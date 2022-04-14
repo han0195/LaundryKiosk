@@ -62,8 +62,7 @@
         - 매출통계보기
     - 큰틀설계 예시 그림[ 관리자페이지 x ]
         
-        ![간단설계그림.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7959e93e-545c-4163-87c9-396a5b257cbc/간단설계그림.png)
-        
+      
 - DB
     - 기계 machine
         - 기계번호 [ 자동번호 ] mnum
@@ -88,7 +87,6 @@
         - 가격 cprice
 - DB그림예시
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf68138c-bfcd-4421-acaa-38eac91781b3/Untitled.png)
     
 
 ## 일정(4/12~4/26)
@@ -107,7 +105,7 @@
     - 15일
         - java이어서 and 최종설계(역할분담)
     - 16일 주말
-        - 
+        - ㅁ
     - 17일 주말
         - ㅁ
     - 18일
@@ -129,5 +127,3 @@
     - 26일
         - 테스트
         
- 
-    
