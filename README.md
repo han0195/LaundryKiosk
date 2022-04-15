@@ -27,10 +27,7 @@
 
 
 ###1. 주제선정 브레인 스토밍
-![팀플 re6_2 기초2](https://user-images.githubusercontent.com/100547978/163542535-e4c8b3ed-3650-409c-9fb3-1d2763081afb.png)
-
-
-
+![팀플 re6_2 기초2](https://user-images.githubusercontent.com/100547978/163544146-cf73d27e-3582-48d8-ad2c-a472da80c302.jpg)
 
 
 
