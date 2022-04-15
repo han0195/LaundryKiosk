@@ -1,7 +1,7 @@
 # renual6_2
 ### 멀티키오스크(세탁,아이스크림주문)
 
-[팀플 기초 작성 노션](https://www.notion.so/65eba034e61c4cfabff76e16270f2340)
+[팀플 기초 작성 노션_링크](https://www.notion.so/65eba034e61c4cfabff76e16270f2340)
 
 
 **기능-세탁기,건조기이용후 아이스크림할인**
