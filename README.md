@@ -1,7 +1,6 @@
 # renual6_2
 
-
-노션____https://www.notion.so/65eba034e61c4cfabff76e16270f2340
+##[노션](https://www.notion.so/65eba034e61c4cfabff76e16270f2340)
 
 # 멀티키오스크(세탁,아이스크림주문)
 
