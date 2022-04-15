@@ -4,8 +4,7 @@
 [팀플 기초 작성 노션_링크](https://www.notion.so/65eba034e61c4cfabff76e16270f2340)
 
 
-
-![image](https://user-images.githubusercontent.com/100547978/163539863-85734da6-3315-4f35-9d82-6b32cb80561a.png)
+![팀플 re6_2 기초2](https://user-images.githubusercontent.com/100547978/163542370-84bb0c8b-a1e4-4141-8d09-bc56bae39364.png)
 
 
 
