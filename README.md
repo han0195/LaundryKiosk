@@ -9,7 +9,7 @@
 2. 주제 선정과 취합
 3. 주제에 맞는기능 생각하기
 4. 데이터베이스(db) 설계
-5. 에프엑스(fx) 설계
+5. 프론트 - 에프엑스(fx) 설계
 6. 컨트롤(java) 설계
 7. fx 기초 제작
 8. 코드작성 1
@@ -42,7 +42,7 @@
 ![데이터베이스_팀플2](https://user-images.githubusercontent.com/100547978/163682299-dde5920d-b7f7-4e51-ba93-2e5797574cda.jpg)
 
 
-### 5. 에프엑스(fx) 설계  
+### 5. 프론트 - 에프엑스(fx) 설계  
 (미리보기)  
 <img width="626" alt="팀플2fx미리보기" src="https://user-images.githubusercontent.com/100547978/163683357-89742614-3968-4825-885f-fb3858c4d443.png">  
 [팀플 리뉴얼6조 2번대팀 프론트(임시) ppt.pptx](https://github.com/ParkRaechan/renual6_2/files/8500218/6.2.ppt.pptx)  
