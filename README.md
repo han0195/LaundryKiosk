@@ -36,6 +36,8 @@
 
 ### 5. 에프엑스(fx) 설계
 [팀플 리뉴얼6조 2번대팀 프론트(임시) ppt.pptx](https://github.com/ParkRaechan/renual6_2/files/8500218/6.2.ppt.pptx)
+[팀플 리뉴얼6조 2번대팀 추가프론트(아이스크림) ppt.pptx](https://github.com/ParkRaechan/renual6_2/files/8500224/6.2.ppt.pptx)
+
 
 ### 6.컨트롤 설계-클래스 설계
 ![팀플 re6_2 기초3](https://user-images.githubusercontent.com/100547978/163554358-8019bdb4-8ba5-4a4d-97d8-7867b323ac97.jpg)
