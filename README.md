@@ -31,9 +31,11 @@
 
 
 
+### 4. 데이터베이스(db) 설계
+![데이터베이스_팀플2](https://user-images.githubusercontent.com/100547978/163682299-dde5920d-b7f7-4e51-ba93-2e5797574cda.jpg)
 
-
-
+### 5. 에프엑스(fx) 설계
+[팀플 리뉴얼6조 2번대팀 프론트(임시) ppt.pptx](https://github.com/ParkRaechan/renual6_2/files/8500218/6.2.ppt.pptx)
 
 ### 6.컨트롤 설계-클래스 설계
 ![팀플 re6_2 기초3](https://user-images.githubusercontent.com/100547978/163554358-8019bdb4-8ba5-4a4d-97d8-7867b323ac97.jpg)
