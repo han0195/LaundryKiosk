@@ -34,6 +34,10 @@
 ![주제취합_팀플2](https://user-images.githubusercontent.com/100547978/163682811-3e111f54-ae4b-48e9-ad9f-215bb027a973.jpg)
 
 
+### 3. 주제에 맞는기능 생각하기
+![기능_팀플2](https://user-images.githubusercontent.com/100547978/163683284-0c415f47-6900-44c8-9a94-23c2d8317455.jpg)
+
+
 ### 4. 데이터베이스(db) 설계
 ![데이터베이스_팀플2](https://user-images.githubusercontent.com/100547978/163682299-dde5920d-b7f7-4e51-ba93-2e5797574cda.jpg)
 
