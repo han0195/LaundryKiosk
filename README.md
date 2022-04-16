@@ -30,9 +30,13 @@
 ![팀플 re6_2 기초2](https://user-images.githubusercontent.com/100547978/163544146-cf73d27e-3582-48d8-ad2c-a472da80c302.jpg)
 
 
+### 2. 주제 선정과 취합
+![주제취합_팀플2](https://user-images.githubusercontent.com/100547978/163682811-3e111f54-ae4b-48e9-ad9f-215bb027a973.jpg)
+
 
 ### 4. 데이터베이스(db) 설계
 ![데이터베이스_팀플2](https://user-images.githubusercontent.com/100547978/163682299-dde5920d-b7f7-4e51-ba93-2e5797574cda.jpg)
+
 
 ### 5. 에프엑스(fx) 설계
 [팀플 리뉴얼6조 2번대팀 프론트(임시) ppt.pptx](https://github.com/ParkRaechan/renual6_2/files/8500218/6.2.ppt.pptx)
