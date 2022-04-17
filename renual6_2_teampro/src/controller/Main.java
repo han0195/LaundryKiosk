@@ -1,7 +1,7 @@
 package controller;
 
 //메인 컨트롤
-	//페이지 전환
+	//기계 선택 페이지전환
 public class Main {
 
 }
