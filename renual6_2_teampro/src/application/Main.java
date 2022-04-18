@@ -19,7 +19,7 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+	//브랜치테스트
 	public static void main(String[] args) {
 		launch(args);
 	}
