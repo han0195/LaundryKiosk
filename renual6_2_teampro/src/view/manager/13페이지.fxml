@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="66.0" layoutY="151.0" prefHeight="575.0" prefWidth="573.0">
+        <columns>
+          <TableColumn prefWidth="169.0" text="세탁기,건조기이름" />
+          <TableColumn minWidth="0.0" prefWidth="106.0" text="기계번호" />
+            <TableColumn minWidth="0.0" prefWidth="113.0" text="세제량" />
+            <TableColumn prefWidth="151.0" text="가격" />
+        </columns>
+      </TableView>
+      <Label layoutX="231.0" layoutY="40.0" prefHeight="86.0" prefWidth="268.0" text="기계관리">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button layoutX="464.0" layoutY="782.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="169.0" text="기계추가" />
+   </children>
+</AnchorPane>
