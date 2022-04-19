@@ -1,7 +1,9 @@
 package dto;
 
+import java.time.LocalDateTime;
+
 public class temptable {
-	private int mnum; 
+	private int mnum; // 기계번호 
 	private String cname;
 	private int mamount;
 	private String mphone;
@@ -9,7 +11,7 @@ public class temptable {
 	private String mdegree;
 	private int inputprice;
 	private int wholeprice;
-
+	
 	public temptable() {
 		super();
 	}

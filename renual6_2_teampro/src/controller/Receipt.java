@@ -39,21 +39,21 @@ public class Receipt implements Initializable{
 
 	    @FXML
 	    void home(ActionEvent event) {
-	    	Main.main.loadpage("/view/user/1번페이지(메인).fxml");
+	    	Main.main.loadpage2("/view/user/1번페이지(메인).fxml");
 	    }
 	    @FXML
 	    void home2(ActionEvent event) {
-	    	Main.main.loadpage("/view/user/1번페이지(메인).fxml");
+	    	Main.main.loadpage2("/view/user/1번페이지(메인).fxml");
 	    }
 	    @Override
 	    public void initialize(URL arg0, ResourceBundle arg1) {
 	    	//db로 꺼내오기
 	    	//머신
 	    	//카테고리
-	    	amoment.setText(null);;
-	    	category.setText(null);
-	    	drgree.setText(null);
-	    	starttime.setText(null);
-	    	endtime.setText(null);
+//	    	amoment.setText(null);;
+//	    	category.setText(null);
+//	    	drgree.setText(null);
+//	    	starttime.setText(null);
+//	    	endtime.setText(null);
 	    }
 }
