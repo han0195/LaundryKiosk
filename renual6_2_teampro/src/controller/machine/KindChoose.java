@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import controller.Main;
-import dao.BoardDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,21 +30,21 @@ public class KindChoose implements Initializable{
     	
     	//세탁기 대형 출력
     		//테이블출력
-    		Main.loadpage("/view/user/4번페이지(세탁기선택)미완성.fxml");
+    		Main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
     	if(rtemp.equals(건조기)) {
     		Main.main.temptable.set(0,"대형건조기",0,null,null,null,0,0);
     	
     	//건조기 대형 출력
     		//테이블출력
-       		Main.loadpage("/view/user/4번페이지(세탁기선택)미완성.fxml");
+       		Main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
 	 
     }
 
     @FXML		//홈가기
     void acchome(ActionEvent event) {
-    	Main.loadpage("/view/user/1번페이지(메인).fxml");
+    	Main.loadpage2("/view/user/1번페이지(메인).fxml");
     }
 
     @FXML
@@ -56,14 +55,14 @@ public class KindChoose implements Initializable{
     	
     	//세탁기 중형 출력
     		//테이블출력
-    		Main.loadpage("/view/user/4번페이지(세탁기선택)미완성.fxml");
+    		Main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
     	if(rtemp.equals(건조기)) {
     		Main.main.temptable.set(0,"중형건조기",0,null,null,null,0,0);
     	
     	//건조기 중형 출력
     		 //테이블출력
-       		Main.loadpage("/view/user/4번페이지(세탁기선택)미완성.fxml");
+       		Main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
     }
     
