@@ -1,8 +1,18 @@
 package controller.machine;
 
-//±â°èÁ¾·ù ¼±ÅÃ(ÁßÇü,´ëÇü)
-	//ÁßÇü ¸®½ºÆ® ºÒ·¯¿À±â
-	//´ëÇü ¸®½ºÆ® ºÒ·¯¿À±â
-public class KindChoose {
+//ì„ íƒí•œ ê¸°ê³„ ì¢…ë¥˜(ì¤‘í˜•/ëŒ€í˜•) ì¶œë ¥ ì»¨íŠ¸ë¡¤
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+public class PleaseProvideControllerClassName {
+
+    @FXML
+    private Button homebtn;
+
+    @FXML
+    private Button mediumbtn;
+
+    @FXML
+    private Button bigbtn;
 
 }

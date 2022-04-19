@@ -26,8 +26,8 @@
             <Image url="@../../img/4페이지%20크기선택.png" />
          </image>
       </ImageView>
-      <Button layoutX="663.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="57.0" text="Button" />
-      <Button layoutX="95.0" layoutY="72.0" mnemonicParsing="false" prefHeight="286.0" prefWidth="221.0" text="Button" />
-      <Button layoutX="405.0" layoutY="72.0" mnemonicParsing="false" prefHeight="286.0" prefWidth="221.0" text="Button" />
+      <Button fx:id="homebtn" layoutX="663.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="57.0" text="Button" />
+      <Button fx:id="mediumbtn" layoutX="95.0" layoutY="72.0" mnemonicParsing="false" prefHeight="286.0" prefWidth="221.0" text="중형" />
+      <Button fx:id="bigbtn" layoutX="405.0" layoutY="72.0" mnemonicParsing="false" prefHeight="286.0" prefWidth="221.0" text="대형" />
    </children>
 </AnchorPane>
