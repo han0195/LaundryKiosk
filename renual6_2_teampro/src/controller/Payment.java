@@ -1,8 +1,31 @@
 package controller;
 
-//결제창 컨트롤
-	//자기돈 500원추가 버튼
-	//자기돈으로 결제 버튼
-public class Payment {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+
+public class Payment implements Initializable{
+	  @FXML
+	  private Button btnaddmoney;
+
+	  @FXML
+	  private Button btnpaymentend;
+
+	  @FXML
+	  void addmoney(ActionEvent event) {
+
+	  }
+	  @FXML
+	  void paymentend(ActionEvent event) {
+
+	  }
+	  @Override
+	  public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		
+	  }
 }

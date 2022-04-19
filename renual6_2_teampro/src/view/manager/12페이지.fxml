@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="62.0" layoutY="41.0" prefHeight="147.0" prefWidth="376.0" text="관리자" />
+      <Button layoutX="86.0" layoutY="229.0" mnemonicParsing="false" prefHeight="221.0" prefWidth="403.0" text="기계관리" />
+      <Button layoutX="80.0" layoutY="551.0" mnemonicParsing="false" prefHeight="221.0" prefWidth="403.0" text="매출통계보기" />
+   </children>
+</AnchorPane>
