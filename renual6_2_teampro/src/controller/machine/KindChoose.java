@@ -21,7 +21,12 @@ public class KindChoose implements Initializable{
 
     @FXML
     private Button btnbig;
-
+    
+ //   @FXML
+  //  private tableview
+    
+    public static dto.Machine machine;
+    
     @FXML
     void accbig(ActionEvent event) {
     	String rtemp = Main.main.temptable.get.cname;
@@ -72,9 +77,37 @@ public class KindChoose implements Initializable{
     	String rtemp = Main.main.temptable.get.cname;
     	if(rtemp.equals(세탁기)) {
     		Main.main.temptable.set(0,"중형세탁기",0,null,null,null,0,0);
-    		ObservableList<dto.Machine> boardlist = kindChoose.boardDao.list();
-        	
     		
+    		
+    		ObservableList<dto.Machine> machinelist = kindChoose.machineDao.list();
+        	
+    		TableColumn tc = boardtable.getColumns().get(0);	
+        	tc.setCellValueFactory( new PropertyValueFactory<>("mnum")); // 
+        	
+        	tc = boardtable.getColumns().get(1);	// ���̺��� �ι�° �� ��������
+        	tc.setCellValueFactory( new PropertyValueFactory<>("btitle"));
+        	
+        	tc = boardtable.getColumns().get(2);	// ���̺��� ����° �� ��������
+        	tc.setCellValueFactory( new PropertyValueFactory<>("bwrite"));
+        	
+        	tc = boardtable.getColumns().get(3);	// ���̺��� �׹�° �� ��������
+        	tc.setCellValueFactory( new PropertyValueFactory<>("bdate"));
+        	
+        	tc = boardtable.getColumns().get(4);	// ���̺��� �ټ���° �� ��������
+        	tc.setCellValueFactory( new PropertyValueFactory<>("bview"));
+        	
+        	// 3. tableview �� list ����
+        	boardtable.setItems(boardlist);;
+        		// ���̺��(fxid).setItems( ObservableList );  // ���̺� ǥ���� ����Ʈ(�Ϲ���arraylist X) ����
+        	
+        	
+        	// * tableview ���� �ش� ���� Ŭ�������� �̺�Ʈ
+        		//boardtable.setOnMouseClicked( �μ� -> { �����ڵ� } ) : ���̺��� Ŭ��������
+        	boardtable.setOnMouseClicked( e -> { 
+        		
+        		// 1. ���̺��� Ŭ���� ��ü�� �ӽð�ü�� ���� 
+        		board = boardtable.getSelectionModel().getSelectedItem() ; // Ŭ���� board ��ü ȣ��
+        		
     		
     	}
     	//1_2. 앞에서 건조기 선택시

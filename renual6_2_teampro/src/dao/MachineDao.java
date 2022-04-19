@@ -30,11 +30,12 @@ public class MachineDao {
 		
 			while(rs.next()) {
 				Machine machine = new Machine(rs.getInt(1),
-						rs.getString(2),
+						rs.getInt(2),
 						rs.getString(3),
 						rs.getString(4),
 						rs.getString(5),
-						rs.getInt(6));
+						rs.getString(6),
+						rs.getInt(7));
 				
 				machineList.add(machine);
 			
