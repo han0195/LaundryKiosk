@@ -4,14 +4,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-//선택한 중형인지 대형인지 dto로 전달
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class KindChoose implements Initializable{
+
+public class KindChoose{
 	
-	public 
     @FXML
     private Button btnhome;
 
@@ -22,8 +21,10 @@ public class KindChoose implements Initializable{
     private Button btnbig;
 
     @FXML
-    int accbig(ActionEvent event) {
-    	return 1;
+    void accbig(ActionEvent event) {
+    	//if
+	    Main.main.temptable temp = new temptable(0,"중형",0,null,null,null,0,0);
+	    temp.set
     }
 
     @FXML
