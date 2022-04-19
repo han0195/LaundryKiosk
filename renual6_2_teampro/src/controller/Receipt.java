@@ -3,7 +3,6 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import dto.Machine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -40,15 +39,21 @@ public class Receipt implements Initializable{
 
 	    @FXML
 	    void home(ActionEvent event) {
-
+	    	Main.main.loadpage("/view/user/1번페이지(메인).fxml");
 	    }
 	    @FXML
 	    void home2(ActionEvent event) {
-
+	    	Main.main.loadpage("/view/user/1번페이지(메인).fxml");
 	    }
 	    @Override
 	    public void initialize(URL arg0, ResourceBundle arg1) {
-	    	Machine machine
-	    	
+	    	//db로 꺼내오기
+	    	//머신
+	    	//카테고리
+	    	amoment.setText(null);;
+	    	category.setText(null);
+	    	drgree.setText(null);
+	    	starttime.setText(null);
+	    	endtime.setText(null);
 	    }
 }

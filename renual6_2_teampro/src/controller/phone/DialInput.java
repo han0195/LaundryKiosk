@@ -15,8 +15,7 @@ public class DialInput implements Initializable{
 
 	@FXML
 	void a1(ActionEvent event) {
-		Main.main.machine.setMphone(Main.main.machine.getMphone() + "1");
-		System.out.println(Main.main.machine.getMphone());
+		
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

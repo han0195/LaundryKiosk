@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import dto.Category;
 import dto.Machine;
+import dto.temptable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,12 +17,12 @@ public class Main implements Initializable{
 	public Main() {
 		main = this;
 	}
-	public static Machine machine;
+	public static temptable temptable;
 	@FXML
 	private BorderPane borderpane;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		machine = new Machine();
+		temptable = new temptable();
 		loadpage("/view/user/1번페이지(메인).fxml");
 	}
 	public void loadpage(String page) {
@@ -36,6 +37,14 @@ public class Main implements Initializable{
 		try {
 			Parent parent = FXMLLoader.load(getClass().getResource(page));
 			borderpane.setBottom(parent);
+		}catch (Exception e) {
+			System.out.println("페이지 오류" + e);
+		}
+	}
+	public void loadpage3(String page) {
+		try {
+			Parent parent = FXMLLoader.load(getClass().getResource(page));
+			borderpane.setBottom(null);
 		}catch (Exception e) {
 			System.out.println("페이지 오류" + e);
 		}
