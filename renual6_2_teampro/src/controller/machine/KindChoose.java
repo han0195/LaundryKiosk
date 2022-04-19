@@ -10,7 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 public class KindChoose implements Initializable{
-
+	
+	public 
     @FXML
     private Button btnhome;
 
@@ -21,8 +22,8 @@ public class KindChoose implements Initializable{
     private Button btnbig;
 
     @FXML
-    void accbig(ActionEvent event) {
-    	
+    int accbig(ActionEvent event) {
+    	return 1;
     }
 
     @FXML
@@ -31,14 +32,8 @@ public class KindChoose implements Initializable{
     }
 
     @FXML
-    void accmedium(ActionEvent event) {
-    	
+    int accmedium(ActionEvent event) {
+    	return 0;
     }
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-	}
-    
-   
 }

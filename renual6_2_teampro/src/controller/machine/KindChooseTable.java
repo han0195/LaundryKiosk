@@ -1,7 +1,17 @@
 package controller.machine;
 
-//±â°èÁ¾·ù ¼±ÅÃ(ÁßÇü,´ëÇü) ÇÏ´Ü Å×ÀÌºíºä ÄÁÆ®·Ñ
-	//ÀÌ´Ï¼È¶óÀÌÁî ¹ÞÀº ¸®½ºÆ®°ª Å×ÀÌºí Ãâ·Â
-public class KindChooseTable {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.fxml.Initializable;
+
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½) ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½
+	//ï¿½Ì´Ï¼È¶ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½
+public class KindChooseTable implements Initializable{
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+	}
+	
 }
