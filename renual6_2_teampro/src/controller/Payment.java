@@ -9,23 +9,37 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 public class Payment implements Initializable{
-	  @FXML
-	  private Button btnaddmoney;
+	 @FXML
+	 private Button btnhome;
 
-	  @FXML
-	  private Button btnpaymentend;
+	 @FXML
+	 private Button btnaddmoney;
 
-	  @FXML
-	  void addmoney(ActionEvent event) {
+	 @FXML
+	 private Button btnpaymentend;
 
-	  }
-	  @FXML
-	  void paymentend(ActionEvent event) {
+	 @FXML
+	 void addmoney(ActionEvent event) {
+		 //예외처리 dto mamount 보다 amount 값이더 적으면
+		 if(Main.machine.getMamount() > Main.machine.getinputamount()) {
+			 Main.machine.setinputamount(Main.machine.getinputamount() + 500);
+		 }
+		 //dto amount 500원추가
+		 	
+	 }
 
-	  }
-	  @Override
-	  public void initialize(URL arg0, ResourceBundle arg1) {
+	 @FXML
+	 void home(ActionEvent event) {
+
+	 }
+
+	 @FXML
+	 void paymentend(ActionEvent event) {
+
+	 }
+	 @Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
-	  }
+	}
 }

@@ -9,12 +9,14 @@ public class Machine {
 	private String mtemperature;
 	private String mdegree;
 	private LocalDateTime mtime;
+	private int inputamount;
 	
 	public Machine() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Machine(int mnum, int mamount, String mphone, String mtemperature, String mdegree, LocalDateTime mtime) {
+	public Machine(int mnum, int mamount, String mphone, String mtemperature, String mdegree, LocalDateTime mtime,
+			int inputamount) {
 		super();
 		this.mnum = mnum;
 		this.mamount = mamount;
@@ -22,6 +24,7 @@ public class Machine {
 		this.mtemperature = mtemperature;
 		this.mdegree = mdegree;
 		this.mtime = mtime;
+		this.inputamount = 0;
 	}
 
 	public int getMnum() {
@@ -70,5 +73,14 @@ public class Machine {
 
 	public void setMtime(LocalDateTime mtime) {
 		this.mtime = mtime;
-	}	
+	}
+
+	public int getinputamount() {
+		return inputamount;
+	}
+
+	public void setinputamount(int inputamount) {
+		this.inputamount = inputamount;
+	}
+	
 }
