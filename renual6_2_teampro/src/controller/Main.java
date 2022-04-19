@@ -1,7 +1,43 @@
 package controller;
 
-//¸ŞÀÎ ÄÁÆ®·Ñ
-	//±â°è ¼±ÅÃ ÆäÀÌÁöÀüÈ¯
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import dto.Machine;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.layout.BorderPane;
+
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½
+	//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¯
 public class Main {
+	public static Main main;
+	public Main() {
+		main = this;
+	}
+	public static Machine machine;
+	@FXML
+	private BorderPane borderpane;
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		machine = new Machine();
+		loadpage("/view/user/1ë²ˆí˜ì´ì§€(ë©”ì¸).fxml");
+	}
+	public void loadpage(String page) {
+		try {
+			Parent parent = FXMLLoader.load(getClass().getResource(page));
+			borderpane.setCenter(parent);
+		}catch (Exception e) {
+			System.out.println("í˜ì´ì§€ ì˜¤ë¥˜" + e);
+		}
+	}
+	public void loadpage2(String page) {
+		try {
+			Parent parent = FXMLLoader.load(getClass().getResource(page));
+			borderpane.setBottom(parent);
+		}catch (Exception e) {
+			System.out.println("í˜ì´ì§€ ì˜¤ë¥˜" + e);
+		}
+	}
 
 }

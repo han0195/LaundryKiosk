@@ -3,6 +3,7 @@ package controller.machine;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import controller.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,9 +23,14 @@ public class KindChoose{
 
     @FXML
     void accbig(ActionEvent event) {
-    	//if
-	    Main.main.temptable temp = new temptable(0,"중형",0,null,null,null,0,0);
-	    temp.set
+    	String rtemp = Main.main.temptable.get.cname;
+    	if(rtemp.equals(세탁기)) {
+    		Main.main.temptable.set(0,"대형세탁기",0,null,null,null,0,0);
+    	}
+    	if(rtemp.equals(건조기)) {
+    		   Main.main.temptable.set(0,"대형건조기",0,null,null,null,0,0);
+    	}
+	 
     }
 
     @FXML
@@ -33,8 +39,14 @@ public class KindChoose{
     }
 
     @FXML
-    int accmedium(ActionEvent event) {
-    	return 0;
+    void accmedium(ActionEvent event) {
+    	String rtemp = Main.main.temptable.get.cname;
+    	if(rtemp.equals(세탁기)) {
+    		Main.main.temptable.set(0,"중형세탁기",0,null,null,null,0,0);
+    	}
+    	if(rtemp.equals(건조기)) {
+    		   Main.main.temptable.set(0,"중형건조기",0,null,null,null,0,0);
+    	}
     }
 
 }
