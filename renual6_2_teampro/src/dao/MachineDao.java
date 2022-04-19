@@ -36,11 +36,11 @@ public class MachineDao {
 						rs.getString(5),
 						rs.getInt(6));
 				
-			boardList.add(board);
+				machineList.add(machine);
 			
 			}
 		
-			return boardList;
+			return machineList;
 		}catch (Exception e) {
 
 		}
