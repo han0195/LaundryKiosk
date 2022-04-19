@@ -19,39 +19,39 @@
             <Image url="@../../img/7페이지%20영수증.png" />
          </image>
       </ImageView>
-      <Button layoutX="666.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="54.0" text="Button" />
-      <Button layoutX="52.0" layoutY="711.0" mnemonicParsing="false" prefHeight="194.0" prefWidth="617.0" text="Button" />
-      <Label layoutX="275.0" layoutY="200.0" prefHeight="50.0" prefWidth="361.0" text="010-1234-1234">
+      <Button fx:id="btnhome" layoutX="666.0" mnemonicParsing="false" onAction="#home" prefHeight="50.0" prefWidth="54.0" text="Button" />
+      <Button fx:id="btnhome2" layoutX="52.0" layoutY="711.0" mnemonicParsing="false" onAction="#home2" prefHeight="194.0" prefWidth="617.0" text="Button" />
+      <Label fx:id="phone" layoutX="275.0" layoutY="200.0" prefHeight="50.0" prefWidth="361.0" text="010-1234-1234">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="261.0" prefHeight="50.0" prefWidth="361.0" text="중형세탁기">
+      <Label fx:id="category" layoutX="275.0" layoutY="261.0" prefHeight="50.0" prefWidth="361.0" text="중형세탁기">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="328.0" prefHeight="50.0" prefWidth="361.0" text="뜨거움">
+      <Label fx:id="temperature" layoutX="275.0" layoutY="328.0" prefHeight="50.0" prefWidth="361.0" text="뜨거움">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="387.0" prefHeight="50.0" prefWidth="361.0" text="강함">
+      <Label fx:id="drgree" layoutX="275.0" layoutY="387.0" prefHeight="50.0" prefWidth="361.0" text="강함">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="455.0" prefHeight="50.0" prefWidth="361.0" text="09:10">
+      <Label fx:id="starttime" layoutX="275.0" layoutY="455.0" prefHeight="50.0" prefWidth="361.0" text="09:10">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="514.0" prefHeight="50.0" prefWidth="361.0" text="09:50">
+      <Label fx:id="endtime" layoutX="275.0" layoutY="514.0" prefHeight="50.0" prefWidth="361.0" text="09:50">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="577.0" prefHeight="50.0" prefWidth="361.0" text="5500">
+      <Label fx:id="amoment" layoutX="275.0" layoutY="577.0" prefHeight="50.0" prefWidth="361.0" text="5500">
          <font>
             <Font size="36.0" />
          </font>

@@ -13,7 +13,7 @@
             <Image url="@../../img/6페이지%20결제창%20하단.png" />
          </image>
       </ImageView>
-      <Label layoutX="276.0" layoutY="90.0" prefHeight="58.0" prefWidth="220.0" text="4000">
+      <Label fx:id="inputamount" layoutX="276.0" layoutY="90.0" prefHeight="58.0" prefWidth="220.0" text="4000">
          <font>
             <Font size="36.0" />
          </font>

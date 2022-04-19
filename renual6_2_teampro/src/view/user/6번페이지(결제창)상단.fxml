@@ -19,22 +19,22 @@
             <Image url="@../../img/6페이지%20결제창%20상단.png" />
          </image>
       </ImageView>
-      <Label layoutX="286.0" layoutY="178.0" prefHeight="48.0" prefWidth="350.0" text="중형세탁기">
+      <Label fx:id="catagroy" layoutX="286.0" layoutY="178.0" prefHeight="48.0" prefWidth="350.0" text="중형세탁기">
          <font>
             <Font size="41.0" />
          </font>
       </Label>
-      <Label layoutX="286.0" layoutY="247.0" prefHeight="48.0" prefWidth="350.0" text="뜨거움">
+      <Label fx:id="temperature" layoutX="286.0" layoutY="247.0" prefHeight="48.0" prefWidth="350.0" text="뜨거움">
          <font>
             <Font size="41.0" />
          </font>
       </Label>
-      <Label layoutX="286.0" layoutY="319.0" prefHeight="48.0" prefWidth="350.0" text="강함">
+      <Label fx:id="mdegree" layoutX="286.0" layoutY="319.0" prefHeight="48.0" prefWidth="350.0" text="강함">
          <font>
             <Font size="41.0" />
          </font>
       </Label>
-      <Label layoutX="294.0" layoutY="435.0" prefHeight="48.0" prefWidth="350.0" text="5500">
+      <Label fx:id="mamount" layoutX="294.0" layoutY="435.0" prefHeight="48.0" prefWidth="350.0" text="5500">
          <font>
             <Font size="41.0" />
          </font>
