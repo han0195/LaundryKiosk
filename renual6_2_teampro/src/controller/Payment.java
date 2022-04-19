@@ -49,8 +49,7 @@ public class Payment implements Initializable{
 
 	@FXML
 	void home(ActionEvent event) {
-		Main.main.loadpage("/view/user/1번페이지(메인).fxml");
-		Main.main.loadpage2("");
+		Main.main.loadpage2("/view/user/1번페이지(메인).fxml");	
 	}
 
 	@FXML
