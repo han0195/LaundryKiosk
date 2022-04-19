@@ -1,18 +1,44 @@
 package controller.machine;
 
-//선택한 기계 종류(중형/대형) 출력 컨트롤
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+//선택한 중형인지 대형인지 dto로 전달
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class PleaseProvideControllerClassName {
+public class KindChoose implements Initializable{
 
     @FXML
-    private Button homebtn;
+    private Button btnhome;
 
     @FXML
-    private Button mediumbtn;
+    private Button btnmedium;
 
     @FXML
-    private Button bigbtn;
+    private Button btnbig;
 
+    @FXML
+    void accbig(ActionEvent event) {
+    	
+    }
+
+    @FXML
+    void acchome(ActionEvent event) {
+    	//loadpage 홈
+    }
+
+    @FXML
+    void accmedium(ActionEvent event) {
+    	
+    }
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+	}
+    
+   
 }
