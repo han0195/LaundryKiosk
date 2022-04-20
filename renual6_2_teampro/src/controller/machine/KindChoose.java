@@ -10,6 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 
@@ -24,9 +26,9 @@ public class KindChoose implements Initializable{
     @FXML
     private Button btnbig;
     
- //   @FXML
-  //  private tableview
-    
+    @FXML
+    private TableView<dto.Machine> machinetable;
+
     public static dto.Machine machine;
     
     @FXML
@@ -83,7 +85,7 @@ public class KindChoose implements Initializable{
     		
     		ObservableList<dto.Machine> machinelist = MachineDao.machineDao.list();
         	
-    		TableColumn tc = boardtable.getColumns().get(0);	
+    		TableColumn tc = machinetable.getColumns().get(0);	
         	tc.setCellValueFactory( new PropertyValueFactory<>("mnum")); // 
         	
         	tc = boardtable.getColumns().get(1);	
@@ -125,3 +127,56 @@ public class KindChoose implements Initializable{
 	
 
 }
+
+	@Override
+		public void initialize(URL arg0, ResourceBundle arg1) {
+			//1_1. 앞에서 세탁기 선택시
+	    	String rtemp = Main.main.temptable.get.cname;
+	    	if(rtemp.equals("세탁기")) {
+	    		Main.main.temptable.set(0,"중형세탁기",0,null,null,null,0,0);
+	    		
+	    		
+	    		ObservableList<dto.Machine> machinelist = MachineDao.machineDao.list();
+	        	
+	    		TableColumn tc = boardtable.getColumns().get(0);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("mnum")); // 
+	        	
+	        	tc = boardtable.getColumns().get(1);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("btitle"));
+	        	
+	        	tc = boardtable.getColumns().get(2);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("bwrite"));
+	        	
+	        	tc = boardtable.getColumns().get(3);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("bdate"));
+	        	
+	        	tc = boardtable.getColumns().get(4);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("bview"));
+	        	
+	        	boardtable.setItems(boardlist);;
+	        	
+	        	boardtable.setOnMouseClicked( e -> { 
+	        	board = boardtable.getSelectionModel().getSelectedItem() ; 	
+	    		
+	    	}
+	    	//1_2. 앞에서 건조기 선택시
+	    	
+	    	
+	    	
+	    	
+	    	
+	  //////////////////////////
+	    	
+	    	//2_1.세탁기중형 선택시
+	    	
+	    	//2_2.세탁기대형 선택시
+	    	
+	    	//2_3.건조기중형 선택시
+	    	
+	    	//2_4.건조기대형 선택시
+	    	
+	    	
+		}
+		
+	
+	}

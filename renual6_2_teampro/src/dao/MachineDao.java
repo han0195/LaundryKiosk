@@ -30,7 +30,7 @@ public class MachineDao {
 		
 			while(rs.next()) {
 				Machine machine = new Machine(rs.getInt(1),
-						rs.getInt(1));
+						rs.getInt(2));
 				
 				machineList.add(machine);
 			
