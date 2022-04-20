@@ -56,7 +56,7 @@ public class MachineDao {
 			Machine machine = null;
 			if(rs.next()) {
 				LocalDateTime localDate1 = rs.getTimestamp(6).toLocalDateTime();// LocalDateTime <=> Timestamp	
-				machine = new Machine(	
+			Machine temp = new Machine(	
 						rs.getInt(1),
 						rs.getInt(2),
 						rs.getString(3),
@@ -65,6 +65,7 @@ public class MachineDao {
 						localDate1,
 						0
 						);
+			machine = temp;
 			}
 			return machine;
 		} catch (Exception e) {

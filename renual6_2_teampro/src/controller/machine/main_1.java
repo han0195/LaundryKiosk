@@ -8,12 +8,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.media.MediaView;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 public class main_1 implements Initializable{
 	
-	 @FXML
-	 private MediaView webview;
+	@FXML
+    private WebView webview;
 
 	 @FXML
 	 private Button bunstart;
@@ -28,7 +29,9 @@ public class main_1 implements Initializable{
 	 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    	
+        WebEngine webEngine = webview.getEngine();
+        webEngine.load("https://www.naver.com");
+
     }
  
    
