@@ -1,8 +1,12 @@
 package controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import dao.MachineDao;
+import dto.Machine;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -47,6 +51,7 @@ public class Receipt implements Initializable{
 	    }
 	    @Override
 	    public void initialize(URL arg0, ResourceBundle arg1) {
+	    	//ArrayList<Machine> machine = MachineDao.machinedao.load(Main.main.temptable.getMnum());
 	    	//db로 꺼내오기
 	    	//머신
 	    	//카테고리

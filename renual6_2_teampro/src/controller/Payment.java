@@ -66,11 +66,11 @@ public class Payment implements Initializable{
 			Main.main.temptable.setMtemperature("강함");
 			Main.main.temptable.setMdegree("약함");
 			MachineDao.machinedao.update(Main.main.temptable);
-			
 			Main.main.loadpage2("/view/user/7페이지(영수증).fxml");
 		}else {
 			Alert alert = new Alert(AlertType.INFORMATION);
-	    	alert.setHeaderText("돈 넣으셈 ㅡㅡ");
+	    	alert.setHeaderText("마 ㄱㅅㄲ야 돈 넣으셈! ㅡㅡ");
+	    	alert.show();
 		}
 	}
 	@Override

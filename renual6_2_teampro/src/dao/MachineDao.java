@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
+import dto.Machine;
 import dto.temptable;
 
 public class MachineDao {
@@ -26,7 +28,7 @@ public class MachineDao {
 	//머신 저장
 	public boolean update(temptable tb) {
 		try {
-			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());
+			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime()); // db date 타임 맞게 시간뽑기
 			String sql = "update machine set mamount=?,mphone=?,mtemperature=?,mdegree=?,mtime=? where mnum=?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, tb.getMamount());
@@ -42,6 +44,13 @@ public class MachineDao {
 		}
 		return false;
 	}
-	
+	//머신 불러오기
+//	public ArrayList<Machine> load(int mnum) {
+//		try {
+//			String sql;
+//		} catch (Exception e) {
+//			System.out.println("[sql 에러]" + e);
+//		}
+//	}
 	
 }
