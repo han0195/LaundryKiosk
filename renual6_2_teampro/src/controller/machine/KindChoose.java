@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import controller.Main;
 import dao.MachineDao;
+import dto.temptable;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -74,35 +75,21 @@ public class KindChoose implements Initializable{
        		Main.main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
     }  
-    	//1_2. 앞에서 건조기 선택시
     	
-    	
-    	
-    	
-    	
-  //////////////////////////
-    	
-    	//2_1.세탁기중형 선택시
-    	
-    	//2_2.세탁기대형 선택시
-    	
-    	//2_3.건조기중형 선택시
-    	
-    	//2_4.건조기대형 선택시
-    	
-    	
-	
-	
 
 
+	///이니셜라이즈시작///
+	///////////////////////////////////////////
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
-			//1_1. 앞에서 세탁기 선택시
+			
 	    	String rtemp = Main.main.temptable.get.cname;
-	    	if(rtemp.equals("세탁기")) {
-	    		Main.main.temptable.set(0,"중형세탁기",0,null,null,null,0,0);
+	    	
+	    	//1. 앞에서 세탁기 선택시
+	    	//1_1. 앞에서 중형세탁기 선택시
+	    	if(rtemp.equals("세탁기")||rtemp.equals("중형세탁기")) {
 	    		
-	    		ObservableList<dto.temptable> temptable = MachineDao.machineDao.list();
+	    		ObservableList<dto.temptable> templist = MachineDao.machineDao.list("중형세탁기");
 	        	
 	    		TableColumn tc = temptable.getColumns().get(0);	
 	        	tc.setCellValueFactory( new PropertyValueFactory<>("mnum")); // 
@@ -113,53 +100,108 @@ public class KindChoose implements Initializable{
 	        	tc = temptable.getColumns().get(2);	
 	        	tc.setCellValueFactory( new PropertyValueFactory<>("mamount"));
 	        	
-	        	machinetable.setItems(machinelist);
+	        	temptable.setItems(templist);
 	        	
-	        	machinetable.setOnMouseClicked(e->{
-	        		machine = machinetable.getSelectionModel().getSelectedItem();
+	        	temptable.setOnMouseClicked(e->{
+	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
+	        		int a= temptable.getSelectionModel().getSelectedItem().getMnum();
+	        		String b= temptable.getSelectionModel().getSelectedItem().getCname();
+	        		int c= temptable.getSelectionModel().getSelectedItem().getMamount();
+	        		
+	        		Main.main.temptable.set(a,b,c,null,null,null,0,0);
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
 	        	});
 	    	}
-	    	if(rtemp.equals("건조기")) {
-	    		Main.main.temptable.set(0,"중형건조기",0,null,null,null,0,0);
+	    	//2. 앞에서 건조기 선택시
+	    	//2_1. 앞에서 중형건조기 선택시
+	    	else if(rtemp.equals("건조기")||rtemp.equals("중형건조기")) {
 	    		
-	    		
-	    		ObservableList<dto.temptable> temptable = MachineDao.machineDao.list();
+	    		ObservableList<dto.temptable> templist = MachineDao.machineDao.list("중형건조기");
 	        	
-	    		TableColumn tc = machinetable.getColumns().get(0);	
+	    		TableColumn tc = temptable.getColumns().get(0);	
 	        	tc.setCellValueFactory( new PropertyValueFactory<>("mnum")); // 
 	        	
-	        	tc = machinetable.getColumns().get(1);	
+	        	tc = temptable.getColumns().get(1);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("cname"));
+	        	
+	        	tc = temptable.getColumns().get(2);	
 	        	tc.setCellValueFactory( new PropertyValueFactory<>("mamount"));
 	        	
-	        	tc = machinetable.getColumns().get(2);	
-	        	tc.setCellValueFactory( new PropertyValueFactory<>(""));
+	        	temptable.setItems(templist);
 	        	
-	        	machinetable.setItems(machinelist);
-	        	
-	        	machinetable.setOnMouseClicked(e->{
-	        		machine = machinetable.getSelectionModel().getSelectedItem();
+	        	temptable.setOnMouseClicked(e->{
+	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
+	        		int a= temptable.getSelectionModel().getSelectedItem().getMnum();
+	        		String b= temptable.getSelectionModel().getSelectedItem().getCname();
+	        		int c= temptable.getSelectionModel().getSelectedItem().getMamount();
+	        		
+	        		Main.main.temptable.set(a,b,c,null,null,null,0,0);
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
 	        	});
 	    	}
-	    	//1_2. 앞에서 건조기 선택시
-	    	
-	    	
-	    	
-	    	
-	    	
-	  //////////////////////////
-	    	
-	    	//2_1.세탁기중형 선택시
-	    	
-	    	//2_2.세탁기대형 선택시
-	    	
-	    	//2_3.건조기중형 선택시
-	    	
-	    	//2_4.건조기대형 선택시
-	    	
+	    	//1_2. 앞에서 대형세탁기 선택시
+	    	else if(rtemp.equals("대형세탁기")) {
+	    		
+	    		ObservableList<dto.temptable> templist = MachineDao.machineDao.list("대형세탁기");
+	        	
+	    		TableColumn tc = temptable.getColumns().get(0);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("mnum")); // 
+	        	
+	        	tc = temptable.getColumns().get(1);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("cname"));
+	        	
+	        	tc = temptable.getColumns().get(2);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("mamount"));
+	        	
+	        	temptable.setItems(templist);
+	        	
+	        	temptable.setOnMouseClicked(e->{
+	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
+	        		int a= temptable.getSelectionModel().getSelectedItem().getMnum();
+	        		String b= temptable.getSelectionModel().getSelectedItem().getCname();
+	        		int c= temptable.getSelectionModel().getSelectedItem().getMamount();
+	        		
+	        		Main.main.temptable.set(a,b,c,null,null,null,0,0);
+	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        	});
+	    	}
+	    	//2_2. 앞에서 대형건조기 선택시
+	    	else if(rtemp.equals("대형건조기")) {
+	    		
+	    		ObservableList<dto.temptable> templist = MachineDao.machineDao.list("대형건조기");
+	        	
+	    		TableColumn tc = temptable.getColumns().get(0);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("mnum")); // 
+	        	
+	        	tc = temptable.getColumns().get(1);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("cname"));
+	        	
+	        	tc = temptable.getColumns().get(2);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("mamount"));
+	        	
+	        	temptable.setItems(templist);
+	        	
+	        	temptable.setOnMouseClicked(e->{
+	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
+	        		int a= temptable.getSelectionModel().getSelectedItem().getMnum();
+	        		String b= temptable.getSelectionModel().getSelectedItem().getCname();
+	        		int c= temptable.getSelectionModel().getSelectedItem().getMamount();
+	        		
+	        		Main.main.temptable.set(a,b,c,null,null,null,0,0);
+	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        	});
+	        	
+	    	}
 	    	
 		}
+		
+		
+		///이니셜라이즈마무리///
+///////////////////////////////////////////
+    	
+    	
+		
+		
 		
 	
 	}

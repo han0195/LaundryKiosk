@@ -21,7 +21,7 @@ public class MachineDao {
 	
 	public static MachineDao machineDao = new MachineDao();
 	
-	public ObservableList<temptable> list() {
+	public ObservableList<temptable> list(String a) {
 		
 		ObservableList<temptable> tempList = FXCollections.observableArrayList();
 		try {
@@ -31,8 +31,8 @@ public class MachineDao {
 			ps = conn.prepareStatement(sql);
 		
 			rs = ps.executeQuery();
-			int y = rs.getInt(2);
-			String sql_ = "select * from category order by cnum where mnum = "+y;
+
+			String sql_ = "select * from category where cname="+a+" order by cnum";
 			
 			ps_ = conn.prepareStatement(sql_);
 		
