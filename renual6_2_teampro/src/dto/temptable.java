@@ -13,6 +13,17 @@ public class temptable {
 	public temptable() {
 		super();
 	}
+	public temptable(int mnum, int mamount) {
+		super();
+		this.mnum = mnum;
+		this.mamount = mamount;
+	}
+	public temptable(int mnum, String cname, int mamount) {
+		super();
+		this.mnum = mnum;
+		this.cname = cname;
+		this.mamount = mamount;
+	}
 	public temptable(int mnum, String cname, int mamount, String mphone, String mtemperature, String mdegree,
 			int inputprice, int wholeprice) {
 		super();

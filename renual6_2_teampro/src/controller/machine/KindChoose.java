@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import controller.Main;
-import controller.home.Home;
 import dao.MachineDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -96,12 +95,33 @@ public class KindChoose implements Initializable{
 	
 
 
-	@Override
+		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			//1_1. 앞에서 세탁기 선택시
 	    	String rtemp = Main.main.temptable.get.cname;
 	    	if(rtemp.equals("세탁기")) {
 	    		Main.main.temptable.set(0,"중형세탁기",0,null,null,null,0,0);
+	    		
+	    		ObservableList<dto.temptable> temptable = MachineDao.machineDao.list();
+	        	
+	    		TableColumn tc = temptable.getColumns().get(0);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("mnum")); // 
+	        	
+	        	tc = temptable.getColumns().get(1);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("cname"));
+	        	
+	        	tc = temptable.getColumns().get(2);	
+	        	tc.setCellValueFactory( new PropertyValueFactory<>("mamount"));
+	        	
+	        	machinetable.setItems(machinelist);
+	        	
+	        	machinetable.setOnMouseClicked(e->{
+	        		machine = machinetable.getSelectionModel().getSelectedItem();
+	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        	});
+	    	}
+	    	if(rtemp.equals("건조기")) {
+	    		Main.main.temptable.set(0,"중형건조기",0,null,null,null,0,0);
 	    		
 	    		
 	    		ObservableList<dto.temptable> temptable = MachineDao.machineDao.list();

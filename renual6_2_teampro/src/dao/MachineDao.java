@@ -15,6 +15,9 @@ public class MachineDao {
 	private PreparedStatement ps;
 	private ResultSet rs;
 	
+	private PreparedStatement ps_;
+	private ResultSet rs_;
+	
 	
 	public static MachineDao machineDao = new MachineDao();
 	
@@ -23,17 +26,24 @@ public class MachineDao {
 		ObservableList<temptable> tempList = FXCollections.observableArrayList();
 		try {
 		
-			String sql = "select * from Machine order by mnum";
+			String sql = "select * from machine order by mnum";
 		
 			ps = conn.prepareStatement(sql);
 		
 			rs = ps.executeQuery();
+			int y = rs.getInt(2);
+			String sql_ = "select * from category order by cnum where mnum = "+y;
+			
+			ps_ = conn.prepareStatement(sql_);
 		
-			while(rs.next()) {
-				Machine machine = new Machine(rs.getInt(1),
-						rs.getInt(2));
+			rs_ = ps_.executeQuery();
+		
+			
+			while(rs_.next()) {
+				temptable temp = new temptable(rs.getInt(1),
+						rs_.getString(4),rs.getInt(2));
 				
-				tempList.addAll(machine);
+				tempList.add(temp);
 			
 			}
 		
