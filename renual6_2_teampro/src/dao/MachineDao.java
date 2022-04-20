@@ -17,7 +17,7 @@ public class MachineDao {
 	
 	public static MachineDao machineDao = new MachineDao();
 	
-	public ObservableList<Machine> list() {
+public ObservableList<Machine> list() {
 		
 		ObservableList<Machine> machineList = FXCollections.observableArrayList();
 		try {
@@ -30,12 +30,7 @@ public class MachineDao {
 		
 			while(rs.next()) {
 				Machine machine = new Machine(rs.getInt(1),
-						rs.getInt(2),
-						rs.getString(3),
-						rs.getString(4),
-						rs.getString(5),
-						rs.getString(6),
-						rs.getInt(7));
+						rs.getInt(1));
 				
 				machineList.add(machine);
 			

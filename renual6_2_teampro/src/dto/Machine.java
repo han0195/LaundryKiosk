@@ -16,6 +16,11 @@ public class Machine {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Machine(int mnum, int mamount) {
+		super();
+		this.mnum = mnum;
+		this.mamount = mamount;
+	}
 	public Machine(int mnum, int mamount, String mphone, String mtemperature, String mdegree, LocalDateTime mtime,
 			int inputamount) {
 		super();
