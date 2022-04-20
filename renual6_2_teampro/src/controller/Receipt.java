@@ -51,14 +51,24 @@ public class Receipt implements Initializable{
 	    }
 	    @Override
 	    public void initialize(URL arg0, ResourceBundle arg1) {
-	    	//ArrayList<Machine> machine = MachineDao.machinedao.load(Main.main.temptable.getMnum());
 	    	//db로 꺼내오기
-	    	//머신
-	    	//카테고리
-//	    	amoment.setText(null);;
-//	    	category.setText(null);
-//	    	drgree.setText(null);
-//	    	starttime.setText(null);
-//	    	endtime.setText(null);
+	    	Machine machine = MachineDao.machinedao.load(Main.main.temptable.getMnum());
+	    	//예외처리
+	    	if (machine != null) {
+	    		amoment.setText(null); 
+//		    	category.setText(null);
+//		    	drgree.setText(null);
+//		    	starttime.setText(null);
+//		    	endtime.setText(null);
+	    	}
+	    	//레이블 수정
+	    	phone.setText(null);
+	    	category.setText(null);
+	    	temperature.setText(null);
+	    	drgree.setText(null);
+	    	starttime.setText(null);
+	    	//종료시간
+	    	amoment.setText(null);
+//	    	
 	    }
 }

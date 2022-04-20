@@ -24,7 +24,7 @@ public class Main implements Initializable{
 		loadpage("/view/user/1번페이지(메인).fxml");
 		
 	}
-	public void loadpage(String page) {
+	public void loadpage(String page) { // borderpane 센터 로드
 		try {
 			Parent parent = FXMLLoader.load(getClass().getResource(page));
 			borderpane.setCenter(parent);
@@ -32,7 +32,7 @@ public class Main implements Initializable{
 			System.out.println("페이지 오류" + e);
 		}
 	}
-	public void loadpage2(String page) {
+	public void loadpage2(String page) { // borderpane 바텀 로드
 		try {
 			Parent parent = FXMLLoader.load(getClass().getResource(page));
 			borderpane.setBottom(parent);

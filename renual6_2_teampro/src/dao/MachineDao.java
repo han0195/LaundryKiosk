@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import dto.Machine;
@@ -45,12 +47,30 @@ public class MachineDao {
 		return false;
 	}
 	//머신 불러오기
-//	public ArrayList<Machine> load(int mnum) {
-//		try {
-//			String sql;
-//		} catch (Exception e) {
-//			System.out.println("[sql 에러]" + e);
-//		}
-//	}
+	public Machine load(int mnum) {
+		try {
+			String sql = "select * from machine where mnum=?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, mnum);
+			rs = ps.executeQuery();
+			Machine machine = null;
+			if(rs.next()) {
+				LocalDateTime localDate1 = rs.getTimestamp(6).toLocalDateTime();// LocalDateTime <=> Timestamp	
+				machine = new Machine(	
+						rs.getInt(1),
+						rs.getInt(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getString(5),
+						localDate1,
+						0
+						);
+			}
+			return machine;
+		} catch (Exception e) {
+			System.out.println("[sql 에러]" + e);
+		}
+		return null;
+	}
 	
 }
