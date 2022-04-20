@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import dto.Machine;
+import dto.temptable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -17,9 +18,9 @@ public class MachineDao {
 	
 	public static MachineDao machineDao = new MachineDao();
 	
-	public ObservableList<Machine> list() {
+	public ObservableList<temptable> list() {
 		
-		ObservableList<Machine> machineList = FXCollections.observableArrayList();
+		ObservableList<temptable> tempList = FXCollections.observableArrayList();
 		try {
 		
 			String sql = "select * from Machine order by mnum";
@@ -32,11 +33,11 @@ public class MachineDao {
 				Machine machine = new Machine(rs.getInt(1),
 						rs.getInt(2));
 				
-				machineList.add(machine);
+				tempList.addAll(machine);
 			
 			}
 		
-			return machineList;
+			return tempList;
 		}catch (Exception e) {
 
 		}
