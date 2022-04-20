@@ -1,6 +1,7 @@
 package controller;
 
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -49,10 +50,12 @@ public class Receipt implements Initializable{
 	    @FXML
 	    void home(ActionEvent event) {
 	    	Main.main.loadpage2("/view/user/1번페이지(메인).fxml");
+	    	Main.main.temptable.setInputprice(0); // 금액 초기화
 	    }
 	    @FXML
 	    void home2(ActionEvent event) {
 	    	Main.main.loadpage2("/view/user/1번페이지(메인).fxml");
+	    	Main.main.temptable.setInputprice(0); // 금액 초기화
 	    }
 	    @Override
 	    public void initialize(URL arg0, ResourceBundle arg1) {
@@ -74,11 +77,15 @@ public class Receipt implements Initializable{
 		    	//종료시간 [세탁 40분 건조기 30분]
 		    		//종료시간 계산
 		    	if(category.getCname().contains("세탁기")) {
-//		    		stime.str
+		    		LocalDateTime etime = machine.getMtime().plusMinutes(40); // 40분 더하기
+		    		String etimes = etime.format(DateTimeFormatter.ofPattern("HH:mm"));
+		    		endtime.setText(etimes);
 		    	}else if(category.getCname().contains("건조기")) {
-		    		
+		    		LocalDateTime etime = machine.getMtime().plusMinutes(30);// 30분 더하기
+		    		String etimes = etime.format(DateTimeFormatter.ofPattern("HH:mm"));
+		    		endtime.setText(etimes);
 		    	}
-		    	amoment.setText(Integer.toString(machine.getMamount()));
+		    	amoment.setText(Integer.toString(category.getCprice()));
 	    	}else {
 	    		Alert alert = new Alert(AlertType.INFORMATION);
 	    		alert.setHeaderText("하하하하하하 넌 빨래에 실패했다");
