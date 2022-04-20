@@ -17,7 +17,7 @@ public class MachineDao {
 	
 	public static MachineDao machineDao = new MachineDao();
 	
-public ObservableList<Machine> list() {
+	public ObservableList<Machine> list() {
 		
 		ObservableList<Machine> machineList = FXCollections.observableArrayList();
 		try {
