@@ -21,23 +21,23 @@ public class Main implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		temptable = new temptable();
-		loadpage("/view/user/1ë²ˆí˜ì´ì§€(ë©”ì¸).fxml");
+		loadpage("/view/user/1¹øÆäÀÌÁö(¸ŞÀÎ).fxml");
 		
 	}
-	public void loadpage(String page) { // borderpane ì„¼í„° ë¡œë“œ
+	public void loadpage(String page) { // borderpane ¼¾ÅÍ ·Îµå
 		try {
 			Parent parent = FXMLLoader.load(getClass().getResource(page));
 			borderpane.setCenter(parent);
 		}catch (Exception e) {
-			System.out.println("í˜ì´ì§€ ì˜¤ë¥˜" + e);
+			System.out.println("ÆäÀÌÁö ¿À·ù" + e);
 		}
 	}
-	public void loadpage2(String page) { // borderpane ë°”í…€ ë¡œë“œ
+	public void loadpage2(String page) { // borderpane ¹ÙÅÒ ·Îµå
 		try {
 			Parent parent = FXMLLoader.load(getClass().getResource(page));
 			borderpane.setBottom(parent);
 		}catch (Exception e) {
-			System.out.println("í˜ì´ì§€ ì˜¤ë¥˜" + e);
+			System.out.println("ÆäÀÌÁö ¿À·ù" + e);
 		}
 	}
 	 

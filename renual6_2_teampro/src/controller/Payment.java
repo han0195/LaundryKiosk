@@ -36,49 +36,49 @@ public class Payment implements Initializable{
 	@FXML
 	private Button btnpaymentend;
 	
-	boolean pass = false; // ê¸ˆì•¡ ì¶©ì¡± íŒë‹¨
+	boolean pass = false; // ±İ¾× ÃæÁ· ÆÇ´Ü
 	@FXML
 	void addmoney(ActionEvent event) {
-		//Main.main.temptable.setWholeprice(5000); í…ŒìŠ¤íŠ¸
-	    if(Main.main.temptable.getWholeprice() > Main.main.temptable.getInputprice()) {//íˆ¬ì…ê¸ˆì•¡ ì¶©ì¡±ì‹œ
-	    	Main.main.temptable.setInputprice(Main.main.temptable.getInputprice() + 500); //500ì›ì¶”ê°€
-	    	Main.main.loadpage2("/view/user/6ë²ˆí˜ì´ì§€(ê²°ì œì°½)í•˜ë‹¨.fxml"); // ë²„íŠ¼ëˆŒë¥´ë•Œë§ˆë‹¤ ìƒˆë¡œê³ ì¹¨
-	    }else { // íˆ¬ì…ê¸ˆì•¡ ì¶©ì¡±ì‹œ
+		//Main.main.temptable.setWholeprice(5000); Å×½ºÆ®
+	    if(Main.main.temptable.getWholeprice() > Main.main.temptable.getInputprice()) {//ÅõÀÔ±İ¾× ÃæÁ·½Ã
+	    	Main.main.temptable.setInputprice(Main.main.temptable.getInputprice() + 500); //500¿øÃß°¡
+	    	Main.main.loadpage2("/view/user/6¹øÆäÀÌÁö(°áÁ¦Ã¢)ÇÏ´Ü.fxml"); // ¹öÆ°´­¸£¶§¸¶´Ù »õ·Î°íÄ§
+	    }else { // ÅõÀÔ±İ¾× ÃæÁ·½Ã
 	    	pass = true;
 	    	Alert alert = new Alert(AlertType.INFORMATION);
-	    	alert.setHeaderText("íˆ¬ì…ê¸ˆì•¡ ì¶©ì¡±í–ˆìŒ ëŒë¦¬ì…ˆ");
+	    	alert.setHeaderText("ÅõÀÔ±İ¾× ÃæÁ·ÇßÀ½ µ¹¸®¼À");
 	    	alert.show();
 	    }
 	}
 
 	@FXML
 	void home(ActionEvent event) {
-		Main.main.loadpage2("/view/user/1ë²ˆí˜ì´ì§€(ë©”ì¸).fxml");	// ì˜ë ¤ì„œ ì•„ë˜ ì¶”ê°€ load ì‚¬ìš©
+		Main.main.loadpage2("/view/user/1¹øÆäÀÌÁö(¸ŞÀÎ).fxml");	// Àß·Á¼­ ¾Æ·¡ Ãß°¡ load »ç¿ë
 	}
 
 	@FXML
 	void paymentend(ActionEvent event) {
-		if(pass) { // íˆ¬ì…ê¸ˆì•¡ ì¶©ì¡±ì—¬ë¶€ ê°€ trueì´ë©´
-			//dbì— ì§‘ì–´ë„£ê¸°
+		if(pass) { // ÅõÀÔ±İ¾× ÃæÁ·¿©ºÎ °¡ trueÀÌ¸é
+			//db¿¡ Áı¾î³Ö±â
 			Main.main.temptable.setMnum(1);
 			Main.main.temptable.setMamount(100);
 			Main.main.temptable.setMphone("010-5694-0195");
-			Main.main.temptable.setMtemperature("ê°•í•¨");
-			Main.main.temptable.setMdegree("ì•½í•¨");
+			Main.main.temptable.setMtemperature("°­ÇÔ");
+			Main.main.temptable.setMdegree("¾àÇÔ");
 			MachineDao.machinedao.update(Main.main.temptable);
-			Main.main.loadpage2("/view/user/7í˜ì´ì§€(ì˜ìˆ˜ì¦).fxml");
+			Main.main.loadpage2("/view/user/7ÆäÀÌÁö(¿µ¼öÁõ).fxml");
 		}else {
 			Alert alert = new Alert(AlertType.INFORMATION);
-	    	alert.setHeaderText("ë§ˆ ã„±ã……ã„²ì•¼ ëˆ ë„£ìœ¼ì…ˆ! ã…¡ã…¡");
+	    	alert.setHeaderText("¸¶ ¤¡¤µ¤¢¾ß µ· ³ÖÀ¸¼À! ¤Ñ¤Ñ");
 	    	alert.show();
 		}
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-//		temperature.setText(Main.main.temptable.getMtemperature()); //ì˜¨ë„ì„¤ì •
-//		mamount.setText(Integer.toString(Main.main.temptable.getWholeprice())); // ì´í•©ê°€ê²©
-//		mdegree.setText(Main.main.temptable.getMdegree()); //ì„¸ê¸°ì„¤ì •
-//		catagroy.setText(Main.main.temptable.getCname()); // catagroy1 ë„£ê¸°
+//		temperature.setText(Main.main.temptable.getMtemperature()); //¿Âµµ¼³Á¤
+//		mamount.setText(Integer.toString(Main.main.temptable.getWholeprice())); // ÃÑÇÕ°¡°İ
+//		mdegree.setText(Main.main.temptable.getMdegree()); //¼¼±â¼³Á¤
+//		catagroy.setText(Main.main.temptable.getCname()); // catagroy1 ³Ö±â
 		
 	}
 }

@@ -43,17 +43,17 @@ public class Receipt implements Initializable{
 
 	    @FXML
 	    void home(ActionEvent event) {
-	    	Main.main.loadpage2("/view/user/1ë²ˆí˜ì´ì§€(ë©”ì¸).fxml");
+	    	Main.main.loadpage2("/view/user/1¹øÆäÀÌÁö(¸ŞÀÎ).fxml");
 	    }
 	    @FXML
 	    void home2(ActionEvent event) {
-	    	Main.main.loadpage2("/view/user/1ë²ˆí˜ì´ì§€(ë©”ì¸).fxml");
+	    	Main.main.loadpage2("/view/user/1¹øÆäÀÌÁö(¸ŞÀÎ).fxml");
 	    }
 	    @Override
 	    public void initialize(URL arg0, ResourceBundle arg1) {
-	    	//dbë¡œ êº¼ë‚´ì˜¤ê¸°
+	    	//db·Î ²¨³»¿À±â
 	    	Machine machine = MachineDao.machinedao.load(Main.main.temptable.getMnum());
-	    	//ì˜ˆì™¸ì²˜ë¦¬
+	    	//¿¹¿ÜÃ³¸®
 	    	if (machine != null) {
 	    		amoment.setText(null); 
 //		    	category.setText(null);
@@ -61,13 +61,13 @@ public class Receipt implements Initializable{
 //		    	starttime.setText(null);
 //		    	endtime.setText(null);
 	    	}
-	    	//ë ˆì´ë¸” ìˆ˜ì •
+	    	//·¹ÀÌºí ¼öÁ¤
 	    	phone.setText(null);
 	    	category.setText(null);
 	    	temperature.setText(null);
 	    	drgree.setText(null);
 	    	starttime.setText(null);
-	    	//ì¢…ë£Œì‹œê°„
+	    	//Á¾·á½Ã°£
 	    	amoment.setText(null);
 //	    	
 	    }
