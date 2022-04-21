@@ -7,6 +7,8 @@ import controller.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 
 public class DialInput implements Initializable{
@@ -52,51 +54,61 @@ public class DialInput implements Initializable{
     @FXML
     void a0(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "0");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a1(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "1");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a2(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "2");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a3(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "3");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a4(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "4");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a5(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "5");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a6(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "6");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a7(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "7");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a8(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "8");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
     void a9(ActionEvent event) {
     	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "9");
+    	Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
     }
 
     @FXML
@@ -108,7 +120,11 @@ public class DialInput implements Initializable{
     @FXML
     void check(ActionEvent event) {
     	//예외처리
-    	if() {
+    	if(Main.main.temptable.getMphone().length() == 9) {
+    		Main.main.loadpage2("/view/user/3번페이지(세탁건조선택).fxml");
+    	}else {
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setHeaderText("올바른 번호가 아닙니다");
     		
     	}
     }
