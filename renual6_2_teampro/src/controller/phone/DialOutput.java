@@ -1,7 +1,21 @@
 package controller.phone;
 
-//전화번호 출력 컨트롤
-	//실시간으로 저장되는 db에서 전화번호꺼내서 보여주기
-public class DialOutput {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import controller.Main;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+
+public class DialOutput implements Initializable{
+	
+    @FXML
+    private Label phonelbl;
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+    	
+    	phonelbl.setText(Main.main.temptable.getMphone());
+    }
 }

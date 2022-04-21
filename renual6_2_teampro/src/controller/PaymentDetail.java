@@ -1,7 +1,19 @@
 package controller;
 
-//°áÁ¦Ã¢ ¼¼ºÎ»çÇ× È®ÀÎ ÄÁÆ®·Ñ
-	//ÀÌ´Ï¼È¶óÀÌÁî ÀÚ±â°¡ ³½µ·,°áÁ¦±İ¾× È®ÀÎ(ÀúÀåÇÑ º¯¼ö¿¡¼­ ²¨³»¿À±â)
-public class PaymentDetail {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+
+public class PaymentDetail implements Initializable{
+
+    @FXML
+    private Label inputamount;
+    
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+    	inputamount.setText(Integer.toString(Main.main.temptable.getInputprice())); // íˆ¬ì…ê¸ˆì•¡
+    }
 }
