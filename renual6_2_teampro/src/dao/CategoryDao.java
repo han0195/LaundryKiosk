@@ -10,22 +10,22 @@ import dto.Category;
 import dto.Machine;
 
 public class CategoryDao {
-	private Connection con; // DB¿¬µ¿½Ã »ç¿ëµÇ´Â Å¬·¡½º : DB¿¬µ¿Å¬·¡½º
-	private PreparedStatement ps; // ¿¬°áµÈ DB³» SQL Á¶ÀÛ ÇÒ¶§ »ç¿ëµÇ´Â ÀÎÅÍÆäÀÌ½º : DBÁ¶ÀÛÀÎÅÍÆäÀÌ½º
-	private ResultSet rs; // °á°ú¹°À» Á¶ÀÛÇÏ´Â ÀÎÅÍÆäÀÌ½º 
+	private Connection con; // DBì—°ë™ì‹œ ì‚¬ìš©ë˜ëŠ” í´ë˜ìŠ¤ : DBì—°ë™í´ë˜ìŠ¤
+	private PreparedStatement ps; // ì—°ê²°ëœ DBë‚´ SQL ì¡°ì‘ í• ë•Œ ì‚¬ìš©ë˜ëŠ” ì¸í„°í˜ì´ìŠ¤ : DBì¡°ì‘ì¸í„°í˜ì´ìŠ¤
+	private ResultSet rs; // ê²°ê³¼ë¬¼ì„ ì¡°ì‘í•˜ëŠ” ì¸í„°í˜ì´ìŠ¤ 
 	
-	public static CategoryDao categoryDao = new CategoryDao(); // DB ¿¬µ¿ °´Ã¼;
+	public static CategoryDao categoryDao = new CategoryDao(); // DB ì—°ë™ ê°ì²´;
 	
 	public CategoryDao() {
 		try {
-			// DB¿¬µ¿ 
-			Class.forName("com.mysql.cj.jdbc.Driver"); // 1. DB µå¶óÀÌ¹ö °¡Á®¿À±â
+			// DBì—°ë™ 
+			Class.forName("com.mysql.cj.jdbc.Driver"); // 1. DB ë“œë¼ì´ë²„ ê°€ì ¸ì˜¤ê¸°
 			con = DriverManager.getConnection("jdbc:mysql://database-1.ctq8tels7lkd.us-east-1.rds.amazonaws.com:3306/javafx?serverTimezone=UTC",
-					"focks","akfrdmsfocks0626!!$LLH"); // 2. DB ÁÖ¼Ò ¿¬°á 
+					"focks","akfrdmsfocks0626!!$LLH"); // 2. DB ì£¼ì†Œ ì—°ê²° 
 		}
-		catch(Exception e ) { System.out.println( "[DB ¿¬µ¿ ¿À·ù]"+e  ); }
+		catch(Exception e ) { System.out.println( "[DB ì—°ë™ ì˜¤ë¥˜]"+e  ); }
 	}
-	// CategoryºÒ·¯¿À±â
+	// Categoryë¶ˆëŸ¬ì˜¤ê¸°
 	public Category load(int mnum) {
 		try {
 			String sql = "select * from category where mnum=?";
@@ -45,7 +45,7 @@ public class CategoryDao {
 			}
 			return category;
 		} catch (Exception e) {
-			System.out.println("[sql ¿¡·¯]" + e);
+			System.out.println("[sql ì—ëŸ¬]" + e);
 		}
 		return null;
 	}

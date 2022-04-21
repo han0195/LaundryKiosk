@@ -53,98 +53,98 @@ public class DialInput implements Initializable{
 
     @FXML
     void a0(ActionEvent event) {
-    	input("0");
+       input("0");
     }
 
     @FXML
     void a1(ActionEvent event) {
-    	input("1");
+       input("1");
     }
 
     @FXML
     void a2(ActionEvent event) {
-    	input("2");
+       input("2");
     }
 
     @FXML
     void a3(ActionEvent event) {
-    	input("3");
+       input("3");
     }
 
     @FXML
     void a4(ActionEvent event) {
-    	input("4");
+       input("4");
     }
 
     @FXML
     void a5(ActionEvent event) {
-    	input("5");
+       input("5");
     }
 
     @FXML
     void a6(ActionEvent event) {
-    	input("6");
+       input("6");
     }
 
     @FXML
     void a7(ActionEvent event) {
-    	input("7");
+       input("7");
     }
 
     @FXML
     void a8(ActionEvent event) {
-    	input("8");
+       input("8");
     }
 
     @FXML
     void a9(ActionEvent event) {
-    	input("9");
+       input("9");
     }
 
     @FXML
-    void back(ActionEvent event) { // ¹øÈ£ 1°³ ¾¿ Áö¿ì±â
-    	if(Main.main.temptable.getMphone().substring(Main.main.temptable.getMphone().length() - 1).equals("-")) {
-    		Main.main.temptable.setMphone(Main.main.temptable.getMphone().substring(0,
-        			Main.main.temptable.getMphone().length()-1));
-    	}
-    	Main.main.temptable.setMphone(Main.main.temptable.getMphone().substring(0,
-    			Main.main.temptable.getMphone().length()-1));
-    	Main.main.loadpage2("/view/user/2ÆäÀÌÁöÇÏ´Ü(ÀüÈ­»ó´Ü).fxml");
+    void back(ActionEvent event) { // ë²ˆí˜¸ 1ê°œ ì”© ì§€ìš°ê¸°
+       if(Main.main.temptable.getMphone().substring(Main.main.temptable.getMphone().length() - 1).equals("-")) {
+          Main.main.temptable.setMphone(Main.main.temptable.getMphone().substring(0,
+                 Main.main.temptable.getMphone().length()-1));
+       }
+       Main.main.temptable.setMphone(Main.main.temptable.getMphone().substring(0,
+             Main.main.temptable.getMphone().length()-1));
+       Main.main.loadpage2("/view/user/2í˜ì´ì§€í•˜ë‹¨(ì „í™”ìƒë‹¨).fxml");
     }
 
     @FXML
     void check(ActionEvent event) {
-    	if(Main.main.temptable.getMphone().length() == 9) {
-    		Main.main.loadpage2("/view/user/3¹øÆäÀÌÁö(¼¼Å¹°ÇÁ¶¼±ÅÃ).fxml");
-    	}else {
-    		Alert alert = new Alert(AlertType.INFORMATION);
-    		alert.setHeaderText("¿Ã¹Ù¸¥ ¹øÈ£°¡ ¾Æ´Õ´Ï´Ù");	
-    		System.out.println("¿À·ù");
-    	}
+       if(Main.main.temptable.getMphone().length() == 9) {
+          Main.main.loadpage2("/view/user/3ë²ˆí˜ì´ì§€(ì„¸íƒê±´ì¡°ì„ íƒ).fxml");
+       }else {
+          Alert alert = new Alert(AlertType.INFORMATION);
+          alert.setHeaderText("ì˜¬ë°”ë¥¸ ë²ˆí˜¸ê°€ ì•„ë‹™ë‹ˆë‹¤");   
+          System.out.println("ì˜¤ë¥˜");
+       }
     }
 
     @FXML
     void home(ActionEvent event) {
-    	Main.main.loadpage2("/view/user/1¹øÆäÀÌÁö(¸ŞÀÎ).fxml");  	
+       Main.main.loadpage2("/view/user/1ë²ˆí˜ì´ì§€(ë©”ì¸).fxml");     
     }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    	Main.main.temptable.setMphone("");
-    	
+       Main.main.temptable.setMphone("");
+       
     }
     
     void input(String s) {
-    	if(Main.main.temptable.getMphone().length() >= 9) {
-    		
-    	}else {
-	    	if(Main.main.temptable.getMphone().length() == 4) {
-	    		
-	    		Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "-");
-	    	}
-	    	Main.main.temptable.setMphone(Main.main.temptable.getMphone() + s);
-	    	System.out.println(Main.main.temptable.getMphone());
-	    	Main.main.loadpage2("/view/user/2ÆäÀÌÁöÇÏ´Ü(ÀüÈ­»ó´Ü).fxml");
-    	}
+       if(Main.main.temptable.getMphone().length() >= 9) {
+          
+       }else {
+          if(Main.main.temptable.getMphone().length() == 4) {
+             
+             Main.main.temptable.setMphone(Main.main.temptable.getMphone() + "-");
+          }
+          Main.main.temptable.setMphone(Main.main.temptable.getMphone() + s);
+          System.out.println(Main.main.temptable.getMphone());
+          Main.main.loadpage2("/view/user/2í˜ì´ì§€í•˜ë‹¨(ì „í™”ìƒë‹¨).fxml");
+       }
     }
     
     

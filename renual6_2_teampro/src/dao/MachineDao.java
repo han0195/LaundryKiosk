@@ -12,25 +12,25 @@ import dto.Machine;
 import dto.temptable;
 
 public class MachineDao {
-	private Connection con; // DB¿¬µ¿½Ã »ç¿ëµÇ´Â Å¬·¡½º : DB¿¬µ¿Å¬·¡½º
-	private PreparedStatement ps; // ¿¬°áµÈ DB³» SQL Á¶ÀÛ ÇÒ¶§ »ç¿ëµÇ´Â ÀÎÅÍÆäÀÌ½º : DBÁ¶ÀÛÀÎÅÍÆäÀÌ½º
-	private ResultSet rs; // °á°ú¹°À» Á¶ÀÛÇÏ´Â ÀÎÅÍÆäÀÌ½º 
+	private Connection con; // DBì—°ë™ì‹œ ì‚¬ìš©ë˜ëŠ” í´ë˜ìŠ¤ : DBì—°ë™í´ë˜ìŠ¤
+	private PreparedStatement ps; // ì—°ê²°ëœ DBë‚´ SQL ì¡°ì‘ í• ë•Œ ì‚¬ìš©ë˜ëŠ” ì¸í„°í˜ì´ìŠ¤ : DBì¡°ì‘ì¸í„°í˜ì´ìŠ¤
+	private ResultSet rs; // ê²°ê³¼ë¬¼ì„ ì¡°ì‘í•˜ëŠ” ì¸í„°í˜ì´ìŠ¤ 
 	
-	public static MachineDao machinedao = new MachineDao(); // DB ¿¬µ¿ °´Ã¼;
+	public static MachineDao machinedao = new MachineDao(); // DB ì—°ë™ ê°ì²´;
 	
 	public MachineDao() {
 		try {
-			// DB¿¬µ¿ 
-			Class.forName("com.mysql.cj.jdbc.Driver"); // 1. DB µå¶óÀÌ¹ö °¡Á®¿À±â
+			// DBì—°ë™ 
+			Class.forName("com.mysql.cj.jdbc.Driver"); // 1. DB ë“œë¼ì´ë²„ ê°€ì ¸ì˜¤ê¸°
 			con = DriverManager.getConnection("jdbc:mysql://database-1.ctq8tels7lkd.us-east-1.rds.amazonaws.com:3306/javafx?serverTimezone=UTC",
-					"focks","akfrdmsfocks0626!!$LLH"); // 2. DB ÁÖ¼Ò ¿¬°á 
+					"focks","akfrdmsfocks0626!!$LLH"); // 2. DB ì£¼ì†Œ ì—°ê²° 
 		}
-		catch(Exception e ) { System.out.println( "[DB ¿¬µ¿ ¿À·ù]"+e  ); }
+		catch(Exception e ) { System.out.println( "[DB ì—°ë™ ì˜¤ë¥˜]"+e  ); }
 	}
-	//¸Ó½Å ÀúÀå
+	//ë¨¸ì‹  ì €ì¥
 	public boolean update(temptable tb) {
 		try {
-			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime()); // db date Å¸ÀÓ ¸Â°Ô ½Ã°£»Ì±â
+			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime()); // db date íƒ€ì„ ë§ê²Œ ì‹œê°„ë½‘ê¸°
 			String sql = "update machine set mamount=?,mphone=?,mtemperature=?,mdegree=?,mtime=? where mnum=?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, tb.getMamount());
@@ -42,11 +42,11 @@ public class MachineDao {
 			ps.executeUpdate();
 			return true;
 		} catch (Exception e) {
-			System.out.println("[sql ¿¡·¯]" + e);
+			System.out.println("[sql ì—ëŸ¬]" + e);
 		}
 		return false;
 	}
-	//¸Ó½Å ºÒ·¯¿À±â
+	//ë¨¸ì‹  ë¶ˆëŸ¬ì˜¤ê¸°
 	public Machine load(int mnum) {
 		try {
 			String sql = "select * from machine where mnum=?";
@@ -69,7 +69,7 @@ public class MachineDao {
 			}
 			return machine;
 		} catch (Exception e) {
-			System.out.println("[sql ¿¡·¯]" + e);
+			System.out.println("[sql ì—ëŸ¬]" + e);
 		}
 		return null;
 	}

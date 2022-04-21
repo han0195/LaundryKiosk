@@ -8,24 +8,24 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 public class main_1 implements Initializable{
-	
-
 	 @FXML
 	 private Button bunstart;
 
 	 @FXML
 	 void start(ActionEvent event) {
-//		 Main.main.loadpage("/view/user/6¹øÆäÀÌÁö(°áÁ¦Ã¢)»ó´Ü.fxml");
-//		 Main.main.loadpage2("/view/user/6¹øÆäÀÌÁö(°áÁ¦Ã¢)ÇÏ´Ü.fxml");
-		 Main.main.loadpage("/view/user/2ÆäÀÌÁö»ó´Ü(ÀüÈ­¹øÈ£).fxml");
-		 Main.main.loadpage2("/view/user/2ÆäÀÌÁöÇÏ´Ü(ÀüÈ­»ó´Ü).fxml");
+		 Main.main.loadpage("/view/user/6ë²ˆí˜ì´ì§€(ê²°ì œì°½)ìƒë‹¨.fxml");
+		 Main.main.loadpage2("/view/user/6ë²ˆí˜ì´ì§€(ê²°ì œì°½)í•˜ë‹¨.fxml");
+		 Main.main.loadpage("/view/user/2í˜ì´ì§€ìƒë‹¨(ì „í™”ë²ˆí˜¸).fxml");
+		 Main.main.loadpage2("/view/user/2í˜ì´ì§€í•˜ë‹¨(ì „í™”ìƒë‹¨).fxml");
 	 }
 	 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    	
+      
     }
  
    

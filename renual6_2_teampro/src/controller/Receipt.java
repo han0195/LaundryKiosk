@@ -49,46 +49,46 @@ public class Receipt implements Initializable{
 
 	    @FXML
 	    void home(ActionEvent event) {
-	    	Main.main.loadpage2("/view/user/1¹øÆäÀÌÁö(¸ŞÀÎ).fxml");
-	    	Main.main.temptable.setInputprice(0); // ±İ¾× ÃÊ±âÈ­
+	    	Main.main.loadpage2("/view/user/1ë²ˆí˜ì´ì§€(ë©”ì¸).fxml");
+	    	Main.main.temptable.setInputprice(0); // ê¸ˆì•¡ ì´ˆê¸°í™”
 	    }
 	    @FXML
 	    void home2(ActionEvent event) {
-	    	Main.main.loadpage2("/view/user/1¹øÆäÀÌÁö(¸ŞÀÎ).fxml");
-	    	Main.main.temptable.setInputprice(0); // ±İ¾× ÃÊ±âÈ­
+	    	Main.main.loadpage2("/view/user/1ë²ˆí˜ì´ì§€(ë©”ì¸).fxml");
+	    	Main.main.temptable.setInputprice(0); // ê¸ˆì•¡ ì´ˆê¸°í™”
 	    }
 	    @Override
 	    public void initialize(URL arg0, ResourceBundle arg1) {
-	    	//db·Î ²¨³»¿À±â
-	    		//¸Ó½Å
+	    	//dbë¡œ êº¼ë‚´ì˜¤ê¸°
+	    		//ë¨¸ì‹ 
 	    	Machine machine = MachineDao.machinedao.load(Main.main.temptable.getMnum());
-	    		//Ä«Å×°í¸®
+	    		//ì¹´í…Œê³ ë¦¬
 	    	Category category = CategoryDao.categoryDao.load(Main.main.temptable.getMnum());
-	    	//¿¹¿ÜÃ³¸®
+	    	//ì˜ˆì™¸ì²˜ë¦¬
 	    	if (machine != null) {
-	    		//·¹ÀÌºí ¼öÁ¤
+	    		//ë ˆì´ë¸” ìˆ˜ì •
 		    	phone.setText(machine.getMphone());
 		    	//category.setText();
 		    	temperature.setText(machine.getMtemperature());
 		    	drgree.setText(machine.getMdegree());
-		    	//½Ã°£ º¯È¯
+		    	//ì‹œê°„ ë³€í™˜
 		    	String stime = machine.getMtime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
 		    	starttime.setText(stime);
-		    	//Á¾·á½Ã°£ [¼¼Å¹ 40ºĞ °ÇÁ¶±â 30ºĞ]
-		    		//Á¾·á½Ã°£ °è»ê
-		    	if(category.getCname().contains("¼¼Å¹±â")) {
-		    		LocalDateTime etime = machine.getMtime().plusMinutes(40); // 40ºĞ ´õÇÏ±â
+		    	//ì¢…ë£Œì‹œê°„ [ì„¸íƒ 40ë¶„ ê±´ì¡°ê¸° 30ë¶„]
+		    		//ì¢…ë£Œì‹œê°„ ê³„ì‚°
+		    	if(category.getCname().contains("ì„¸íƒê¸°")) {
+		    		LocalDateTime etime = machine.getMtime().plusMinutes(40); // 40ë¶„ ë”í•˜ê¸°
 		    		String etimes = etime.format(DateTimeFormatter.ofPattern("HH:mm"));
 		    		endtime.setText(etimes);
-		    	}else if(category.getCname().contains("°ÇÁ¶±â")) {
-		    		LocalDateTime etime = machine.getMtime().plusMinutes(30);// 30ºĞ ´õÇÏ±â
+		    	}else if(category.getCname().contains("ê±´ì¡°ê¸°")) {
+		    		LocalDateTime etime = machine.getMtime().plusMinutes(30);// 30ë¶„ ë”í•˜ê¸°
 		    		String etimes = etime.format(DateTimeFormatter.ofPattern("HH:mm"));
 		    		endtime.setText(etimes);
 		    	}
 		    	amoment.setText(Integer.toString(category.getCprice()));
 	    	}else {
 	    		Alert alert = new Alert(AlertType.INFORMATION);
-	    		alert.setHeaderText("ÇÏÇÏÇÏÇÏÇÏÇÏ ³Í »¡·¡¿¡ ½ÇÆĞÇß´Ù");
+	    		alert.setHeaderText("í•˜í•˜í•˜í•˜í•˜í•˜ ë„Œ ë¹¨ë˜ì— ì‹¤íŒ¨í–ˆë‹¤");
 	    		alert.show();
 	    	}
 	    	
