@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,36 +21,47 @@
             <Image url="@../../img/5페이지%20기계%20선택%20상단.png" />
          </image>
       </ImageView>
-      <RadioButton layoutX="112.0" layoutY="199.0" mnemonicParsing="false" text="뜨거움">
+      <RadioButton fx:id="opt1_1" layoutX="112.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#clickevent1" text="뜨거움">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="temperature" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="opt1_3" layoutX="112.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#clickevent3" text="차가움" toggleGroup="$temperature">
          <font>
             <Font size="21.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="112.0" layoutY="290.0" mnemonicParsing="false" text="차가움">
+      <RadioButton fx:id="opt1_2" layoutX="112.0" layoutY="245.0" mnemonicParsing="false" onMouseClicked="#clickevent2" text="중간" toggleGroup="$temperature">
          <font>
             <Font size="21.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="112.0" layoutY="245.0" mnemonicParsing="false" text="중간">
+      <RadioButton fx:id="opt2_2" layoutX="112.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#clickevent5" text="약함">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="degree" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="opt2_1" layoutX="112.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#clickevent4" text="강함" toggleGroup="$degree">
          <font>
             <Font size="21.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="112.0" layoutY="526.0" mnemonicParsing="false" text="약함">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </RadioButton>
-      <RadioButton layoutX="112.0" layoutY="481.0" mnemonicParsing="false" text="강함">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </RadioButton>
-      <Label layoutX="411.0" layoutY="127.0" prefHeight="42.0" prefWidth="261.0" text="1번중형세탁기">
+      <Label fx:id="lblmkind" layoutX="411.0" layoutY="127.0" prefHeight="42.0" prefWidth="261.0" text="1번중형세탁기">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
       <Button layoutX="670.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="butt" />
+      <Button fx:id="btncp" layoutX="411.0" layoutY="543.0" mnemonicParsing="false" onAction="#cp" prefHeight="64.0" prefWidth="184.0" text="완료">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

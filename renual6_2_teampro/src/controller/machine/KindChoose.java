@@ -32,18 +32,23 @@ public class KindChoose implements Initializable{
 
     public static dto.Machine machine;
     
+
+    String b= Main.main.temptable.get.cname;
+    String d= Main.main.temptable.get.mphone;
+    
+    
     @FXML
     void accbig(ActionEvent event) {
     	String rtemp = Main.main.temptable.get.cname;
     		if(rtemp.equals("세탁기")) {
-    			Main.main.temptable.set(0,"대형세탁기",0,null,null,null,0,0);
+    			Main.main.temptable.set(0,"대형세탁기",0,d,null,null,0,0);
     	
     	//세탁기 대형 출력
     		//테이블출력
     		Main.main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
     	if(rtemp.equals("건조기")) {
-    		Main.main.temptable.set(0,"대형건조기",0,null,null,null,0,0);
+    		Main.main.temptable.set(0,"대형건조기",0,d,null,null,0,0);
     	
     	//건조기 대형 출력
     		//테이블출력
@@ -61,14 +66,14 @@ public class KindChoose implements Initializable{
     void accmedium(ActionEvent event) {
     	String rtemp = Main.main.temptable.get.cname;
     	if(rtemp.equals("세탁기")) {
-    		Main.main.temptable.set(0,"중형세탁기",0,null,null,null,0,0);
+    		Main.main.temptable.set(0,"중형세탁기",0,d,null,null,0,0);
     	
     	//세탁기 중형 출력
     		//테이블출력
     		Main.main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
     	if(rtemp.equals("건조기")) {
-    		Main.main.temptable.set(0,"중형건조기",0,null,null,null,0,0);
+    		Main.main.temptable.set(0,"중형건조기",0,d,null,null,0,0);
     	
     	//건조기 중형 출력
     		 //테이블출력
@@ -108,8 +113,10 @@ public class KindChoose implements Initializable{
 	        		String b= temptable.getSelectionModel().getSelectedItem().getCname();
 	        		int c= temptable.getSelectionModel().getSelectedItem().getMamount();
 	        		
-	        		Main.main.temptable.set(a,b,c,null,null,null,0,0);
-	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        		Main.main.temptable.set(a,b,c,d,"미설정","미설정",0,0);
+	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
+	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
+	        		
 	        	});
 	    	}
 	    	//2. 앞에서 건조기 선택시
@@ -135,8 +142,9 @@ public class KindChoose implements Initializable{
 	        		String b= temptable.getSelectionModel().getSelectedItem().getCname();
 	        		int c= temptable.getSelectionModel().getSelectedItem().getMamount();
 	        		
-	        		Main.main.temptable.set(a,b,c,null,null,null,0,0);
-	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        		Main.main.temptable.set(a,b,c,d,"미설정","미설정",0,0);
+	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
 	    	}
 	    	//1_2. 앞에서 대형세탁기 선택시
@@ -161,8 +169,9 @@ public class KindChoose implements Initializable{
 	        		String b= temptable.getSelectionModel().getSelectedItem().getCname();
 	        		int c= temptable.getSelectionModel().getSelectedItem().getMamount();
 	        		
-	        		Main.main.temptable.set(a,b,c,null,null,null,0,0);
-	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        		Main.main.temptable.set(a,b,c,d,"미설정","미설정",0,0);
+	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
+	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
 	    	}
 	    	//2_2. 앞에서 대형건조기 선택시
@@ -187,8 +196,9 @@ public class KindChoose implements Initializable{
 	        		String b= temptable.getSelectionModel().getSelectedItem().getCname();
 	        		int c= temptable.getSelectionModel().getSelectedItem().getMamount();
 	        		
-	        		Main.main.temptable.set(a,b,c,null,null,null,0,0);
-	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        		Main.main.temptable.set(a,b,c,d,"미설정","미설정",0,0);
+	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
+	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
 	        	
 	    	}
