@@ -7,11 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" style="-fx-background-color: #32A4FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" style="-fx-background-color: #32A4FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.machine.Choose">
    <children>
-      <WebView layoutY="708.0" prefHeight="227.0" prefWidth="720.0" />
       <Line endX="563.0" layoutX="157.0" layoutY="708.0" startX="-157.0" />
       <Line endX="563.0" layoutX="157.0" layoutY="935.0" startX="-157.0" />
       <ImageView fitHeight="50.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
@@ -24,8 +22,8 @@
             <Image url="@../../img/3페이지%20세탁및%20건조.png" />
          </image>
       </ImageView>
-      <Button layoutX="47.0" layoutY="416.0" mnemonicParsing="false" prefHeight="227.0" prefWidth="627.0" text="Button" />
-      <Button layoutX="47.0" layoutY="102.0" mnemonicParsing="false" prefHeight="227.0" prefWidth="627.0" text="Button" />
+      <Button fx:id="btn2" layoutX="47.0" layoutY="416.0" mnemonicParsing="false" onAction="#acc2" prefHeight="227.0" prefWidth="627.0" text="Button" />
+      <Button fx:id="btn1" layoutX="47.0" layoutY="102.0" mnemonicParsing="false" onAction="#acc1" prefHeight="227.0" prefWidth="627.0" text="Button" />
       <Label layoutX="220.0" layoutY="264.0" prefHeight="29.0" prefWidth="313.0" text="세탁기 8대 사용가능" textFill="#595959">
          <font>
             <Font size="20.0" />

@@ -1,9 +1,38 @@
 package controller.machine;
 
-//±â°è¼±ÅÃ(¼¼Å¹±â,°ÇÁ¶±â) ÄÁÆ®·Ñ
-	//ÀÌ´Ï¼È¶óÀÌÁî À¥ºä
-	//¼¼Å¹±â ÆäÀÌÁö ÀüÈ¯
-	//°ÇÁ¶±â ÆäÀÌÁö ÀüÈ¯
-public class Choose {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import controller.Main;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+
+public class Choose implements Initializable{
+
+    @FXML
+    private Button btn2;
+
+    @FXML
+    private Button btn1;
+
+    @FXML
+    void acc1(ActionEvent event) {
+    	Main.main.temptable.setCname("ì„¸íƒê¸°");
+    	Main.main.loadpage2("/view/user/4ë²ˆí˜ì´ì§€(ì„¸íƒê¸°ì„ íƒ)ë¯¸ì™„ì„±.fxml");
+    }
+
+    @FXML
+    void acc2(ActionEvent event) {
+    	Main.main.temptable.setCname("ê±´ì¡°ê¸°");
+    	Main.main.loadpage2("/view/user/4ë²ˆí˜ì´ì§€(ì„¸íƒê¸°ì„ íƒ)ë¯¸ì™„ì„±.fxml");
+    }
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
