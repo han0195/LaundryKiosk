@@ -35,6 +35,7 @@ public class KindChoose implements Initializable{
     void accbig(ActionEvent event) {
     	String rtemp = Main.main.temptable.getCname();
     		if(rtemp.equals("세탁기")) {
+    			System.out.println("대형세탁기연결");
     			Main.main.temptable.setCname("대형세탁기");
 
     	//세탁기 대형 출력
@@ -42,6 +43,7 @@ public class KindChoose implements Initializable{
     		Main.main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
     	if(rtemp.equals("건조기")) {
+    		System.out.println("대형건조기연결");
     		Main.main.temptable.setCname("대형건조기");
     	
     	//건조기 대형 출력
@@ -60,6 +62,7 @@ public class KindChoose implements Initializable{
     void accmedium(ActionEvent event) {
     	String rtemp = Main.main.temptable.getCname();
     	if(rtemp.equals("세탁기")) {
+			System.out.println("중형세탁기연결");
     		Main.main.temptable.setCname("중형세탁기");
     	
     	//세탁기 중형 출력
@@ -67,6 +70,7 @@ public class KindChoose implements Initializable{
     		Main.main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
     	}
     	if(rtemp.equals("건조기")) {
+    		System.out.println("중형건조기연결");
     		Main.main.temptable.setCname("중형건조기");
     	
     	//건조기 중형 출력
@@ -84,13 +88,13 @@ public class KindChoose implements Initializable{
 			
 			Main.main.temptable.setMtemperature("중간");
 			
-			Main.main.temptable.setMdegree("약함");
-			
+			Main.main.temptable.setMdegree("강함");
+			System.out.println("대형중형연결성공");
 	    	String rtemp = Main.main.temptable.getCname();
 	    	
 	    	//1. 앞에서 세탁기 선택시
 	    	//1_1. 앞에서 중형세탁기 선택시
-	    	if(rtemp.equals("세탁기")||rtemp.equals("중형세탁기")) {
+	    	if(rtemp.equals("중형세탁기")) {
 	    		
 	    		ObservableList<dto.temptable> templist = MachineDao.machinedao.list("중형세탁기");
 	        	
@@ -119,7 +123,7 @@ public class KindChoose implements Initializable{
 	    	}
 	    	//2. 앞에서 건조기 선택시
 	    	//2_1. 앞에서 중형건조기 선택시
-	    	else if(rtemp.equals("건조기")||rtemp.equals("중형건조기")) {
+	    	else if(rtemp.equals("중형건조기")) {
 	    		
 	    		ObservableList<dto.temptable> templist = MachineDao.machinedao.list("중형건조기");
 	        	

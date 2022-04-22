@@ -81,13 +81,39 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 			ObservableList<temptable> tempList = FXCollections.observableArrayList();
 			ObservableList<temptable> tempList1 = FXCollections.observableArrayList();
 			ObservableList<temptable> tempList2 = FXCollections.observableArrayList();
-			
+			/////////////////////////////////////////////////////////////////////
 			try {
 
-				String sql =null;
+				
+				
+				
+				
+				////////////////////////////////////////
 
-						sql = "select * from machine where mamount is not null order by mnum";
+
+				String	sql = "select * from category where cname=\""+a+"\" order by cnum";
 						
+						ps = con.prepareStatement(sql);
+					
+						rs = ps.executeQuery();
+					
+					
+				
+				
+				
+				while(rs.next()) {
+					temptable temp2 = new temptable(rs.getInt(2),rs.getString(4));
+					
+					tempList2.add(temp2);
+
+				}
+		///////////////////////////////////////////////////////////////////////////////////		
+				 
+				
+				 for(int g=0; g<tempList2.size();g++) {
+					 
+					 sql = "select * from machine where mamount is not null and mnum ="+tempList2.get(g).getMnum()+" order by mnum";
+
 						ps = con.prepareStatement(sql);
 					
 						rs = ps.executeQuery();
@@ -103,28 +129,10 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 					tempList1.add(temp1);
 				
 				}
+				 }
 				
 				
-				
-				////////////////////////////////////////
-
-
-						sql = "select * from category where cname=\""+a+"\" order by cnum";
-						
-						ps = con.prepareStatement(sql);
-					
-						rs = ps.executeQuery();
-					
-					
-				
-				
-				
-				while(rs.next()) {
-					temptable temp2 = new temptable(rs.getString(4));
-					
-					tempList2.add(temp2);
-
-				}
+				/////////////////////////////////////////////////
 				
 				for(int h=0; h<tempList1.size();h++) {
 				temptable temp = new temptable(tempList1.get(h).getMnum(),tempList2.get(h).getCname(),tempList1.get(h).getMamount());
@@ -143,12 +151,38 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 			ObservableList<temptable> tempList1 = FXCollections.observableArrayList();
 			ObservableList<temptable> tempList2 = FXCollections.observableArrayList();
 			
-			try {
+try {
 
-				String sql =null;
+				
+				
+				
+				
+				////////////////////////////////////////
 
-						sql = "select * from machine where mamount is null order by mnum";
+
+				String	sql = "select * from category where cname=\""+a+"\" order by cnum";
 						
+						ps = con.prepareStatement(sql);
+					
+						rs = ps.executeQuery();
+					
+					
+				
+				
+				
+				while(rs.next()) {
+					temptable temp2 = new temptable(rs.getInt(2),rs.getString(4));
+					
+					tempList2.add(temp2);
+
+				}
+		///////////////////////////////////////////////////////////////////////////////////		
+				 
+				
+				 for(int g=0; g<tempList2.size();g++) {
+					 
+					 sql = "select * from machine where mamount is not null and mnum ="+tempList2.get(g).getMnum()+" order by mnum";
+
 						ps = con.prepareStatement(sql);
 					
 						rs = ps.executeQuery();
@@ -164,28 +198,10 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 					tempList1.add(temp1);
 				
 				}
+				 }
 				
 				
-				
-				////////////////////////////////////////
-
-
-						sql = "select * from category where cname=\""+a+"\" order by cnum";
-						
-						ps = con.prepareStatement(sql);
-					
-						rs = ps.executeQuery();
-					
-					
-				
-				
-				
-				while(rs.next()) {
-					temptable temp2 = new temptable(rs.getString(4));
-					
-					tempList2.add(temp2);
-
-				}
+				/////////////////////////////////////////////////
 				
 				for(int h=0; h<tempList1.size();h++) {
 				temptable temp = new temptable(tempList1.get(h).getMnum(),tempList2.get(h).getCname(),tempList1.get(h).getMamount());

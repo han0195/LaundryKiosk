@@ -15,8 +15,9 @@ public class temptable {
 	public temptable() {
 		super();
 	}
-	public temptable(String cname) {
+	public temptable(int mnum,String cname) {
 		super();
+		this.mnum = mnum;
 		this.cname = cname;
 	}
 	public temptable(int mnum, int mamount) {
