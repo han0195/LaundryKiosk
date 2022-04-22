@@ -34,7 +34,7 @@ public class KindChoose implements Initializable{
     @FXML
     void accbig(ActionEvent event) {
     	String rtemp = Main.main.temptable.getCname();
-    		if(rtemp.equals("세탁기")) {
+    	if(rtemp.equals("세탁기")) {
     			System.out.println("세탁기연결");
     			Main.main.temptable.setCname("대형세탁기");
 
