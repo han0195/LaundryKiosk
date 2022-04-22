@@ -147,11 +147,11 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 			}
 		}
 		if(a.equals("중형건조기")||a.equals("대형건조기")) {
-			ObservableList<temptable> tempList = FXCollections.observableArrayList();
-			ObservableList<temptable> tempList1 = FXCollections.observableArrayList();
-			ObservableList<temptable> tempList2 = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList4 = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList5 = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList6 = FXCollections.observableArrayList();
 			
-try {
+				try {
 
 				
 				
@@ -173,15 +173,15 @@ try {
 				while(rs.next()) {
 					temptable temp2 = new temptable(rs.getInt(2),rs.getString(4));
 					
-					tempList2.add(temp2);
+					tempList6.add(temp2);
 
 				}
 		///////////////////////////////////////////////////////////////////////////////////		
 				 
 				
-				 for(int g=0; g<tempList2.size();g++) {
+				 for(int g=0; g<tempList6.size();g++) {
 					 
-					 sql = "select * from machine where mamount is not null and mnum ="+tempList2.get(g).getMnum()+" order by mnum";
+					 sql = "select * from machine where mamount is null and mnum ="+tempList6.get(g).getMnum()+" order by mnum";
 
 						ps = con.prepareStatement(sql);
 					
@@ -195,7 +195,7 @@ try {
 					temptable temp1 = new temptable(rs.getInt(1)
 							,rs.getInt(2));
 					
-					tempList1.add(temp1);
+					tempList5.add(temp1);
 				
 				}
 				 }
@@ -203,14 +203,14 @@ try {
 				
 				/////////////////////////////////////////////////
 				
-				for(int h=0; h<tempList1.size();h++) {
-				temptable temp = new temptable(tempList1.get(h).getMnum(),tempList2.get(h).getCname(),tempList1.get(h).getMamount());
+				for(int h=0; h<tempList5.size();h++) {
+				temptable temp = new temptable(tempList5.get(h).getMnum(),tempList6.get(h).getCname(),tempList5.get(h).getMamount());
 				
-				tempList.add(temp);
+				tempList4.add(temp);
 				}
 				////////////////////////////////////////
 			
-				return tempList;
+				return tempList4;
 			}catch (Exception e) {
 
 			}

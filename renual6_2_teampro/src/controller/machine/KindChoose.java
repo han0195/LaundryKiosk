@@ -94,8 +94,8 @@ public class KindChoose implements Initializable{
 	    	
 	    	//1. 앞에서 세탁기 선택시
 	    	//1_1. 앞에서 중형세탁기 선택시
-	    	if(rtemp.equals("중형세탁기")) {
-	    		
+	    	if(rtemp.equals("중형세탁기")||rtemp.equals("세탁기")) {
+	    		Main.main.temptable.setCname("세탁기");
 	    		ObservableList<dto.temptable> templist = MachineDao.machinedao.list("중형세탁기");
 	        	
 	    		TableColumn tc = temptable1.getColumns().get(0);	
@@ -123,8 +123,8 @@ public class KindChoose implements Initializable{
 	    	}
 	    	//2. 앞에서 건조기 선택시
 	    	//2_1. 앞에서 중형건조기 선택시
-	    	else if(rtemp.equals("중형건조기")) {
-	    		
+	    	else if(rtemp.equals("중형건조기")||rtemp.equals("건조기")) {
+	    		Main.main.temptable.setCname("건조기");
 	    		ObservableList<dto.temptable> templist = MachineDao.machinedao.list("중형건조기");
 	        	
 	    		TableColumn tc = temptable1.getColumns().get(0);	
@@ -150,7 +150,7 @@ public class KindChoose implements Initializable{
 	    	}
 	    	//1_2. 앞에서 대형세탁기 선택시
 	    	else if(rtemp.equals("대형세탁기")) {
-	    		
+	    		Main.main.temptable.setCname("세탁기");
 	    		ObservableList<dto.temptable> templist = MachineDao.machinedao.list("대형세탁기");
 	        	
 	    		TableColumn tc = temptable1.getColumns().get(0);	
@@ -176,7 +176,7 @@ public class KindChoose implements Initializable{
 	    	}
 	    	//2_2. 앞에서 대형건조기 선택시
 	    	else if(rtemp.equals("대형건조기")) {
-	    		
+	    		Main.main.temptable.setCname("건조기");
 	    		ObservableList<dto.temptable> templist = MachineDao.machinedao.list("대형건조기");
 	        	
 	    		TableColumn tc = temptable1.getColumns().get(0);	
