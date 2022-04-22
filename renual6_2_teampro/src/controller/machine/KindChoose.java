@@ -109,9 +109,7 @@ public class KindChoose implements Initializable{
 	        		Main.main.temptable.setMnum(a);
 	        		Main.main.temptable.setCname(b);
 	        		Main.main.temptable.setMamount(c);
-	        		System.out.println(a);
-	        		System.out.println(b);
-	        		System.out.println(c);
+
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        			
@@ -136,13 +134,13 @@ public class KindChoose implements Initializable{
 	        	
 	        	temptable1.setOnMouseClicked(e->{
 	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
-	        		/*int a= temptable1.getSelectionModel().getSelectedItem().getMnum();
+	        		int a= temptable1.getSelectionModel().getSelectedItem().getMnum();
 	        		String b= temptable1.getSelectionModel().getSelectedItem().getCname();
 	        		int c= temptable1.getSelectionModel().getSelectedItem().getMamount();
 	        		
 	        		Main.main.temptable.setMnum(a);
 	        		Main.main.temptable.setCname(b);
-	        		Main.main.temptable.setMamount(c);*/
+	        		Main.main.temptable.setMamount(c);
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
@@ -165,13 +163,13 @@ public class KindChoose implements Initializable{
 	        	
 	        	temptable1.setOnMouseClicked(e->{
 	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
-	        		/*int a= temptable1.getSelectionModel().getSelectedItem().getMnum();
+	        		int a= temptable1.getSelectionModel().getSelectedItem().getMnum();
 	        		String b= temptable1.getSelectionModel().getSelectedItem().getCname();
 	        		int c= temptable1.getSelectionModel().getSelectedItem().getMamount();
 	        		
 	        		Main.main.temptable.setMnum(a);
 	        		Main.main.temptable.setCname(b);
-	        		Main.main.temptable.setMamount(c);*/
+	        		Main.main.temptable.setMamount(c);
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
@@ -194,13 +192,13 @@ public class KindChoose implements Initializable{
 	        	
 	        	temptable1.setOnMouseClicked(e->{
 	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
-	        		/*int a= temptable1.getSelectionModel().getSelectedItem().getMnum();
+	        		int a= temptable1.getSelectionModel().getSelectedItem().getMnum();
 	        		String b= temptable1.getSelectionModel().getSelectedItem().getCname();
 	        		int c= temptable1.getSelectionModel().getSelectedItem().getMamount();
 	        		
 	        		Main.main.temptable.setMnum(a);
 	        		Main.main.temptable.setCname(b);
-	        		Main.main.temptable.setMamount(c);*/
+	        		Main.main.temptable.setMamount(c);
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
