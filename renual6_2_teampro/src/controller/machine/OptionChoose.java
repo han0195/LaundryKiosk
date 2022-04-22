@@ -96,7 +96,7 @@ public class OptionChoose implements Initializable{
 		Main.main.temptable.setMtemperature(mtemperature);
 		Main.main.temptable.setMdegree(mdegree);
 		
-		Main.main.loadpage2("/view/user/6번페이지(결제창)상단.fxml");
+		Main.main.loadpage("/view/user/6번페이지(결제창)상단.fxml");
     	Main.main.loadpage2("/view/user/6번페이지(결제창)하단.fxml");
     }
 
