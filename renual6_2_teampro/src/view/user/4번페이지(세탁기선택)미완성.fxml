@@ -7,14 +7,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:controller="controller.machine.KindChoose" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" style="-fx-background-color: #32A4FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" style="-fx-background-color: #32A4FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.machine.KindChoose">
    <children>
       <ImageView fitHeight="50.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../img/4페이지%20상단로고.png" />
          </image>
       </ImageView>
-      <TableView layoutX="10.0" layoutY="389.0" prefHeight="554.0" prefWidth="701.0">
+      <TableView fx:id="temptable1" layoutX="10.0" layoutY="389.0" prefHeight="554.0" prefWidth="701.0">
         <columns>
           <TableColumn prefWidth="121.6666259765625" text="번호" />
           <TableColumn prefWidth="428.3333740234375" text="이름" />
@@ -26,8 +26,8 @@
             <Image url="@../../img/4페이지%20크기선택.png" />
          </image>
       </ImageView>
-      <Button layoutX="663.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="57.0" text="Button" />
-      <Button layoutX="95.0" layoutY="72.0" mnemonicParsing="false" prefHeight="286.0" prefWidth="221.0" text="Button" />
-      <Button layoutX="405.0" layoutY="72.0" mnemonicParsing="false" prefHeight="286.0" prefWidth="221.0" text="Button" />
+      <Button fx:id="btnhome" layoutX="663.0" mnemonicParsing="false" onAction="#acchome" prefHeight="50.0" prefWidth="57.0" text="Button" />
+      <Button fx:id="btnmedium" layoutX="95.0" layoutY="72.0" mnemonicParsing="false" onAction="#accmedium" prefHeight="286.0" prefWidth="221.0" text="중형" />
+      <Button fx:id="btnbig" layoutX="405.0" layoutY="72.0" mnemonicParsing="false" onAction="#accbig" prefHeight="286.0" prefWidth="221.0" text="대형" />
    </children>
 </AnchorPane>

@@ -10,13 +10,16 @@ import java.util.ArrayList;
 
 import dto.Machine;
 import dto.temptable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class MachineDao {
 	private Connection con; // DB연동시 사용되는 클래스 : DB연동클래스
 	private PreparedStatement ps; // 연결된 DB내 SQL 조작 할때 사용되는 인터페이스 : DB조작인터페이스
 	private ResultSet rs; // 결과물을 조작하는 인터페이스 
 	
-	public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
+	
+public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 	
 	public MachineDao() {
 		try {
@@ -73,5 +76,69 @@ public class MachineDao {
 		}
 		return null;
 	}
-	
+	public ObservableList<temptable> list(String a) {
+		
+		ObservableList<temptable> tempList = FXCollections.observableArrayList();
+		ObservableList<temptable> tempList1 = FXCollections.observableArrayList();
+		ObservableList<temptable> tempList2 = FXCollections.observableArrayList();
+		
+		try {
+
+			String sql =null;
+
+					sql = "select * from machine order by mnum";
+					
+					ps = con.prepareStatement(sql);
+				
+					rs = ps.executeQuery();
+
+				
+			
+			
+			
+			while(rs.next()) {
+				temptable temp1 = new temptable(rs.getInt(1)
+						,rs.getInt(2));
+				
+				tempList1.add(temp1);
+			
+			}
+			
+			
+			
+			////////////////////////////////////////
+
+
+					sql = "select * from category where cname=\""+a+"\" order by cnum";
+					
+					ps = con.prepareStatement(sql);
+				
+					rs = ps.executeQuery();
+				
+				
+			
+			
+			
+			while(rs.next()) {
+				temptable temp2 = new temptable(rs.getString(4));
+				
+				tempList2.add(temp2);
+
+			}
+			
+			for(int h=0; h<tempList1.size();h++) {
+			temptable temp = new temptable(tempList1.get(h).getMnum(),tempList2.get(h).getCname(),tempList1.get(h).getMamount());
+			
+			tempList.add(temp);
+			}
+			////////////////////////////////////////
+		
+			return tempList;
+		}catch (Exception e) {
+
+		}
+		
+		
+		return null;
+	}
 }
