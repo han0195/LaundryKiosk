@@ -13,22 +13,12 @@
             <Image url="@../../img/5페이지%20기계%20선택%20하단.png" />
          </image>
       </ImageView>
-      <Label layoutX="150.0" layoutY="98.0" prefHeight="33.0" prefWidth="125.0" text="중간">
+      <Label fx:id="lbltemperature" layoutX="150.0" layoutY="98.0" prefHeight="33.0" prefWidth="125.0" text="미설정">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="150.0" layoutY="139.0" prefHeight="33.0" prefWidth="125.0" text="강함">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="150.0" layoutY="184.0" prefHeight="33.0" prefWidth="125.0" text="09:12">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="499.0" layoutY="184.0" prefHeight="33.0" prefWidth="125.0" text="09:50">
+      <Label fx:id="lbldree" layoutX="150.0" layoutY="139.0" prefHeight="33.0" prefWidth="125.0" text="미설정">
          <font>
             <Font size="25.0" />
          </font>
