@@ -77,66 +77,129 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 		return null;
 	}
 	public ObservableList<temptable> list(String a) {
-		
-		ObservableList<temptable> tempList = FXCollections.observableArrayList();
-		ObservableList<temptable> tempList1 = FXCollections.observableArrayList();
-		ObservableList<temptable> tempList2 = FXCollections.observableArrayList();
-		
-		try {
+		if(a.equals("중형세탁기")||a.equals("대형세탁기")) {
+			ObservableList<temptable> tempList = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList1 = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList2 = FXCollections.observableArrayList();
+			
+			try {
 
-			String sql =null;
+				String sql =null;
 
-					sql = "select * from machine order by mnum";
+						sql = "select * from machine where mamount is not null order by mnum";
+						
+						ps = con.prepareStatement(sql);
 					
-					ps = con.prepareStatement(sql);
-				
-					rs = ps.executeQuery();
+						rs = ps.executeQuery();
 
-				
-			
-			
-			
-			while(rs.next()) {
-				temptable temp1 = new temptable(rs.getInt(1)
-						,rs.getInt(2));
-				
-				tempList1.add(temp1);
-			
-			}
-			
-			
-			
-			////////////////////////////////////////
-
-
-					sql = "select * from category where cname=\""+a+"\" order by cnum";
 					
-					ps = con.prepareStatement(sql);
-				
-					rs = ps.executeQuery();
 				
 				
+				
+				while(rs.next()) {
+					temptable temp1 = new temptable(rs.getInt(1)
+							,rs.getInt(2));
+					
+					tempList1.add(temp1);
+				
+				}
+				
+				
+				
+				////////////////////////////////////////
+
+
+						sql = "select * from category where cname=\""+a+"\" order by cnum";
+						
+						ps = con.prepareStatement(sql);
+					
+						rs = ps.executeQuery();
+					
+					
+				
+				
+				
+				while(rs.next()) {
+					temptable temp2 = new temptable(rs.getString(4));
+					
+					tempList2.add(temp2);
+
+				}
+				
+				for(int h=0; h<tempList1.size();h++) {
+				temptable temp = new temptable(tempList1.get(h).getMnum(),tempList2.get(h).getCname(),tempList1.get(h).getMamount());
+				
+				tempList.add(temp);
+				}
+				////////////////////////////////////////
 			
-			
-			
-			while(rs.next()) {
-				temptable temp2 = new temptable(rs.getString(4));
-				
-				tempList2.add(temp2);
+				return tempList;
+			}catch (Exception e) {
 
 			}
-			
-			for(int h=0; h<tempList1.size();h++) {
-			temptable temp = new temptable(tempList1.get(h).getMnum(),tempList2.get(h).getCname(),tempList1.get(h).getMamount());
-			
-			tempList.add(temp);
-			}
-			////////////////////////////////////////
-		
-			return tempList;
-		}catch (Exception e) {
-
 		}
+		if(a.equals("중형건조기")||a.equals("대형건조기")) {
+			ObservableList<temptable> tempList = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList1 = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList2 = FXCollections.observableArrayList();
+			
+			try {
+
+				String sql =null;
+
+						sql = "select * from machine where mamount is null order by mnum";
+						
+						ps = con.prepareStatement(sql);
+					
+						rs = ps.executeQuery();
+
+					
+				
+				
+				
+				while(rs.next()) {
+					temptable temp1 = new temptable(rs.getInt(1)
+							,rs.getInt(2));
+					
+					tempList1.add(temp1);
+				
+				}
+				
+				
+				
+				////////////////////////////////////////
+
+
+						sql = "select * from category where cname=\""+a+"\" order by cnum";
+						
+						ps = con.prepareStatement(sql);
+					
+						rs = ps.executeQuery();
+					
+					
+				
+				
+				
+				while(rs.next()) {
+					temptable temp2 = new temptable(rs.getString(4));
+					
+					tempList2.add(temp2);
+
+				}
+				
+				for(int h=0; h<tempList1.size();h++) {
+				temptable temp = new temptable(tempList1.get(h).getMnum(),tempList2.get(h).getCname(),tempList1.get(h).getMamount());
+				
+				tempList.add(temp);
+				}
+				////////////////////////////////////////
+			
+				return tempList;
+			}catch (Exception e) {
+
+			}
+		}
+		
 		
 		
 		return null;

@@ -82,6 +82,10 @@ public class KindChoose implements Initializable{
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			
+			Main.main.temptable.setMtemperature("중간");
+			
+			Main.main.temptable.setMdegree("약함");
+			
 	    	String rtemp = Main.main.temptable.getCname();
 	    	
 	    	//1. 앞에서 세탁기 선택시
@@ -106,7 +110,7 @@ public class KindChoose implements Initializable{
 	        		String b= temptable1.getSelectionModel().getSelectedItem().getCname();
 
 	        		Main.main.temptable.setCname(b);
-	        		System.out.println(b);
+
 
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
