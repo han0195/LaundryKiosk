@@ -93,7 +93,7 @@ public class Payment implements Initializable{
 		//테스트 s
 		Main.main.temptable.setWholeprice(5000); //테스트
 		Main.main.temptable.setCname("중형세탁기");
-		Main.main.temptable.setMnum(1);
+		Main.main.temptable.setMnum(2);
 		Main.main.temptable.setMamount(100);
 		Main.main.temptable.setMphone("010-5694-0195");
 		Main.main.temptable.setMtemperature("강함");
