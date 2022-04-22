@@ -19,7 +19,7 @@
             <Image url="@../../img/2페이지.png" />
          </image>
       </ImageView>
-      <TableView layoutX="15.0" layoutY="70.0" prefHeight="585.0" prefWidth="691.0">
+      <TableView fx:id="mtableview" layoutX="15.0" layoutY="70.0" prefHeight="585.0" prefWidth="691.0">
         <columns>
           <TableColumn prefWidth="305.0" text="이름" />
           <TableColumn prefWidth="110.0" text="기계번호" />
@@ -27,7 +27,7 @@
             <TableColumn prefWidth="163.0" text="가격" />
         </columns>
       </TableView>
-      <Button layoutX="44.0" layoutY="746.0" mnemonicParsing="false" prefHeight="161.0" prefWidth="635.0" text="Button" />
-      <Button layoutX="668.0" layoutY="3.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="52.0" text="Button" />
+      <Button fx:id="btnmadd" layoutX="44.0" layoutY="746.0" mnemonicParsing="false" onAction="#madd" prefHeight="161.0" prefWidth="635.0" text="Button" />
+      <Button fx:id="btnhome" layoutX="668.0" layoutY="3.0" mnemonicParsing="false" onAction="#home" prefHeight="44.0" prefWidth="52.0" text="Button" />
    </children>
 </AnchorPane>
