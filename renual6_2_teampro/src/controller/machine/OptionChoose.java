@@ -19,11 +19,6 @@ import javafx.scene.input.MouseEvent;
 
 public class OptionChoose implements Initializable{
 
-		int a= Main.main.temptable.getMnum();
-	    String b= Main.main.temptable.getCname();
-	    int c= Main.main.temptable.getMamount();
-	    String d= Main.main.temptable.getMphone();
-	   
 	    
 	    String mtemperature = "";
     	String mdegree = "";
@@ -98,15 +93,17 @@ public class OptionChoose implements Initializable{
 
     @FXML
     void cp(ActionEvent event) {
-		Main.main.temptable.set(a,b,c,d,mtemperature,mdegree,0,0);
+		Main.main.temptable.setMtemperature(mtemperature);
+		Main.main.temptable.setMdegree(mdegree);
+		
 		Main.main.loadpage2("/view/user/6번페이지(결제창)상단.fxml");
     	Main.main.loadpage2("/view/user/6번페이지(결제창)하단.fxml");
     }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		String rtemp = Main.main.temptable.get.cname;
+		String rtemp = Main.main.temptable.getCname();
 		lblmkind.setText(rtemp);
 	}
 
-}`
+}
