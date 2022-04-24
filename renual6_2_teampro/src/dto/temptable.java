@@ -91,5 +91,6 @@ public class temptable {
 	public void setWholeprice(int wholeprice) {
 		this.wholeprice = wholeprice;
 	}
+
 	
 }

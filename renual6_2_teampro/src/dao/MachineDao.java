@@ -92,7 +92,7 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 
 
 				String	sql = "select * from category where cname=\""+a+"\" order by cnum";
-						
+								
 						ps = con.prepareStatement(sql);
 					
 						rs = ps.executeQuery();
@@ -110,10 +110,13 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 		///////////////////////////////////////////////////////////////////////////////////		
 				 
 				
-				 for(int g=0; g<tempList2.size();g++) {
+				for(int g=0; g<tempList2.size();g++) {
 					 
 					 sql = "select * from machine where mamount is not null and mnum ="+tempList2.get(g).getMnum()+" order by mnum";
-
+					 					////////////////////////////////
+					 						//		and mtime is not null			
+											//		db에 저장될떄 시간 플러스해서 저장인지 확인
+					 						//////////////////////////////////
 						ps = con.prepareStatement(sql);
 					
 						rs = ps.executeQuery();
@@ -122,14 +125,14 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 				
 				
 				
-				while(rs.next()) {
-					temptable temp1 = new temptable(rs.getInt(1)
-							,rs.getInt(2));
+						while(rs.next()) {
+							temptable temp1 = new temptable(rs.getInt(1)
+								,rs.getInt(2));
 					
-					tempList1.add(temp1);
+						tempList1.add(temp1);
 				
+						}
 				}
-				 }
 				
 				
 				/////////////////////////////////////////////////
@@ -182,7 +185,8 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 				 for(int g=0; g<tempList6.size();g++) {
 					 
 					 sql = "select * from machine where mamount is null and mnum ="+tempList6.get(g).getMnum()+" order by mnum";
-
+					 								//and mtime is not null
+													//db에 저장될떄 시간 플러스해서 저장인지 확인
 						ps = con.prepareStatement(sql);
 					
 						rs = ps.executeQuery();
