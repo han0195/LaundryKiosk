@@ -1,11 +1,15 @@
 package controller;
 
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
+import dao.CategoryDao;
 import dao.MachineDao;
+import dao.SalesDao;
 import dto.Category;
 import dto.Machine;
+import dto.Sales;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -61,9 +65,23 @@ public class Payment implements Initializable{
 	@FXML
 	void paymentend(ActionEvent event) {
 		if(pass) { // 투입금액 충족여부 가 true이면
+			LocalDateTime date = LocalDateTime.now();
 			//db에 집어넣기
-			MachineDao.machinedao.update(Main.main.temptable);
-			Main.main.loadpage2("/view/user/7페이지(영수증).fxml");
+			boolean pass = MachineDao.machinedao.update(Main.main.temptable);
+			if(pass) {
+				//매출 기록
+				Machine machine = MachineDao.machinedao.load(Main.main.temptable.getMnum());
+		    	Category category = CategoryDao.categoryDao.load(Main.main.temptable.getMnum());
+		    	Sales sales = new Sales(0, date, category.getCnum(), category.getCprice());
+				SalesDao.salesDao.logadd(sales);
+		    	//로드
+		    	Main.main.loadpage2("/view/user/7페이지(영수증).fxml");
+			}else {
+				Alert alert = new Alert(AlertType.INFORMATION);
+		    	alert.setHeaderText("오류 관리자 호출바람[010-123-1234]");
+		    	alert.show();
+		    	Main.main.loadpage2("/view/user/1번페이지(메인).fxml");
+			}		
 		}else {
 			Alert alert = new Alert(AlertType.INFORMATION);
 	    	alert.setHeaderText("마 ㄱㅅㄲ야 돈 넣으셈! ㅡㅡ");
@@ -75,7 +93,7 @@ public class Payment implements Initializable{
 		//테스트 s
 		Main.main.temptable.setWholeprice(5000); //테스트
 		Main.main.temptable.setCname("중형세탁기");
-		Main.main.temptable.setMnum(1);
+		Main.main.temptable.setMnum(2);
 		Main.main.temptable.setMamount(100);
 		Main.main.temptable.setMphone("010-5694-0195");
 		Main.main.temptable.setMtemperature("강함");
