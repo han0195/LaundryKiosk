@@ -133,7 +133,7 @@ public class KindChoose implements Initializable{
 	        	tc = temptable1.getColumns().get(1);	
 	        	tc.setCellValueFactory( new PropertyValueFactory<>("cname"));
 	        	
-	        	tc = temptable1.getColumns().get(2);	
+	        	tc = temptable1.getColumns().get(2);	//
 	        	tc.setCellValueFactory( new PropertyValueFactory<>("mamount"));
 	        	
 	        	temptable1.setItems(templist);
