@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -73,6 +72,24 @@ public class MachineDao {
 		}
 		return null;
 	}
-	
+	// 머신 리스트
+	public ArrayList<Machine> list(){
+		ArrayList<Machine> list = new ArrayList<>();
+		try {
+			String sql = "select * from javafx.machine";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				LocalDateTime date = rs.getTimestamp(6).toLocalDateTime();
+				list.add(
+						new Machine(rs.getInt(1), rs.getInt(2), rs.getString(3),rs.getString(4),rs.getString(5),date,0)
+						);
+			}
+			return list;
+		} catch (Exception e) {
+			System.out.println("[sql 에러]" + e);
+		}
+		return null;
+	}
 	
 }

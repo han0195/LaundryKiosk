@@ -26,7 +26,7 @@ public class Sales1 implements Initializable{
 
     @FXML
     void ch2(ActionEvent event) {
-    	Main.main.loadpage("/view/관리자(이용빈도).fxml");
+    	Main.main.loadpage("/view/관리자7페이지(수익).fxml");
     }
 
     @FXML

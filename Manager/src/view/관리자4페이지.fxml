@@ -11,12 +11,12 @@
    <children>
       <ImageView fitHeight="50.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../img/임시로고.png" />
+            <Image url="@../img/임시로고.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="900.0" fitWidth="720.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../img/4페이지.png" />
+            <Image url="@../img/4페이지.png" />
          </image>
       </ImageView>
       <Label layoutX="305.0" layoutY="169.0" prefHeight="50.0" prefWidth="288.0" text="중형세탁기">

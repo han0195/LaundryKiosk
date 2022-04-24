@@ -6,8 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import dto.Machine;
 import dto.Sales;
 import dto.count;
+import dto.temptable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class SalesDao {
 	private Connection con; // DB연동시 사용되는 클래스 : DB연동클래스
@@ -41,4 +45,22 @@ public class SalesDao {
 		}
 		return null;
 	}
+	public ObservableList<temptable> tlist(Machine machine){
+		
+		ObservableList<temptable> tlist = FXCollections.observableArrayList();
+		try {
+			String sql = "SELECT * FROM javafx.category where mnum = "+machine.getMnum();
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				temptable tem = new temptable(machine.getMnum(),rs.getString(4),machine.getMamount(),machine.getMphone(),machine.getMtemperature(),machine.getMdegree(), 0, rs.getInt(5));
+				tlist.add(tem);
+			}
+			return tlist;
+		} catch (Exception e) {
+			System.out.println("[sql에러]" + e);
+		}
+		return null;
+	}
+	
 }
