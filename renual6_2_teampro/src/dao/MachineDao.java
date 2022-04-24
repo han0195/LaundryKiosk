@@ -88,7 +88,7 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 				
 				
 				
-				////////////////////////////////////////
+				//////////////////////////////////////////
 
 
 				String	sql = "select * from category where cname=\""+a+"\" order by cnum";
