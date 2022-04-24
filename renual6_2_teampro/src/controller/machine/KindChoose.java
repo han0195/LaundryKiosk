@@ -144,7 +144,7 @@ public class KindChoose implements Initializable{
 
 	        		Main.main.temptable.setCname(b);
 
-	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택)상단.fxml");
+	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
 	    	}
