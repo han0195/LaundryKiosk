@@ -49,4 +49,19 @@ public class CategoryDao {
 		}
 		return null;
 	}
+	//카테고리 추가
+	public boolean insert(int mnum,String cname,int price) {
+		try {
+			String sql = "insert into javafx.category(mnum,cname,cprice)values(?,?,?)";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, mnum);
+			ps.setString(2, cname);
+			ps.setInt(3, price);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			System.out.println("[sql 에러]" + e);
+		}
+		return false;
+	}
 }

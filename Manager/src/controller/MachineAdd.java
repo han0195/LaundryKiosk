@@ -3,6 +3,8 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dao.CategoryDao;
+import dao.MachineDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,8 +37,23 @@ public class MachineAdd implements Initializable{
     @FXML
     void check(ActionEvent event) {
     	//db 추가
-    	//관리자4페이지 로드
-    	Main.main.loadpage("/view/관리자2페이지.fxml");
+    	if(nametext.getText().equals("중형세탁기") || nametext.getText().equals("대형세탁기") || nametext.getText().equals("중형건조기") ||nametext.getText().equals("대형세탁기")) {
+    		//머신 추가
+    		int mnum = MachineDao.machinedao.insert();
+    		//카테고리 추가
+    		boolean pass = CategoryDao.categoryDao.insert(mnum, nametext.getText(), Integer.parseInt(money.getText()));
+    		if(pass) {
+    			Alert alert = new Alert(AlertType.INFORMATION);
+    			alert.setHeaderText("등록성공 기계번호:" + mnum);
+    			alert.show();
+    			//관리자4페이지 로드
+            	Main.main.loadpage("/view/관리자2페이지.fxml");
+    		}
+    		
+    	}else {
+    		System.out.println("no");
+    	}
+    	
     }
 
     @FXML

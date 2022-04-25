@@ -1,5 +1,6 @@
 package dao;
 
+import java.nio.channels.SelectionKey;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -80,7 +81,10 @@ public class MachineDao {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				LocalDateTime date = rs.getTimestamp(6).toLocalDateTime();
+				LocalDateTime date = null;
+				if(rs.getTimestamp(6) != null) {
+					date = rs.getTimestamp(6).toLocalDateTime();
+				}
 				list.add(
 						new Machine(rs.getInt(1), rs.getInt(2), rs.getString(3),rs.getString(4),rs.getString(5),date,0)
 						);
@@ -91,5 +95,24 @@ public class MachineDao {
 		}
 		return null;
 	}
-	
+	//머신 추가
+	public int insert() {
+		try {	
+			String sql = "insert into javafx.machine(mamount)value(?)";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, 100);
+			ps.executeUpdate();
+			
+			sql = "select last_insert_id();";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("[sql 에러]" + e);
+		}
+		return 0;
+	}
 }

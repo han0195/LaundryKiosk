@@ -28,7 +28,9 @@ public class CleanserDetail implements Initializable{
 
     @FXML
     private Button btnhome;
-
+    
+    public static temptable table;
+    
     @FXML
     void home(ActionEvent event) {
     	Main.main.loadpage("/view/관리자1페이지.fxml");
@@ -59,5 +61,10 @@ public class CleanserDetail implements Initializable{
     	tc.setCellValueFactory( new PropertyValueFactory<>("wholeprice"));
     	
     	mtableview.setItems(tlist);
+    	mtableview.setOnMouseClicked( e -> {
+    		table = mtableview.getSelectionModel().getSelectedItem();
+    		
+    		Main.main.loadpage("/view/관리자4페이지.fxml");
+    	});
     }
 }
