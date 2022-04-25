@@ -39,12 +39,12 @@
             <Font size="42.0" />
          </font>
       </Label>
-      <Button fx:id="btnaddmo" layoutX="387.0" layoutY="606.0" mnemonicParsing="false" onAction="#addmo" prefHeight="233.0" prefWidth="260.0" text="Button" />
+      <Button fx:id="btnaddmo" layoutX="387.0" layoutY="606.0" mnemonicParsing="false" onAction="#addmo" opacity="0.0" prefHeight="233.0" prefWidth="260.0" text="Button" />
       <Label fx:id="lablmosen" layoutX="115.0" layoutY="723.0" prefHeight="70.0" prefWidth="135.0" text="50%" textFill="#ff00dd">
          <font>
             <Font size="60.0" />
          </font>
       </Label>
-      <Button fx:id="btnhome" layoutX="673.0" layoutY="1.0" mnemonicParsing="false" onAction="#home" prefHeight="49.0" prefWidth="47.0" text="Button" />
+      <Button fx:id="btnhome" layoutX="673.0" layoutY="1.0" mnemonicParsing="false" onAction="#home" opacity="0.0" prefHeight="49.0" prefWidth="47.0" text="Button" />
    </children>
 </AnchorPane>

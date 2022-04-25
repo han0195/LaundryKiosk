@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:controller="controller.Sales2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Sales2">
    <children>
       <ImageView fitHeight="50.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -20,8 +20,8 @@
             <Image url="@../img/7페이지.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnsales1" layoutX="36.0" layoutY="80.0" mnemonicParsing="false" onAction="#sales1" prefHeight="111.0" prefWidth="330.0" text="Button" />
-      <Button fx:id="btnhome" layoutX="663.0" mnemonicParsing="false" onAction="#home" prefHeight="50.0" prefWidth="57.0" text="Button" />
+      <Button fx:id="btnsales1" layoutX="36.0" layoutY="80.0" mnemonicParsing="false" onAction="#sales1" opacity="0.0" prefHeight="111.0" prefWidth="330.0" text="Button" />
+      <Button fx:id="btnhome" layoutX="663.0" mnemonicParsing="false" onAction="#home" opacity="0.0" prefHeight="50.0" prefWidth="57.0" text="Button" />
       <AreaChart fx:id="chart" layoutX="61.0" layoutY="273.0" prefHeight="614.0" prefWidth="611.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />

@@ -36,7 +36,6 @@ public class Sales1 implements Initializable{
 	@Override
     public void initialize(URL arg0, ResourceBundle arg1) {
     	ArrayList<count> count2 = SalesDao.salesDao.frequency();
-    	System.out.println(count2.get(0).getCname());
     	int p1 = 0;
     	int p2 = 0;
     	int p3 = 0;

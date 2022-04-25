@@ -39,8 +39,8 @@
             <Font size="43.0" />
          </font>
       </Label>
-      <Button fx:id="btnaddmo" layoutX="48.0" layoutY="565.0" mnemonicParsing="false" onAction="#addmo" prefHeight="317.0" prefWidth="276.0" text="Button" />
-      <Button fx:id="btnreprice" layoutX="391.0" layoutY="572.0" mnemonicParsing="false" onAction="#reprice" prefHeight="317.0" prefWidth="276.0" text="Button" />
-      <Button fx:id="btnhome" layoutX="667.0" layoutY="2.0" mnemonicParsing="false" onAction="#home" prefHeight="50.0" prefWidth="53.0" text="Button" />
+      <Button fx:id="btnaddmo" layoutX="48.0" layoutY="565.0" mnemonicParsing="false" onAction="#addmo" opacity="0.0" prefHeight="317.0" prefWidth="276.0" text="Button" />
+      <Button fx:id="btnreprice" layoutX="391.0" layoutY="572.0" mnemonicParsing="false" onAction="#reprice" opacity="0.0" prefHeight="317.0" prefWidth="276.0" text="Button" />
+      <Button fx:id="btnhome" layoutX="667.0" layoutY="2.0" mnemonicParsing="false" onAction="#home" opacity="0.0" prefHeight="50.0" prefWidth="53.0" text="Button" />
    </children>
 </AnchorPane>

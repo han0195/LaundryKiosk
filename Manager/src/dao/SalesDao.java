@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import dto.Machine;
-import dto.Sales;
 import dto.count;
+import dto.date;
 import dto.temptable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -71,7 +71,22 @@ public class SalesDao {
 		}
 		return null;
 	}
-
+	public ArrayList<date> frequency2() {
+		ArrayList<date> date = new ArrayList<>();
+		try {
+			String sql = "select sdate, count(sdate), sum(sprice) as date from javafx.sales group by sdate";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				date dat = new date(rs.getString(1), rs.getInt(3));
+				date.add(dat);
+			}
+			return date;
+		} catch (Exception e) {
+			System.out.println("[sql에러]" + e);
+		}
+		return null;
+	}
 	
 	
 }

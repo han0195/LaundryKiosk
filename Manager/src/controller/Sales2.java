@@ -1,12 +1,19 @@
 package controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javax.mail.internet.NewsAddress;
+
+import dao.SalesDao;
+import dto.date;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 
 public class Sales2 implements Initializable{
@@ -31,7 +38,12 @@ public class Sales2 implements Initializable{
     }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    	// 차트기록
+    	ArrayList<date> date2 = SalesDao.salesDao.frequency2();
+    	XYChart.Series<String, Integer> series = new XYChart.Series<>();
+    	for(date temp : date2) {
+    		series.getData().add(new XYChart.Data<>(temp.getDate(),temp.getCount()));
+    	}
     	
+    	chart.getData().add(series);
     }
 }
