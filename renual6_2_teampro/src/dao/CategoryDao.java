@@ -70,4 +70,32 @@ public class CategoryDao {
 		}
 		
 	}
+	
+	
+	public int load2(int mnum) {
+		int qwer=0;
+		try {
+			String sql = "select * from category where mnum=?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, mnum);
+			rs = ps.executeQuery();
+			Category category = null;
+			if(rs.next()) {
+				Category temp = new Category(	
+						rs.getInt(1),
+						rs.getInt(2),
+						rs.getInt(3),
+						rs.getString(4),
+						rs.getInt(5)	
+						);
+			category = temp;
+			}
+			qwer=category.getCprice();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return qwer;
+		
+	}
 }

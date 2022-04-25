@@ -27,22 +27,22 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 		try {
 			// DB연동 
 			Class.forName("com.mysql.cj.jdbc.Driver"); // 1. DB 드라이버 가져오기
-			con = DriverManager.getConnection("jdbc:mysql://database-1.ctq8tels7lkd.us-east-1.rds.amazonaws.com:3306/javafx?serverTimezone=UTC",
+			con = DriverManager.getConnection("jdbc:mysql://database-1.ctq8tels7lkd.us-east-1.rds.amazonaws.com:3306/javafx?serverTimezone=GMT",
 					"focks","akfrdmsfocks0626!!$LLH"); // 2. DB 주소 연결 
 		}
 		catch(Exception e ) { System.out.println( "[DB 연동 오류]"+e  ); }
 	}
 	//머신 저장
 	public boolean update(temptable tb) {
-		
+        LocalDateTime dateTime =  LocalDateTime.now().plusHours(9);
+        Timestamp timestamp = Timestamp.valueOf(dateTime);
 		try {
-			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());  // db date 타임 맞게 시간뽑기
 			String sql = "update machine set mphone=?,mtemperature=?,mdegree=?,mtime=? where mnum=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, tb.getMphone());
 			ps.setString(2, tb.getMtemperature());
 			ps.setString(3, tb.getMdegree());
-			ps.setTimestamp(4,date);
+			ps.setTimestamp(4,timestamp);
 			ps.setInt(5, tb.getMnum());
 			ps.executeUpdate();
 			return true;
@@ -60,7 +60,7 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 			rs = ps.executeQuery();
 			Machine machine = null;
 			if(rs.next()) {
-				LocalDateTime localDate1 = rs.getTimestamp(6).toLocalDateTime();// LocalDateTime <=> Timestamp	
+				LocalDateTime localDate1 = rs.getTimestamp(6).toLocalDateTime().minusHours(9);// LocalDateTime <=> Timestamp   
 			Machine temp = new Machine(	
 						rs.getInt(1),
 						rs.getInt(2),

@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import controller.Main;
+import dao.CategoryDao;
 import dao.MachineDao;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -86,9 +87,9 @@ public class KindChoose implements Initializable{
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			
-			Main.main.temptable.setMtemperature("중간");
+			Main.main.temptable.setMtemperature("미설정");
 			
-			Main.main.temptable.setMdegree("강함");
+			Main.main.temptable.setMdegree("미설정");
 			System.out.println("대형중형연결성공");
 	    	String rtemp = Main.main.temptable.getCname();
 	    	
@@ -116,7 +117,8 @@ public class KindChoose implements Initializable{
 
 	        		Main.main.temptable.setCname(b);
 	        		Main.main.temptable.setMnum(c);
-	        		Main.main.temptable.setWholeprice(4500);
+	        		
+	        		Main.main.temptable.setWholeprice(CategoryDao.categoryDao.load2(c));
 	        		
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
@@ -148,7 +150,7 @@ public class KindChoose implements Initializable{
 
 	        		Main.main.temptable.setCname(b);
 	        		Main.main.temptable.setMnum(c);
-	        		Main.main.temptable.setWholeprice(4500);
+	        		Main.main.temptable.setWholeprice(CategoryDao.categoryDao.load2(c));
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
@@ -177,7 +179,7 @@ public class KindChoose implements Initializable{
 
 	        		Main.main.temptable.setCname(b);
 	        		Main.main.temptable.setMnum(c);
-	        		Main.main.temptable.setWholeprice(5000);
+	        		Main.main.temptable.setWholeprice(CategoryDao.categoryDao.load2(c));
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
@@ -206,7 +208,7 @@ public class KindChoose implements Initializable{
 
 	        		Main.main.temptable.setCname(b);
 	        		Main.main.temptable.setMnum(c);
-	        		Main.main.temptable.setWholeprice(5000);
+	        		Main.main.temptable.setWholeprice(CategoryDao.categoryDao.load2(c));
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
