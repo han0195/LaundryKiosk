@@ -74,6 +74,7 @@ public class Payment implements Initializable{
 		    	Category category = CategoryDao.categoryDao.load(Main.main.temptable.getMnum());
 		    	Sales sales = new Sales(0, date, category.getCnum(), category.getCprice());
 				SalesDao.salesDao.logadd(sales);
+				CategoryDao.categoryDao.ch(Main.main.temptable.getMnum());
 		    	//로드
 		    	Main.main.loadpage2("/view/user/7페이지(영수증).fxml");
 			}else {

@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 
+import controller.Main;
 import dto.Category;
 import dto.Machine;
 
@@ -48,5 +50,23 @@ public class CategoryDao {
 			System.out.println("[sql 에러]" + e);
 		}
 		return null;
+	}
+	
+	public void ch(int mnum) {
+		
+		
+		try {
+			String sql="update * from category set cname= ? where mnum=?";
+			String ss=Main.main.temptable.getCname()+"이용중";
+			System.out.println(ss);
+			ps = con.prepareStatement(sql);
+			ps.setString(1, ss);
+			ps.setInt(2, mnum);
+			rs = ps.executeQuery();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 }
