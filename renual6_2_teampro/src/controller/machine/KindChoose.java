@@ -86,7 +86,7 @@ public class KindChoose implements Initializable{
 	///////////////////////////////////////////
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
-			
+
 			Main.main.temptable.setMtemperature("미설정");
 			
 			Main.main.temptable.setMdegree("미설정");
