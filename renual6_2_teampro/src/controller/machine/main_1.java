@@ -8,12 +8,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 public class main_1 implements Initializable{
 	 @FXML
 	 private Button bunstart;
+	 
+	 @FXML
+	 private MediaView mediaview;
 
 	 @FXML
 	 void start(ActionEvent event) {
@@ -25,7 +31,17 @@ public class main_1 implements Initializable{
 	 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-      
+    	Media media = new Media(getClass().getResource("/img/광고1.mp4").toString());
+		
+		MediaPlayer mediaplayer = new MediaPlayer(media);
+		
+		mediaview.setMediaPlayer(mediaplayer);
+		
+		mediaplayer.play();
+		
+		mediaplayer.setAutoPlay(true);
+		mediaplayer.setCycleCount(MediaPlayer.INDEFINITE);
+		mediaview = new MediaView(mediaplayer);
     }
  
    

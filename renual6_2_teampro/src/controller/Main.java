@@ -18,6 +18,8 @@ public class Main implements Initializable{
 	public static temptable temptable;
 	@FXML
 	private BorderPane borderpane;
+
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		temptable = new temptable();

@@ -12,9 +12,6 @@ public class Start extends Application{
 		Parent parent = FXMLLoader.load(getClass().getResource("/view/main.fxml"));
 		Scene scene = new Scene(parent);
 		
-		//폰트///
-		//Font.loadFont( getClass().getResourceAsStream("SANGJU Gotgam.ttf"), 15);
-		//폰트//
 		
 		
 		stage.setScene(scene);
