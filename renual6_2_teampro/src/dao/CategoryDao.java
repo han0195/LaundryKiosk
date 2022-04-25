@@ -56,14 +56,14 @@ public class CategoryDao {
 		
 		
 		try {
-			String sql="update * from category set cname= ? where mnum=?";
+			String sql="update category set cname= ? where mnum=?";
 			System.out.println(mnum);
 			String ss=Main.main.temptable.getCname()+"이용중";
 			System.out.println(ss);
 			ps = con.prepareStatement(sql);
 			ps.setString(1, ss);
 			ps.setInt(2, mnum);
-			rs = ps.executeQuery();
+			ps.executeUpdate();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

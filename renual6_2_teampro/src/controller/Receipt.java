@@ -30,7 +30,7 @@ public class Receipt implements Initializable{
 	    private Label phone;
 
 	    @FXML
-	    private Label category;
+	    private Label category1;
 
 	    @FXML
 	    private Label temperature;
@@ -76,6 +76,7 @@ public class Receipt implements Initializable{
 		    	starttime.setText(stime);
 		    	//종료시간 [세탁 40분 건조기 30분]
 		    		//종료시간 계산
+		    	category1.setText(Main.main.temptable.getCname());
 		    	if(category.getCname().contains("세탁기")) {
 		    		LocalDateTime etime = machine.getMtime().plusMinutes(40); // 40분 더하기
 		    		String etimes = etime.format(DateTimeFormatter.ofPattern("HH:mm"));
@@ -92,6 +93,5 @@ public class Receipt implements Initializable{
 	    		alert.show();
 	    	}
 	    	
-//	    	
 	    }
 }

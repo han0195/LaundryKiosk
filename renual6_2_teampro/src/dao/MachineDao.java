@@ -34,14 +34,13 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 	public boolean update(temptable tb) {
 		try {
 			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime()); // db date 타임 맞게 시간뽑기
-			String sql = "update machine set mamount=?,mphone=?,mtemperature=?,mdegree=?,mtime=? where mnum=?";
+			String sql = "update machine set mphone=?,mtemperature=?,mdegree=?,mtime=? where mnum=?";
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, tb.getMamount());
-			ps.setString(2, tb.getMphone());
-			ps.setString(3, tb.getMtemperature());
-			ps.setString(4, tb.getMdegree());
-			ps.setTimestamp(5,date);
-			ps.setInt(6, tb.getMnum());
+			ps.setString(1, tb.getMphone());
+			ps.setString(2, tb.getMtemperature());
+			ps.setString(3, tb.getMdegree());
+			ps.setTimestamp(4,date);
+			ps.setInt(5, tb.getMnum());
 			ps.executeUpdate();
 			return true;
 		} catch (Exception e) {
@@ -76,6 +75,7 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 		}
 		return null;
 	}
+	
 	public ObservableList<temptable> list(String a) {
 		if(a.equals("중형세탁기")||a.equals("대형세탁기")) {
 			ObservableList<temptable> tempList = FXCollections.observableArrayList();

@@ -71,8 +71,9 @@ public class Payment implements Initializable{
 			if(pass) {
 				//매출 기록
 
-				Machine machine = MachineDao.machinedao.load(Main.main.temptable.getMnum());
+
 		    	Category category = CategoryDao.categoryDao.load(Main.main.temptable.getMnum());
+		    	
 		    	Sales sales = new Sales(0, date, category.getCnum(), category.getCprice());
 				SalesDao.salesDao.logadd(sales);
 				CategoryDao.categoryDao.ch(Main.main.temptable.getMnum());
@@ -92,15 +93,7 @@ public class Payment implements Initializable{
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//테스트 s
-		//Main.main.temptable.setWholeprice(5000); //받음
-		//Main.main.temptable.setCname("중형세탁기"); //받음
-		//Main.main.temptable.setMnum(2);			//받음
-		//Main.main.temptable.setMamount(100);	//받음
-		//Main.main.temptable.setMphone("010-5694-0195");//받음
-		//Main.main.temptable.setMtemperature("강함");	//받음
-		//Main.main.temptable.setMdegree("약함");		//받음
-		// 테스트 e
+		
 		temperature.setText(Main.main.temptable.getMtemperature()); //온도설정
 		mamount.setText(Integer.toString(Main.main.temptable.getWholeprice())); // 총합가격
 		mdegree.setText(Main.main.temptable.getMdegree()); //세기설정
