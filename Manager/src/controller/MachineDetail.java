@@ -47,9 +47,9 @@ public class MachineDetail implements Initializable{
     }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    	lablcname.setText(CleanserDetail.table.getCname());
-    	lablmnum.setText(Integer.toString(CleanserDetail.table.getMnum()));
-    	lablprice.setText(Integer.toString(CleanserDetail.table.getWholeprice()));
-    	lablmo.setText(Integer.toString(CleanserDetail.table.getMamount()));
+    	lablcname.setText(MachineManagement.table.getCname());
+    	lablmnum.setText(Integer.toString(MachineManagement.table.getMnum()));
+    	lablprice.setText(Integer.toString(MachineManagement.table.getWholeprice()));
+    	lablmo.setText(Integer.toString(MachineManagement.table.getMamount()));
     }
 }

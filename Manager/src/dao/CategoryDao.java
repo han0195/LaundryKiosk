@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
 
+import controller.MachineManagement;
 import dto.Category;
 import dto.Machine;
 
@@ -57,6 +58,19 @@ public class CategoryDao {
 			ps.setInt(1, mnum);
 			ps.setString(2, cname);
 			ps.setInt(3, price);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			System.out.println("[sql 에러]" + e);
+		}
+		return false;
+	}
+	public boolean up(int mnum,int price) {
+		try {
+			String sql = "update category set cprice = ? where mnum=?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, price);
+			ps.setInt(2, mnum);
 			ps.executeUpdate();
 			return true;
 		} catch (Exception e) {

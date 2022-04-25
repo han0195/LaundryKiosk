@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -30,14 +31,16 @@ public class MachineDao {
 	//머신 저장
 	public boolean update(temptable tb) {
 		try {
-			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime()); // db date 타임 맞게 시간뽑기
+			
+			LocalDateTime dateTime =  LocalDateTime.now().plusHours(9);
+			Timestamp timestamp = Timestamp.valueOf(dateTime);
 			String sql = "update machine set mamount=?,mphone=?,mtemperature=?,mdegree=?,mtime=? where mnum=?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, tb.getMamount());
 			ps.setString(2, tb.getMphone());
 			ps.setString(3, tb.getMtemperature());
 			ps.setString(4, tb.getMdegree());
-			ps.setTimestamp(5,date);
+			ps.setTimestamp(5,timestamp);
 			ps.setInt(6, tb.getMnum());
 			ps.executeUpdate();
 			return true;

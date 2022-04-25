@@ -37,9 +37,14 @@ public class MachineAdd implements Initializable{
     @FXML
     void check(ActionEvent event) {
     	//db 추가
-    	if(nametext.getText().equals("중형세탁기") || nametext.getText().equals("대형세탁기") || nametext.getText().equals("중형건조기") ||nametext.getText().equals("대형세탁기")) {
-    		//머신 추가
-    		int mnum = MachineDao.machinedao.insert();
+    	if(nametext.getText().equals("중형세탁기") || nametext.getText().equals("대형세탁기") || nametext.getText().equals("중형건조기") ||nametext.getText().equals("대형건조기")) {
+    		int mnum = 0;
+    		if(nametext.getText().contains("건조기")) {
+    			mnum = MachineDao.machinedao.insert("null");
+    		}else {
+    			//머신 추가
+        		mnum = MachineDao.machinedao.insert("100");
+    		}	
     		//카테고리 추가
     		boolean pass = CategoryDao.categoryDao.insert(mnum, nametext.getText(), Integer.parseInt(money.getText()));
     		if(pass) {

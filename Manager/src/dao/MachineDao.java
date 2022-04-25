@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import controller.MachineDetail;
+import controller.MachineManagement;
 import dto.Machine;
 import dto.temptable;
 
@@ -96,13 +98,18 @@ public class MachineDao {
 		return null;
 	}
 	//머신 추가
-	public int insert() {
+	public int insert(String name) {
 		try {	
+			
+			
 			String sql = "insert into javafx.machine(mamount)value(?)";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, 100);
+			if(name.equals("null")) {
+				sql = "insert into javafx.machine()value()";
+				ps = con.prepareStatement(sql);
+			}
 			ps.executeUpdate();
-			
 			sql = "select last_insert_id();";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -114,5 +121,19 @@ public class MachineDao {
 			System.out.println("[sql 에러]" + e);
 		}
 		return 0;
+	}
+	// 세제 추가
+	public boolean add(int mnum, String ch) {
+		try {
+			String sql = "update machine set "+ch+" = ? where mnum=?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, MachineManagement.table.getMamount() + 10);	
+			ps.setInt(2, mnum);
+			ps.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			System.out.println("[sql 에러]" + e);
+		}
+		return false;
 	}
 }
