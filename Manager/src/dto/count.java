@@ -2,11 +2,11 @@ package dto;
 
 public class count {
 	private int cnum;
-	private int cnt;
-	public count(int cnum, int cnt) {
+	private String cname;
+	public count(int cnum, String cname) {
 		super();
 		this.cnum = cnum;
-		this.cnt = cnt;
+		this.cname = cname;
 	}
 	public int getCnum() {
 		return cnum;
@@ -14,11 +14,11 @@ public class count {
 	public void setCnum(int cnum) {
 		this.cnum = cnum;
 	}
-	public int getCnt() {
-		return cnt;
+	public String getCname() {
+		return cname;
 	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 	
 }

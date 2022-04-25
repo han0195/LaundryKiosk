@@ -33,30 +33,27 @@ public class Sales1 implements Initializable{
     void home(ActionEvent event) {
     	Main.main.loadpage("/view/관리자1페이지.fxml");
     }
-    @SuppressWarnings("unchecked")
 	@Override
     public void initialize(URL arg0, ResourceBundle arg1) {
     	ArrayList<count> count2 = SalesDao.salesDao.frequency();
+    	System.out.println(count2.get(0).getCname());
+    	int p1 = 0;
+    	int p2 = 0;
+    	int p3 = 0;
+    	int p4 = 0;
     	for(count temp : count2) {
-    		System.out.println(temp.getCnum());
+    		if(temp.getCname().contains("중형세탁기")) {
+    			p1++;
+    		}else if(temp.getCname().contains("대형세탁기")) {
+    			p2++;
+    		}else if(temp.getCname().contains("중형건조기")) {
+    			p3++;
+    		}else if(temp.getCname().contains("대형세탁기")) {
+    			p4++;
+    		}
     	}
     	XYChart.Series case1 = new XYChart.Series();
 		case1.setName("세탁/건조이용빈도");
-		int p1 = 0;
-		int p2 = 0;
-		int p3 = 0;
-		int p4 = 0;
-		for(count temp : count2) {
-			if(temp.getCnum() == 1) {
-				p1 = temp.getCnt();
-			}else if(temp.getCnum() == 2) {
-				p2 = temp.getCnt();
-			}else if(temp.getCnum() == 3) {
-				p3 = temp.getCnt();
-			}else if(temp.getCnum() == 4) {
-				p4 = temp.getCnt();
-			}
-		}
 		case1.setData(FXCollections.observableArrayList(
 				new XYChart.Data("중형세탁기", p1),
 				new XYChart.Data("대형세탁기", p2),

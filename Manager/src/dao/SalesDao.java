@@ -31,14 +31,23 @@ public class SalesDao {
 	}
 	
 	public ArrayList<count> frequency() {
+		ArrayList<count> count = new ArrayList<>();
 		try {
-			String sql = "select cnum, count(cnum) as cnt from javafx.sales group by cnum";
+			String sql = "select * from javafx.sales";
 			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery();
-			ArrayList<count> count = new ArrayList<>();
+			rs = ps.executeQuery();		
 			while(rs.next()) {
-				count.add(new count(rs.getInt(1), rs.getInt(2)));
+				count.add(new count(rs.getInt(3),null));	
 			}
+			for(count temp : count) {
+				sql = "select cname from javafx.category where cnum = ?";
+				ps = con.prepareStatement(sql);
+				ps.setInt(1, temp.getCnum());
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					temp.setCname(rs.getString(1));
+				}
+			}		
 			return count;
 		} catch (Exception e) {
 			System.out.println("[sql에러]" + e);
@@ -62,5 +71,7 @@ public class SalesDao {
 		}
 		return null;
 	}
+
+	
 	
 }
