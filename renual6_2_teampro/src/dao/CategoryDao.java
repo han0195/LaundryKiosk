@@ -57,6 +57,7 @@ public class CategoryDao {
 		
 		try {
 			String sql="update * from category set cname= ? where mnum=?";
+			System.out.println(mnum);
 			String ss=Main.main.temptable.getCname()+"이용중";
 			System.out.println(ss);
 			ps = con.prepareStatement(sql);

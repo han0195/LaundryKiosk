@@ -112,10 +112,12 @@ public class KindChoose implements Initializable{
 	        	temptable1.setOnMouseClicked(e->{
 	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
 	        		String b= temptable1.getSelectionModel().getSelectedItem().getCname();
+	        		int c= temptable1.getSelectionModel().getSelectedItem().getMnum();
 
 	        		Main.main.temptable.setCname(b);
-
-
+	        		Main.main.temptable.setMnum(c);
+	        		Main.main.temptable.setWholeprice(4500);
+	        		
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        			
@@ -142,8 +144,11 @@ public class KindChoose implements Initializable{
 	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
 	        		String b= temptable1.getSelectionModel().getSelectedItem().getCname();
 
-	        		Main.main.temptable.setCname(b);
+	        		int c= temptable1.getSelectionModel().getSelectedItem().getMnum();
 
+	        		Main.main.temptable.setCname(b);
+	        		Main.main.temptable.setMnum(c);
+	        		Main.main.temptable.setWholeprice(4500);
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
@@ -168,8 +173,11 @@ public class KindChoose implements Initializable{
 	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
 	        		String b= temptable1.getSelectionModel().getSelectedItem().getCname();
 
-	        		Main.main.temptable.setCname(b);
+	        		int c= temptable1.getSelectionModel().getSelectedItem().getMnum();
 
+	        		Main.main.temptable.setCname(b);
+	        		Main.main.temptable.setMnum(c);
+	        		Main.main.temptable.setWholeprice(5000);
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});
@@ -194,8 +202,11 @@ public class KindChoose implements Initializable{
 	        		//세탑옵션선택페이지로 선택한 중형 대형 넘겨주기
 	        		String b= temptable1.getSelectionModel().getSelectedItem().getCname();
 
-	        		Main.main.temptable.setCname(b);
+	        		int c= temptable1.getSelectionModel().getSelectedItem().getMnum();
 
+	        		Main.main.temptable.setCname(b);
+	        		Main.main.temptable.setMnum(c);
+	        		Main.main.temptable.setWholeprice(5000);
 	        		Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
 	        		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	        	});

@@ -1,7 +1,30 @@
 package controller.machine;
 
-//기계옵션 선택 하단 세부사항 확인 컨트롤(무엇무엇 선택했는지 실시간 표시)
-	//받은 온도,세기 db로 보내기 버튼
-public class OptionChooseDetail {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import controller.Main;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.fxml.Initializable;
+
+
+public class OptionChooseDetail implements Initializable{
+	
+		
+    	String e= Main.main.temptable.getMtemperature();
+    	String f= Main.main.temptable.getMdegree();
+    	
+		@FXML
+	    private Label lbltemperature;
+
+	    @FXML
+	    private Label lbldree;
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		lbltemperature.setText(e);
+		lbldree.setText(f);
+	}
+	
 }

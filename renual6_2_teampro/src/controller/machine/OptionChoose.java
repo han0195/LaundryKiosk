@@ -22,7 +22,7 @@ public class OptionChoose implements Initializable{
 	    
 	    String mtemperature = "";
     	String mdegree = "";
-    	
+
 	    @FXML
 	    private RadioButton opt1_1;
 
