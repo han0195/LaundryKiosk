@@ -12,8 +12,7 @@ import javafx.fxml.Initializable;
 public class OptionChooseDetail implements Initializable{
 	
 		
-    	String e= Main.main.temptable.getMtemperature();
-    	String f= Main.main.temptable.getMdegree();
+    	
     	
 		@FXML
 	    private Label lbltemperature;
@@ -23,6 +22,8 @@ public class OptionChooseDetail implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		String e= Main.main.temptable.getMtemperature();
+    	String f= Main.main.temptable.getMdegree();
 		lbltemperature.setText(e);
 		lbldree.setText(f);
 	}

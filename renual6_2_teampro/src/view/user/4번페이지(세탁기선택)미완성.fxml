@@ -27,7 +27,7 @@
          </image>
       </ImageView>
       <Button fx:id="btnhome" layoutX="663.0" mnemonicParsing="false" onAction="#acchome" prefHeight="50.0" prefWidth="57.0" text="Button" />
-      <Button fx:id="btnmedium" layoutX="95.0" layoutY="72.0" mnemonicParsing="false" onAction="#accmedium" prefHeight="286.0" prefWidth="221.0" text="중형" />
-      <Button fx:id="btnbig" layoutX="405.0" layoutY="72.0" mnemonicParsing="false" onAction="#accbig" prefHeight="286.0" prefWidth="221.0" text="대형" />
+      <Button fx:id="btnmedium" layoutX="95.0" layoutY="72.0" mnemonicParsing="false" onAction="#accmedium" opacity="0.0" prefHeight="286.0" prefWidth="221.0" text="중형" />
+      <Button fx:id="btnbig" layoutX="405.0" layoutY="72.0" mnemonicParsing="false" onAction="#accbig" opacity="0.0" prefHeight="286.0" prefWidth="221.0" text="대형" />
    </children>
 </AnchorPane>

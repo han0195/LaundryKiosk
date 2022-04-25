@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="controller.machine.OptionChooseDetail" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.machine.OptionChooseDetail">
    <children>
       <ImageView fitHeight="250.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,6 +21,16 @@
       <Label fx:id="lbldree" layoutX="150.0" layoutY="139.0" prefHeight="33.0" prefWidth="125.0" text="미설정">
          <font>
             <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="157.0" layoutY="186.0" text="영수증에 표기">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="508.0" layoutY="186.0" text="영수증에 표기">
+         <font>
+            <Font size="24.0" />
          </font>
       </Label>
    </children>

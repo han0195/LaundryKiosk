@@ -78,11 +78,11 @@ public class Receipt implements Initializable{
 		    		//종료시간 계산
 		    	category1.setText(Main.main.temptable.getCname());
 		    	if(category.getCname().contains("세탁기")) {
-		    		LocalDateTime etime = machine.getMtime().plusMinutes(40); // 40분 더하기
+		    		LocalDateTime etime = machine.getMtime().plusMinutes(10); // 40분 더하기 
 		    		String etimes = etime.format(DateTimeFormatter.ofPattern("HH:mm"));
 		    		endtime.setText(etimes);
 		    	}else if(category.getCname().contains("건조기")) {
-		    		LocalDateTime etime = machine.getMtime().plusMinutes(30);// 30분 더하기
+		    		LocalDateTime etime = machine.getMtime().plusMinutes(10);// 30분 더하기
 		    		String etimes = etime.format(DateTimeFormatter.ofPattern("HH:mm"));
 		    		endtime.setText(etimes);
 		    	}

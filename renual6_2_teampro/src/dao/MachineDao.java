@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import dto.Machine;
@@ -32,8 +34,9 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 	}
 	//머신 저장
 	public boolean update(temptable tb) {
+		
 		try {
-			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime()); // db date 타임 맞게 시간뽑기
+			java.sql.Timestamp date = new java.sql.Timestamp(new java.util.Date().getTime());  // db date 타임 맞게 시간뽑기
 			String sql = "update machine set mphone=?,mtemperature=?,mdegree=?,mtime=? where mnum=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, tb.getMphone());

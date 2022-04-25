@@ -61,48 +61,62 @@ public class OptionChoose implements Initializable{
 	    @FXML
 	    void clickevent1(MouseEvent event) {
 	    	mtemperature="뜨거움";
+	    	Main.main.temptable.setMtemperature(mtemperature);
+			Main.main.temptable.setMdegree(mdegree);
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("온도-뜨거움선택완료");
 			Optional<ButtonType> optional = alert.showAndWait();
+			Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	    }
 
 	    @FXML
 	    void clickevent2(MouseEvent event) {
 	    	mtemperature="중간";
+	    	Main.main.temptable.setMtemperature(mtemperature);
+			Main.main.temptable.setMdegree(mdegree);
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("온도-중간선택완료");
 			Optional<ButtonType> optional = alert.showAndWait();
+			Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	    }
 
 	    @FXML
 	    void clickevent3(MouseEvent event) {
 	    	mtemperature="차가움";
+	    	Main.main.temptable.setMtemperature(mtemperature);
+			Main.main.temptable.setMdegree(mdegree);
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("온도-차가움선택완료");
 			Optional<ButtonType> optional = alert.showAndWait();
+			Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	    }
 
 	    @FXML
 	    void clickevent4(MouseEvent event) {
 	    	mdegree="강함";
+	    	Main.main.temptable.setMtemperature(mtemperature);
+			Main.main.temptable.setMdegree(mdegree);
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("세기-강함선택완료");
 			Optional<ButtonType> optional = alert.showAndWait();
+			Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 			
 	    }
 
 	    @FXML
 	    void clickevent5(MouseEvent event) {
 			mdegree="약함";
+			Main.main.temptable.setMtemperature(mtemperature);
+			Main.main.temptable.setMdegree(mdegree);
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("세기-약함선택완료");
 			Optional<ButtonType> optional = alert.showAndWait();
+			Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
 	    }
 
     @FXML
     void cp(ActionEvent event) {
-		Main.main.temptable.setMtemperature(mtemperature);
-		Main.main.temptable.setMdegree(mdegree);
+		
 		
 		Main.main.loadpage("/view/user/6번페이지(결제창)상단.fxml");
     	Main.main.loadpage2("/view/user/6번페이지(결제창)하단.fxml");

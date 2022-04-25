@@ -22,8 +22,8 @@
             <Image url="@../../img/3페이지%20세탁및%20건조.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn2" layoutX="47.0" layoutY="416.0" mnemonicParsing="false" onAction="#acc2" prefHeight="227.0" prefWidth="627.0" text="Button" />
-      <Button fx:id="btn1" layoutX="47.0" layoutY="102.0" mnemonicParsing="false" onAction="#acc1" prefHeight="227.0" prefWidth="627.0" text="Button" />
+      <Button fx:id="btn2" layoutX="47.0" layoutY="416.0" mnemonicParsing="false" onAction="#acc2" opacity="0.0" prefHeight="227.0" prefWidth="627.0" text="Button" />
+      <Button fx:id="btn1" layoutX="47.0" layoutY="102.0" mnemonicParsing="false" onAction="#acc1" opacity="0.0" prefHeight="227.0" prefWidth="627.0" text="Button" />
       <Label layoutX="220.0" layoutY="264.0" prefHeight="29.0" prefWidth="313.0" text="세탁기 8대 사용가능" textFill="#595959">
          <font>
             <Font size="20.0" />
