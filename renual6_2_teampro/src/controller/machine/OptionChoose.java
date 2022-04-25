@@ -48,8 +48,16 @@ public class OptionChoose implements Initializable{
 	    private Label lblmkind;
 
 	    @FXML
+	    private Button btnhome;
+	    
+	    @FXML
 	    private Button btncp;
 
+	    @FXML
+	    void acchome(ActionEvent event) {
+	       	Main.main.loadpage2("/view/user/1번페이지(메인).fxml");
+	    }
+	    
 	    @FXML
 	    void clickevent1(MouseEvent event) {
 	    	mtemperature="뜨거움";
