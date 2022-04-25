@@ -21,6 +21,6 @@
          </image>
       </ImageView>
       <Button fx:id="bunstart" layoutX="95.0" layoutY="761.0" mnemonicParsing="false" onAction="#start" prefHeight="157.0" prefWidth="530.0" style="-fx-opacity: 0;" />
-      <MediaView fx:id="mediaview" fitHeight="600.0" fitWidth="600.0" layoutX="60.0" layoutY="88.0" />
+      <MediaView fx:id="mediaview" fitHeight="600.0" fitWidth="600.0" layoutX="60.0" layoutY="123.0" />
    </children>
 </AnchorPane>

@@ -35,5 +35,10 @@
          </font>
       </Label>
       <Button layoutX="670.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button" />
+      <ImageView fitHeight="219.0" fitWidth="559.0" layoutX="87.0" layoutY="713.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/광고2.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
