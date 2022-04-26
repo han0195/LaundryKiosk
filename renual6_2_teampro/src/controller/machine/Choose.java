@@ -18,6 +18,9 @@ public class Choose implements Initializable{
     private Button btn1;
 
     @FXML
+    private Button btnhome;
+    
+    @FXML
     void acc1(ActionEvent event) {
     	Main.main.temptable.setCname("세탁기");
     	Main.main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
@@ -34,5 +37,8 @@ public class Choose implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
-
+    @FXML
+    void acchome(ActionEvent event) {
+    	Main.main.loadpage2("/view/user/1번페이지(메인).fxml");
+    }
 }

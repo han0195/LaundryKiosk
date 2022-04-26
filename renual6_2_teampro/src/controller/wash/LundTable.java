@@ -77,8 +77,9 @@ public class LundTable implements Initializable{
 					LocalDateTime etime = machine.getMtime();
 					
 					Duration duration = Duration.between(startDateTime, etime);
-					System.out.println(duration.toMinutes());
-					if(duration.toMinutes()>40) {
+					long aft = (duration.toMinutes())*-1;
+					System.out.println(aft);
+					if(aft>40) {
 						CategoryDao.categoryDao.ch2(Main.main.temptable.getMnum());
 						CategoryDao.categoryDao.ch3(Main.main.temptable.getMnum());
 						Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
@@ -94,7 +95,9 @@ public class LundTable implements Initializable{
 		    		LocalDateTime etime = machine.getMtime();
 					
 					Duration duration = Duration.between(startDateTime, etime);
-					if(duration.toMinutes()>40) {
+					long aft = (duration.toMinutes())*-1;
+					System.out.println(aft);
+					if(aft>40) {
 						CategoryDao.categoryDao.ch2(Main.main.temptable.getMnum());
 						CategoryDao.categoryDao.ch3(Main.main.temptable.getMnum());
 						Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
