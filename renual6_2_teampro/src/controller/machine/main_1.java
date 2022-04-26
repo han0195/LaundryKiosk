@@ -20,11 +20,21 @@ public class main_1 implements Initializable{
 	 
 	 @FXML
 	 private MediaView mediaview;
+	 
+	 @FXML
+	 private Button bunstart2;
 
 	 @FXML
+	 void start2(ActionEvent event) {
+		 Main.main.loadpage("/view/wash/빨래전화번호상단.fxml");
+		 Main.main.loadpage2("/view/wash/빨래전화번호하단.fxml");
+
+		 mediaplayer.stop();
+	 }
+	 
+	 
+	 @FXML
 	 void start(ActionEvent event) {
-		 Main.main.loadpage("/view/user/6번페이지(결제창)상단.fxml");
-		 Main.main.loadpage2("/view/user/6번페이지(결제창)하단.fxml");
 		 Main.main.loadpage("/view/user/2페이지상단(전화번호).fxml");
 		 Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
 		 mediaplayer.stop();
