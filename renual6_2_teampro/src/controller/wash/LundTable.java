@@ -1,11 +1,17 @@
 package controller.wash;
 
 import java.net.URL;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 import controller.Main;
 import dao.CategoryDao;
+import dao.MachineDao;
+import dto.Category;
+import dto.Machine;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,7 +54,7 @@ public class LundTable implements Initializable{
     	tc.setCellValueFactory( new PropertyValueFactory<>("cname"));
     	
     	temptable2.setItems(templist);
-    	
+    	System.out.println(templist);
     	temptable2.setOnMouseClicked(e->{
    
     		String b= temptable2.getSelectionModel().getSelectedItem().getCname();
@@ -62,8 +68,42 @@ public class LundTable implements Initializable{
 			alert.setHeaderText(c+"번 "+b+"에 있는 빨래를 회수하시겠습니까?");
 			Optional<ButtonType> optional = alert.showAndWait();
 			if( optional.get() == ButtonType.OK ) {
-				CategoryDao.categoryDao.ch2(Main.main.temptable.getMnum());
-				Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
+				Machine machine = MachineDao.machinedao.load(Main.main.temptable.getMnum());
+				Category category = CategoryDao.categoryDao.load(Main.main.temptable.getMnum());
+				
+				
+				if(category.getCname().contains("대형")) {
+					LocalDateTime startDateTime = LocalDateTime.now();
+					LocalDateTime etime = machine.getMtime();
+					
+					Duration duration = Duration.between(startDateTime, etime);
+					System.out.println(duration.toMinutes());
+					if(duration.toMinutes()>40) {
+						CategoryDao.categoryDao.ch2(Main.main.temptable.getMnum());
+						CategoryDao.categoryDao.ch3(Main.main.temptable.getMnum());
+						Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
+					}
+					else{Alert alert2 = new Alert( AlertType.CONFIRMATION );
+					alert2.setHeaderText("시간이 "+(40+duration.toMinutes())+"분 남았습니다.");
+					Optional<ButtonType> optional2 = alert2.showAndWait();}
+					
+		    		
+		    		
+		    	}else if(category.getCname().contains("중형")) {
+		    		LocalDateTime startDateTime = LocalDateTime.now();
+		    		LocalDateTime etime = machine.getMtime();
+					
+					Duration duration = Duration.between(startDateTime, etime);
+					if(duration.toMinutes()>40) {
+						CategoryDao.categoryDao.ch2(Main.main.temptable.getMnum());
+						CategoryDao.categoryDao.ch3(Main.main.temptable.getMnum());
+						Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
+					}
+					else{Alert alert2 = new Alert( AlertType.CONFIRMATION );
+					alert2.setHeaderText("시간이 "+(40+duration.toMinutes())+"분 남았습니다.");
+					Optional<ButtonType> optional2 = alert2.showAndWait();}
+		    	}
+				
 			}
     	});
 		

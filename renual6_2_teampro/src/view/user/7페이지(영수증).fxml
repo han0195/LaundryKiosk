@@ -19,7 +19,7 @@
             <Image url="@../../img/7페이지%20영수증.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnhome" layoutX="666.0" mnemonicParsing="false" onAction="#home" prefHeight="50.0" prefWidth="54.0" text="Button" />
+      <Button fx:id="btnhome" layoutX="666.0" mnemonicParsing="false" onAction="#home" opacity="0.0" prefHeight="50.0" prefWidth="54.0" text="Button" />
       <Button fx:id="btnhome2" layoutX="52.0" layoutY="711.0" mnemonicParsing="false" onAction="#home2" opacity="0.0" prefHeight="194.0" prefWidth="617.0" text="Button" />
       <Label fx:id="phone" layoutX="275.0" layoutY="200.0" prefHeight="50.0" prefWidth="361.0" text="010-1234-1234">
          <font>

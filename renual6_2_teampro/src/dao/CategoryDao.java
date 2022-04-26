@@ -110,7 +110,23 @@ public class CategoryDao {
 		}
 		
 	}
-	
+
+	public void ch3(int mnum) {
+		
+		
+		try {
+			String sql="update machine set mphone= ? where mnum=?";
+			ps = con.prepareStatement(sql);
+			String ss="0000-0000";
+			ps.setString(1, ss);
+			ps.setInt(2, mnum);
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	public int load2(int mnum) {
 		int qwer=0;
 		try {
@@ -209,7 +225,7 @@ public class CategoryDao {
 				
 				
 				/////////////////////////////////////////////////
-				
+				System.out.println(tempList99.size());
 				for(int h=0; h<tempList99.size();h++) {
 				temptable temp = new temptable(tempList98.get(h).getMnum(),tempList99.get(h).getCname());
 				if(tempList99.get(h).getCname().equals("중형세탁기")) {break;}
@@ -217,7 +233,7 @@ public class CategoryDao {
 				if(tempList99.get(h).getCname().equals("대형세탁기")) {break;}
 				if(tempList99.get(h).getCname().equals("대형건조기")) {break;}
 				tempList100.add(temp);
-				
+				System.out.println(temp);
 				}
 				////////////////////////////////////////
 			

@@ -51,7 +51,7 @@ public class Payment implements Initializable{
 	    }else { // 투입금액 충족시
 	    	pass = true;
 	    	Alert alert = new Alert(AlertType.INFORMATION);
-	    	alert.setHeaderText("투입금액 충족했음 돌리셈");
+	    	alert.setHeaderText("투입금액에 충족했습니다. 결제하시길바립니다.");
 	    	alert.show();
 	    }
 	}
@@ -87,7 +87,7 @@ public class Payment implements Initializable{
 			}		
 		}else {
 			Alert alert = new Alert(AlertType.INFORMATION);
-	    	alert.setHeaderText("마 ㄱㅅㄲ야 돈 넣으셈! ㅡㅡ");
+	    	alert.setHeaderText("금액에 맞게 충분히 돈을 넣어주세요");
 	    	alert.show();
 		}
 	}

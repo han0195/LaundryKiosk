@@ -51,6 +51,7 @@ public static MachineDao machinedao = new MachineDao(); // DB 연동 객체;
 		}
 		return false;
 	}
+	
 	//머신 불러오기
 	public Machine load(int mnum) {
 		try {
