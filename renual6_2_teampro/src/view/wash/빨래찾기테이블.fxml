@@ -22,7 +22,7 @@
           <TableColumn prefWidth="548.0" text="이름" />
         </columns>
       </TableView>
-      <Button fx:id="btnhome" layoutX="663.0" mnemonicParsing="false" onAction="#acchome" prefHeight="50.0" prefWidth="57.0" text="Button" />
+      <Button fx:id="btnhome" layoutX="663.0" mnemonicParsing="false" onAction="#acchome" opacity="0.0" prefHeight="50.0" prefWidth="57.0" text="Button" />
       <Label layoutX="94.0" layoutY="84.0" text="고객님의 전화번호" textFill="WHITE">
          <font>
             <Font size="64.0" />

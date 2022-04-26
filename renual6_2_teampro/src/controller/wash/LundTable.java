@@ -59,10 +59,11 @@ public class LundTable implements Initializable{
     		System.out.println(b);
     		System.out.println(c);
     		Alert alert = new Alert( AlertType.CONFIRMATION );
-			alert.setHeaderText(c+"번"+b+"에 있는 빨래를 회수하시겠습니까?");
+			alert.setHeaderText(c+"번 "+b+"에 있는 빨래를 회수하시겠습니까?");
 			Optional<ButtonType> optional = alert.showAndWait();
 			if( optional.get() == ButtonType.OK ) {
 				CategoryDao.categoryDao.ch2(Main.main.temptable.getMnum());
+				Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
 			}
     	});
 		
