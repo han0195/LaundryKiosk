@@ -1,8 +1,69 @@
-package controller.manager;
+package controller;
 
-//°ü¸®ÀÚ ±â°è°ü¸® ÄÁÆ®·Ñ
-	//ÀÌ´Ï¼È¶óÀÌÁî Å×ÀÌºíºä ±â°èdb¸ñ·Ï Ãâ·Â
-	//±â°è Ãß°¡ ÆäÀÌÁö ÀüÈ¯
-public class MachineManagement {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
+import dao.MachineDao;
+import dao.SalesDao;
+import dto.Machine;
+import dto.temptable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+public class MachineManagement implements Initializable{
+    @FXML
+    private TableView<temptable> mtableview;
+
+    @FXML
+    private Button btnmadd;
+
+    @FXML
+    private Button btnhome;
+    
+    public static temptable table;
+    
+    @FXML
+    void home(ActionEvent event) {
+    	Main.main.loadpage("/view/ê´€ë¦¬ì1í˜ì´ì§€.fxml");
+    }
+
+    @FXML
+    void madd(ActionEvent event) {
+    	Main.main.loadpage("/view/ê´€ë¦¬ì3í˜ì´ì§€ì¶”ê°€.fxml");
+    }
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+    	ArrayList<Machine> mlist = MachineDao.machinedao.list();
+    	ObservableList<temptable> tlist = FXCollections.observableArrayList();
+    	for(Machine temp : mlist) {
+    		tlist.addAll(SalesDao.salesDao.tlist(temp));
+    	}
+    	//í…Œì´ë¸”ë·° ë„£ê¸°
+    	TableColumn tc = mtableview.getColumns().get(0);	// í…Œì´ë¸”ì—ì„œ ì²«ë²ˆì§¸ ì—´ ê°€ì ¸ì˜¤ê¸° 
+    	tc.setCellValueFactory( new PropertyValueFactory<>("cname")); // 
+    	//tc.setCellValueFactory( new PropertyValueFactory<>("ë¦¬ìŠ¤íŠ¸ë‚´ ìë£Œí˜•ì˜ í‘œì‹œí•  í•„ë“œëª…"));
+    	tc = mtableview.getColumns().get(1);	// í…Œì´ë¸”ì—ì„œ ë‘ë²ˆì§¸ ì—´ ê°€ì ¸ì˜¤ê¸°
+    	tc.setCellValueFactory( new PropertyValueFactory<>("mnum"));
+    	
+    	tc = mtableview.getColumns().get(2);	// í…Œì´ë¸”ì—ì„œ ì„¸ë²ˆì§¸ ì—´ ê°€ì ¸ì˜¤ê¸°
+    	tc.setCellValueFactory( new PropertyValueFactory<>("mamount"));
+    	
+    	tc = mtableview.getColumns().get(3);	// í…Œì´ë¸”ì—ì„œ ë„¤ë²ˆì§¸ ì—´ ê°€ì ¸ì˜¤ê¸°
+    	tc.setCellValueFactory( new PropertyValueFactory<>("wholeprice"));
+    	
+    	mtableview.setItems(tlist);
+    	mtableview.setOnMouseClicked( e -> {
+    		table = mtableview.getSelectionModel().getSelectedItem();
+    		
+    		Main.main.loadpage("/view/ê´€ë¦¬ì4í˜ì´ì§€.fxml");
+    	});
+    }
 }

@@ -1,8 +1,55 @@
-package controller.manager;
+package controller;
 
-//°ü¸®ÀÚ ±â°è »ó¼¼ÆäÀÌÁö ÄÁÆ®·Ñ
-	//¼¼Á¦ Á¶Àı ¹öÆ°- ¼¼Á¦ ÆäÀÌÁö ÀüÈ¯
-	//°¡°İ Á¶Àı ¹öÆ° - °¡°İÁ¶ÀıÆäÀÌÁö ÀüÈ¯
-public class MachineDetail {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+
+public class MachineDetail implements Initializable{
+    @FXML
+    private Label lablcname;
+
+    @FXML
+    private Label lablmnum;
+
+    @FXML
+    private Label lablprice;
+
+    @FXML
+    private Label lablmo;
+
+    @FXML
+    private Button btnaddmo;
+
+    @FXML
+    private Button btnreprice;
+
+    @FXML
+    private Button btnhome;
+
+    @FXML
+    void addmo(ActionEvent event) {
+    	Main.main.loadpage("/view/ê´€ë¦¬ì5í˜ì´ì§€.fxml");
+    }
+
+    @FXML
+    void home(ActionEvent event) {
+    	Main.main.loadpage("/view/ê´€ë¦¬ì1í˜ì´ì§€.fxml");
+    }
+
+    @FXML
+    void reprice(ActionEvent event) {
+    	Main.main.loadpage("/view/ê´€ë¦¬ì6í˜ì´ì§€.fxml");
+    }
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+    	lablcname.setText(MachineManagement.table.getCname());
+    	lablmnum.setText(Integer.toString(MachineManagement.table.getMnum()));
+    	lablprice.setText(Integer.toString(MachineManagement.table.getWholeprice()));
+    	lablmo.setText(Integer.toString(MachineManagement.table.getMamount()));
+    }
 }

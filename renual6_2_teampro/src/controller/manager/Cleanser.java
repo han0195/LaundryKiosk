@@ -1,7 +1,42 @@
 package controller.manager;
 
-//°ü¸®ÀÚ ¼¼Á¦º¸Ãæ ÄÁÆ®·Ñ
-	//db¿¡¼­ ¼¼Á¦·® º¯°æ(100%·Îº¯°æ)
-public class Cleanser {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import controller.Main;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+
+public class Cleanser implements Initializable{
+    @FXML
+    private Button btnmanagement;
+
+    @FXML
+    private Button btnsalesview;
+
+    @FXML
+    private Button btnhome;
+
+    @FXML
+    void home(ActionEvent event) {
+    	//ì‘ë™ x
+    }
+
+    @FXML
+    void management(ActionEvent event) {
+    	Main.main.loadpage("/view/manager/ê´€ë¦¬ì2í˜ì´ì§€.fxml");
+    }
+
+    @FXML
+    void salesview(ActionEvent event) {
+    	Main.main.loadpage("/view/manager/ê´€ë¦¬ì7í˜ì´ì§€(ì´ˆê¸°í™”ë©´).fxml");
+    }
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+    	// TODO Auto-generated method stub
+    	
+    }
 
 }
