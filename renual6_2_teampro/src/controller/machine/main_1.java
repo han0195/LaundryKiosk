@@ -27,14 +27,16 @@ public class main_1 implements Initializable{
 		 Main.main.loadpage2("/view/user/6번페이지(결제창)하단.fxml");
 		 Main.main.loadpage("/view/user/2페이지상단(전화번호).fxml");
 		 Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
+		 mediaplayer.play();
 	 }
-	 
+	
+	 Media media = new Media(getClass().getResource("/img/광고1.mp4").toString());
+		
+	MediaPlayer mediaplayer = new MediaPlayer(media);
+		
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    	Media media = new Media(getClass().getResource("/img/광고1.mp4").toString());
-		
-		MediaPlayer mediaplayer = new MediaPlayer(media);
-		
+    	
 		mediaview.setMediaPlayer(mediaplayer);
 		
 		mediaplayer.play();
