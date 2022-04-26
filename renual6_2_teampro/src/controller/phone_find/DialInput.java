@@ -115,7 +115,7 @@ public class DialInput implements Initializable{
     @FXML
     void check(ActionEvent event) {
        if(Main.main.temptable.getMphone().length() == 9) {
-    	   Main.main.loadpage2("/view/user/3번페이지(세탁건조선택).fxml");
+    	   Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
        }else {
           Alert alert = new Alert(AlertType.INFORMATION);
           alert.setHeaderText("올바른 번호가 아닙니다");   

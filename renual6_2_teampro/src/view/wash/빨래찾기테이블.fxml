@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="controller.wash.LundTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" style="-fx-background-color: #32A4FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.machine.KindChoose">
+   <children>
+      <ImageView fitHeight="50.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/4페이지%20상단로고.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="temptable1" layoutX="10.0" layoutY="313.0" prefHeight="630.0" prefWidth="701.0">
+        <columns>
+          <TableColumn prefWidth="121.6666259765625" text="번호" />
+          <TableColumn prefWidth="428.3333740234375" text="이름" />
+            <TableColumn prefWidth="150.0" text="남은 세제량" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnhome" layoutX="663.0" mnemonicParsing="false" onAction="#acchome" prefHeight="50.0" prefWidth="57.0" text="Button" />
+      <Label layoutX="94.0" layoutY="84.0" text="고객님의 전화번호" textFill="WHITE">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Label fx:id="phonelbl" layoutX="278.0" layoutY="159.0" prefHeight="64.0" prefWidth="274.0" text="0000-0000" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="163.0" text="010-">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="187.0" layoutY="259.0" text="당신이 이용중인 기계" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
