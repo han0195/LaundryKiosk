@@ -10,6 +10,9 @@ import java.time.LocalDateTime;
 import controller.Main;
 import dto.Category;
 import dto.Machine;
+import dto.temptable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class CategoryDao {
 	private Connection con; // DB연동시 사용되는 클래스 : DB연동클래스
@@ -70,7 +73,43 @@ public class CategoryDao {
 		}
 		
 	}
-	
+	public void ch2(int mnum) {
+		
+		
+		try {
+			String sql="update category set cname= ? where mnum=?";
+			System.out.println(mnum);
+			boolean asd11=Main.main.temptable.getCname().equals("중형세탁기이용중");
+			boolean asd12=Main.main.temptable.getCname().equals("중형건조기이용중");
+			boolean asd13=Main.main.temptable.getCname().equals("대형세탁기이용중");
+			boolean asd14=Main.main.temptable.getCname().equals("대형건조기이용중");
+			System.out.println(asd11);
+			System.out.println(asd12);
+			System.out.println(asd13);
+			System.out.println(asd14);
+			ps = con.prepareStatement(sql);
+			String ss="";
+			if(asd11) {
+				ss="중형세탁기";
+			}
+			if(asd12) {
+				ss="중형건조기";
+			}
+			if(asd13) {
+				ss="대형세탁기";
+			}
+			if(asd14) {
+				ss="대형건조기";
+			}
+			ps.setString(1, ss);
+			ps.setInt(2, mnum);
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public int load2(int mnum) {
 		int qwer=0;
@@ -98,4 +137,119 @@ public class CategoryDao {
 		return qwer;
 		
 	}
+/////////////////////////////////////////////////////////	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public ObservableList<temptable> list(String a) {
+			ObservableList<temptable> tempList100 = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList99 = FXCollections.observableArrayList();
+			ObservableList<temptable> tempList98 = FXCollections.observableArrayList();
+			
+			/////////////////////////////////////////////////////////////////////
+			try {
+
+				
+				
+				
+				
+				////////////////////////////////////////
+
+
+				String	sql = "select * from machine where mphone=\""+a+"\" order by mnum";
+						
+						ps = con.prepareStatement(sql);
+					
+						rs = ps.executeQuery();
+					
+					
+				
+				
+				System.out.println(sql);
+				while(rs.next()) {
+					temptable temp1 = new temptable(rs.getInt(1));
+					System.out.println(rs.getInt(1));
+					tempList98.add(temp1);
+
+				}
+		///////////////////////////////////////////////////////////////////////////////////		
+				 
+				
+				 for(int g=0; g<tempList98.size();g++) {
+					 
+					 sql = "select * from category where mnum ="+tempList98.get(g).getMnum()+" order by mnum";
+					 System.out.println(tempList98.get(g).getMnum());
+						ps = con.prepareStatement(sql);
+					
+						rs = ps.executeQuery();
+
+					
+				
+				
+				
+					while(rs.next()) {
+						temptable temp2 = new temptable(rs.getString(4));
+						
+						tempList99.add(temp2);
+						System.out.println(rs.getString(4));
+					}
+				 }
+				
+				
+				/////////////////////////////////////////////////
+				
+				for(int h=0; h<tempList99.size();h++) {
+				temptable temp = new temptable(tempList98.get(h).getMnum(),tempList99.get(h).getCname());
+				if(tempList99.get(h).getCname().equals("중형세탁기")) {break;}
+				if(tempList99.get(h).getCname().equals("중형건조기")) {break;}
+				if(tempList99.get(h).getCname().equals("대형세탁기")) {break;}
+				if(tempList99.get(h).getCname().equals("대형건조기")) {break;}
+				tempList100.add(temp);
+				
+				}
+				////////////////////////////////////////
+			
+				return tempList100;
+			}catch (Exception e) {
+
+			}
+		
+		
+		
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/////////////////////////////////////////////////////////////////
 }
