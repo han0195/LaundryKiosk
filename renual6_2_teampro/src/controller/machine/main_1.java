@@ -27,7 +27,7 @@ public class main_1 implements Initializable{
 		 Main.main.loadpage2("/view/user/6번페이지(결제창)하단.fxml");
 		 Main.main.loadpage("/view/user/2페이지상단(전화번호).fxml");
 		 Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
-		 mediaplayer.play();
+		 mediaplayer.stop();
 	 }
 	
 	 Media media = new Media(getClass().getResource("/img/광고1.mp4").toString());
