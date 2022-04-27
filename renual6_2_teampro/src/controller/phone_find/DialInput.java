@@ -109,7 +109,7 @@ public class DialInput implements Initializable{
        }
        Main.main.temptable.setMphone(Main.main.temptable.getMphone().substring(0,
              Main.main.temptable.getMphone().length()-1));
-       Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
+       Main.main.loadpage2("/view/wash/빨래전화번호하단.fxml");
     }
 
     @FXML
@@ -143,7 +143,7 @@ public class DialInput implements Initializable{
           }
           Main.main.temptable.setMphone(Main.main.temptable.getMphone() + s);
           System.out.println(Main.main.temptable.getMphone());
-          Main.main.loadpage2("/view/user/2페이지하단(전화상단).fxml");
+          Main.main.loadpage2("/view/wash/빨래전화번호하단.fxml");
        }
     }
     
