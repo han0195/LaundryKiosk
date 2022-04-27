@@ -39,7 +39,16 @@ public class Payment implements Initializable{
 
 	@FXML
 	private Button btnpaymentend;
-	
+
+    @FXML
+    private Button back99;
+
+    @FXML
+    void accback99(ActionEvent event) {
+    	
+    	Main.main.loadpage("/view/user/5번페이지(세탁옵션 선택) 상단.fxml");
+		Main.main.loadpage2("/view/user/5번페이지(세탁옵션선택)하단.fxml");
+    }
 	boolean pass = false; // 금액 충족 판단
 	@FXML
 	void addmoney(ActionEvent event) {

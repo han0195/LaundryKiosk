@@ -42,5 +42,12 @@
       <Button fx:id="btnhome" layoutX="670.0" mnemonicParsing="false" onAction="#home" opacity="0.0" prefHeight="50.0" prefWidth="50.0" text="Button" />
       <Button fx:id="btnaddmoney" layoutX="92.0" layoutY="536.0" mnemonicParsing="false" onAction="#addmoney" opacity="0.0" prefHeight="117.0" prefWidth="218.0" text="Button" />
       <Button fx:id="btnpaymentend" layoutX="427.0" layoutY="536.0" mnemonicParsing="false" onAction="#paymentend" opacity="0.0" prefHeight="117.0" prefWidth="227.0" text="Button" />
+      <Label prefHeight="50.0" prefWidth="64.0" style="-fx-background-color: #ffffff;" text="Label" textFill="WHITE" />
+      <ImageView fitHeight="44.0" fitWidth="67.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/뒤로가기2.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="back99" layoutY="3.0" mnemonicParsing="false" onAction="#accback99" opacity="0.0" prefHeight="44.0" prefWidth="64.0" text="Button" />
    </children>
 </AnchorPane>

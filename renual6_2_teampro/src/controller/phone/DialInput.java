@@ -100,6 +100,13 @@ public class DialInput implements Initializable{
     void a9(ActionEvent event) {
        input("9");
     }
+    @FXML
+    private Button back99;
+    @FXML
+    void accback99(ActionEvent event) {
+    	Main.main.temptable.setMphone("0000-0000");
+    	Main.main.loadpage2("/view/user/1번페이지(메인).fxml");
+    }
 
     @FXML
     void back(ActionEvent event) { // 번호 1개 씩 지우기
