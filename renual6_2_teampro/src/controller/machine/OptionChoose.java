@@ -72,7 +72,7 @@ public class OptionChoose implements Initializable{
 	    void clickevent1(MouseEvent event) {
 	    	mtemperature="뜨거움";
 	    	Main.main.temptable.setMtemperature(mtemperature);
-			Main.main.temptable.setMdegree(mdegree);
+			
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("온도-뜨거움선택완료");
 			Optional<ButtonType> optional = alert.showAndWait();
@@ -83,7 +83,7 @@ public class OptionChoose implements Initializable{
 	    void clickevent2(MouseEvent event) {
 	    	mtemperature="중간";
 	    	Main.main.temptable.setMtemperature(mtemperature);
-			Main.main.temptable.setMdegree(mdegree);
+			
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("온도-중간선택완료");
 			Optional<ButtonType> optional = alert.showAndWait();
@@ -94,7 +94,7 @@ public class OptionChoose implements Initializable{
 	    void clickevent3(MouseEvent event) {
 	    	mtemperature="차가움";
 	    	Main.main.temptable.setMtemperature(mtemperature);
-			Main.main.temptable.setMdegree(mdegree);
+			
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("온도-차가움선택완료");
 			Optional<ButtonType> optional = alert.showAndWait();
@@ -104,7 +104,7 @@ public class OptionChoose implements Initializable{
 	    @FXML
 	    void clickevent4(MouseEvent event) {
 	    	mdegree="강함";
-	    	Main.main.temptable.setMtemperature(mtemperature);
+	    	
 			Main.main.temptable.setMdegree(mdegree);
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("세기-강함선택완료");
@@ -116,7 +116,7 @@ public class OptionChoose implements Initializable{
 	    @FXML
 	    void clickevent5(MouseEvent event) {
 			mdegree="약함";
-			Main.main.temptable.setMtemperature(mtemperature);
+		
 			Main.main.temptable.setMdegree(mdegree);
 			Alert alert = new Alert( AlertType.CONFIRMATION );
 			alert.setHeaderText("세기-약함선택완료");
