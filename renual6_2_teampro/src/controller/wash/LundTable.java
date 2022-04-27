@@ -84,8 +84,8 @@ public class LundTable implements Initializable{
 						CategoryDao.categoryDao.ch3(Main.main.temptable.getMnum());
 						Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
 					}
-					else{Alert alert2 = new Alert( AlertType.CONFIRMATION );
-					alert2.setHeaderText("시간이 "+(40+duration.toMinutes())+"분 남았습니다.");
+					else{Alert alert2 = new Alert( AlertType.INFORMATION );
+					alert2.setHeaderText("시간이 "+(40-aft)+"분 남았습니다.");
 					Optional<ButtonType> optional2 = alert2.showAndWait();}
 					
 		    		
@@ -97,13 +97,13 @@ public class LundTable implements Initializable{
 					Duration duration = Duration.between(startDateTime, etime);
 					long aft = (duration.toMinutes())*-1;
 					System.out.println(aft);
-					if(aft>40) {
+					if(aft>30) {
 						CategoryDao.categoryDao.ch2(Main.main.temptable.getMnum());
 						CategoryDao.categoryDao.ch3(Main.main.temptable.getMnum());
 						Main.main.loadpage2("/view/wash/빨래찾기테이블.fxml");
 					}
-					else{Alert alert2 = new Alert( AlertType.CONFIRMATION );
-					alert2.setHeaderText("시간이 "+(40+duration.toMinutes())+"분 남았습니다.");
+					else{Alert alert2 = new Alert( AlertType.INFORMATION );
+					alert2.setHeaderText("시간이 "+(30-aft)+"분 남았습니다.");
 					Optional<ButtonType> optional2 = alert2.showAndWait();}
 		    	}
 				

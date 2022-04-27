@@ -36,7 +36,6 @@ public class KindChoose implements Initializable{
 
     @FXML
     void accback99(ActionEvent event) {
-    	Main.main.temptable.setCname("");
     	Main.main.loadpage2("/view/user/3번페이지(세탁건조선택).fxml");
     }
     @FXML

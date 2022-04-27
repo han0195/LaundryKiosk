@@ -57,10 +57,6 @@ public class OptionChoose implements Initializable{
 
 	    @FXML
 	    void accback99(ActionEvent event) {
-	    	Main.main.temptable.setCname("");
-    		Main.main.temptable.setMnum(0);
-    		Main.main.temptable.setMtemperature("미설정");
-    		Main.main.temptable.setMdegree("미설정");
 	    	Main.main.loadpage2("/view/user/4번페이지(세탁기선택)미완성.fxml");
 	    }
 	    @FXML

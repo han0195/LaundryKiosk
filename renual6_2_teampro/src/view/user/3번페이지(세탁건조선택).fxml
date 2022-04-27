@@ -6,7 +6,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="720.0" style="-fx-background-color: #32A4FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.machine.Choose">
    <children>
@@ -24,16 +23,6 @@
       </ImageView>
       <Button fx:id="btn2" layoutX="47.0" layoutY="416.0" mnemonicParsing="false" onAction="#acc2" opacity="0.0" prefHeight="227.0" prefWidth="627.0" text="Button" />
       <Button fx:id="btn1" layoutX="47.0" layoutY="102.0" mnemonicParsing="false" onAction="#acc1" opacity="0.0" prefHeight="227.0" prefWidth="627.0" text="Button" />
-      <Label layoutX="220.0" layoutY="264.0" prefHeight="29.0" prefWidth="313.0" text="세탁기 8대 사용가능" textFill="#595959">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="221.0" layoutY="569.0" prefHeight="29.0" prefWidth="327.0" text="건조기 4대 사용가능" textFill="#595959">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
       <Button fx:id="btnhome" layoutX="670.0" mnemonicParsing="false" onAction="#acchome" opacity="0.0" prefHeight="50.0" prefWidth="50.0" text="Button" />
       <ImageView fitHeight="219.0" fitWidth="559.0" layoutX="87.0" layoutY="713.0" pickOnBounds="true" preserveRatio="true">
          <image>
