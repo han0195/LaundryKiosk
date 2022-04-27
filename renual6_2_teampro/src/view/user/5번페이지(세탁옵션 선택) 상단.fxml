@@ -21,7 +21,7 @@
             <Image url="@../../img/5페이지%20기계%20선택%20상단.png" />
          </image>
       </ImageView>
-      <RadioButton fx:id="opt1_1" layoutX="112.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#clickevent1" text="뜨거움">
+      <RadioButton fx:id="opt1_1" layoutX="112.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#clickevent1" selected="true" text="뜨거움">
          <font>
             <Font size="21.0" />
          </font>
@@ -47,7 +47,7 @@
             <ToggleGroup fx:id="degree" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="opt2_1" layoutX="112.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#clickevent4" text="강함" toggleGroup="$degree">
+      <RadioButton fx:id="opt2_1" layoutX="112.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#clickevent4" selected="true" text="강함" toggleGroup="$degree">
          <font>
             <Font size="21.0" />
          </font>

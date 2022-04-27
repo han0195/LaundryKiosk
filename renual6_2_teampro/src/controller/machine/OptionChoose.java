@@ -124,6 +124,8 @@ public class OptionChoose implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		Main.main.temptable.setMtemperature("뜨거움");
+		Main.main.temptable.setMdegree("강함");
 		String rtemp = Main.main.temptable.getCname();
 		lblmkind.setText(rtemp);
 	}
